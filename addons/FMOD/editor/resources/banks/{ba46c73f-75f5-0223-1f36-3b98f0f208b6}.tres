@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://bi2swl6kutmws"]
+
+[resource]
+file_path = "res://audio/banks/Desktop/Master.strings.bank"
+modified_time = 1692151881
+path = "bank:/master.strings"
+guid = "{ba46c73f-75f5-0223-1f36-3b98f0f208b6}"
+name = "master.strings"

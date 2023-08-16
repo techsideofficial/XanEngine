@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://wbocae1nexq6"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/pre"
+guid = "{5a547e29-2810-43f6-b837-5683b62a9dfc}"
+name = "pre"
