@@ -25,7 +25,7 @@ enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
 
 [fmod]
 
-settings/banks_path="res://audio/banks"
+settings/banks_path="res://audio/banks/Build/Desktop"
 settings/fmod_output_type=0
 settings/fmod_debug_flags=0
 settings/fmod_debug_mode=1

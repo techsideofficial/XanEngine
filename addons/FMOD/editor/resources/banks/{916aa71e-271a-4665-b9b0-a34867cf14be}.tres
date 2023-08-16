@@ -2,7 +2,7 @@
 
 [resource]
 file_path = "res://audio/banks/Desktop/music.bank"
-modified_time = 1692151881
+modified_time = 1692151683
 path = "bank:/music"
 guid = "{916aa71e-271a-4665-b9b0-a34867cf14be}"
 name = "music"
