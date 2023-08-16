@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{25d0c2ff-0705-4258-8c25-0c33ccdd09b3}">
-		<property name="builtBanksOutputDirectory">
-			<value>../../GodotProjects/FNLobby/audio/banks</value>
-		</property>
+		<property name="builtBanksOutputDirectory" />
 		<relationship name="masterEventFolder">
 			<destination>{d505d686-aba5-41e5-9e09-7ce0416d7f3e}</destination>
 		</relationship>

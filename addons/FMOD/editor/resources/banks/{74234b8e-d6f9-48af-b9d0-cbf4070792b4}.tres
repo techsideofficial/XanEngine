@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://cerne4r6jd4ks"]
+
+[resource]
+file_path = "res://audio/banks/Build/Desktop/UI.bank"
+modified_time = 1692225606
+path = "bank:/UI"
+guid = "{74234b8e-d6f9-48af-b9d0-cbf4070792b4}"
+name = "UI"

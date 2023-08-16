@@ -1,47 +1,276 @@
-[gd_resource type="ProjectCache" load_steps=8 format=3 uid="uid://eyjfucloondc"]
+[gd_resource type="ProjectCache" load_steps=21 format=3 uid="uid://eyjfucloondc"]
 
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="1_rcjv2"]
 [ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="2_qb7gd"]
-[ext_resource type="BankAsset" uid="uid://6rfqhtrllafy" path="res://addons/FMOD/editor/resources/banks/{916aa71e-271a-4665-b9b0-a34867cf14be}.tres" id="3_l3del"]
 [ext_resource type="BusAsset" uid="uid://t5w576mttipj" path="res://addons/FMOD/editor/resources/busses/{b6f84801-e3df-441a-a2c7-d79685596dbc}.tres" id="4_s7rfp"]
-[ext_resource type="BusAsset" uid="uid://bdtgexgqgho2s" path="res://addons/FMOD/editor/resources/busses/{5fae1b69-4342-4373-abe2-dece324d432c}.tres" id="5_x6dst"]
 [ext_resource type="EventAsset" uid="uid://b3hjj047wa2pg" path="res://addons/FMOD/editor/resources/events/{a8a2b59d-b143-4f9c-9a85-e2c5470d30c6}.tres" id="6_m8ubu"]
 [ext_resource type="EventAsset" uid="uid://wbocae1nexq6" path="res://addons/FMOD/editor/resources/events/{5a547e29-2810-43f6-b837-5683b62a9dfc}.tres" id="7_ljqvp"]
+
+[sub_resource type="BankAsset" id="BankAsset_660mf"]
+file_path = "res://audio/banks/Build/Desktop/Emotes.bank"
+modified_time = 1692225606
+path = "bank:/Emotes"
+guid = "{46eedf6f-d3b4-4ff9-8dae-04e2e693a146}"
+name = "Emotes"
+
+[sub_resource type="BankAsset" id="BankAsset_ok3f4"]
+file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
+modified_time = 1692225606
+path = "bank:/MusicPacks"
+guid = "{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}"
+name = "MusicPacks"
+
+[sub_resource type="BankAsset" id="BankAsset_l4fgc"]
+file_path = "res://audio/banks/Build/Desktop/SFX.bank"
+modified_time = 1692225606
+path = "bank:/SFX"
+guid = "{9815987a-7dbf-4b95-8120-9e6b10991f19}"
+name = "SFX"
+
+[sub_resource type="BankAsset" id="BankAsset_mfoxk"]
+file_path = "res://audio/banks/Build/Desktop/UI.bank"
+modified_time = 1692225606
+path = "bank:/UI"
+guid = "{74234b8e-d6f9-48af-b9d0-cbf4070792b4}"
+name = "UI"
+
+[sub_resource type="EventAsset" id="EventAsset_28bpm"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/llamabell/llamabell_intro"
+guid = "{d1679176-b2aa-420a-99c0-d697bc0c398d}"
+name = "llamabell_intro"
+
+[sub_resource type="EventAsset" id="EventAsset_hwl2c"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/llamabell/llamabell_loop"
+guid = "{9e413c51-b25d-4e73-bfd5-56d0cb981b03}"
+name = "llamabell_loop"
+
+[sub_resource type="EventAsset" id="EventAsset_j0v2k"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/llamabell/llamabell_main"
+guid = "{90d2c3d7-cfe4-4ad6-b349-1f93d8b8f1dd}"
+name = "llamabell_main"
+
+[sub_resource type="EventAsset" id="EventAsset_7wvrn"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/zirconsweep"
+guid = "{5397b4f8-00bc-4bb4-94a9-a25f8c82fbb0}"
+name = "zirconsweep"
+
+[sub_resource type="EventAsset" id="EventAsset_qhxny"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/default_remix"
+guid = "{6c7e233e-1a69-40e1-afc4-3fc5d651b822}"
+name = "default_remix"
+
+[sub_resource type="EventAsset" id="EventAsset_frc6p"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/everybodydance"
+guid = "{b5ac4cd7-78ab-4b2e-98c0-5fb5ff1e7129}"
+name = "everybodydance"
+
+[sub_resource type="EventAsset" id="EventAsset_6i85p"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/floss"
+guid = "{499acb3a-b27a-419b-9e44-7146570c7d90}"
+name = "floss"
+
+[sub_resource type="EventAsset" id="EventAsset_0r3j0"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/future_remix"
+guid = "{2a8d9367-c969-4df0-b189-086525f6d202}"
+name = "future_remix"
+
+[sub_resource type="EventAsset" id="EventAsset_4m5vo"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/homebase"
+guid = "{8c9e359a-8786-4267-a1eb-43179e041682}"
+name = "homebase"
+
+[sub_resource type="EventAsset" id="EventAsset_yiaep"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/lilwhip"
+guid = "{358ab2fe-d86f-4192-a2a2-ca5ae45718b4}"
+name = "lilwhip"
+
+[sub_resource type="EventAsset" id="EventAsset_4gnyr"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/llamabell"
+guid = "{ba49b326-d500-4197-a50b-6367be2dd047}"
+name = "llamabell"
 
 [resource]
 banks = {
 "{225be7eb-048e-4e61-997f-b16601010e2e}": ExtResource("1_rcjv2"),
-"{916aa71e-271a-4665-b9b0-a34867cf14be}": ExtResource("3_l3del"),
+"{46eedf6f-d3b4-4ff9-8dae-04e2e693a146}": SubResource("BankAsset_660mf"),
+"{74234b8e-d6f9-48af-b9d0-cbf4070792b4}": SubResource("BankAsset_mfoxk"),
+"{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}": SubResource("BankAsset_ok3f4"),
+"{9815987a-7dbf-4b95-8120-9e6b10991f19}": SubResource("BankAsset_l4fgc"),
 "{ba46c73f-75f5-0223-1f36-3b98f0f208b6}": ExtResource("2_qb7gd")
 }
 events = {
+"{2a8d9367-c969-4df0-b189-086525f6d202}": SubResource("EventAsset_0r3j0"),
+"{358ab2fe-d86f-4192-a2a2-ca5ae45718b4}": SubResource("EventAsset_yiaep"),
+"{499acb3a-b27a-419b-9e44-7146570c7d90}": SubResource("EventAsset_6i85p"),
+"{5397b4f8-00bc-4bb4-94a9-a25f8c82fbb0}": SubResource("EventAsset_7wvrn"),
 "{5a547e29-2810-43f6-b837-5683b62a9dfc}": ExtResource("7_ljqvp"),
-"{a8a2b59d-b143-4f9c-9a85-e2c5470d30c6}": ExtResource("6_m8ubu")
+"{6c7e233e-1a69-40e1-afc4-3fc5d651b822}": SubResource("EventAsset_qhxny"),
+"{8c9e359a-8786-4267-a1eb-43179e041682}": SubResource("EventAsset_4m5vo"),
+"{90d2c3d7-cfe4-4ad6-b349-1f93d8b8f1dd}": SubResource("EventAsset_j0v2k"),
+"{9e413c51-b25d-4e73-bfd5-56d0cb981b03}": SubResource("EventAsset_hwl2c"),
+"{a8a2b59d-b143-4f9c-9a85-e2c5470d30c6}": ExtResource("6_m8ubu"),
+"{b5ac4cd7-78ab-4b2e-98c0-5fb5ff1e7129}": SubResource("EventAsset_frc6p"),
+"{ba49b326-d500-4197-a50b-6367be2dd047}": SubResource("EventAsset_4gnyr"),
+"{d1679176-b2aa-420a-99c0-d697bc0c398d}": SubResource("EventAsset_28bpm")
 }
 busses = {
-"{5fae1b69-4342-4373-abe2-dece324d432c}": ExtResource("5_x6dst"),
 "{b6f84801-e3df-441a-a2c7-d79685596dbc}": ExtResource("4_s7rfp")
 }
 bank_tree = [{
 "children": [],
 "item_type": 3,
-"node_name": "master",
-"path": "bank:/master",
+"node_name": "Emotes",
+"path": "bank:/Emotes",
+"resource": SubResource("BankAsset_660mf")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
 "resource": ExtResource("1_rcjv2")
 }, {
 "children": [],
 "item_type": 3,
-"node_name": "master.strings",
-"path": "bank:/master.strings",
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
 "resource": ExtResource("2_qb7gd")
 }, {
 "children": [],
 "item_type": 3,
-"node_name": "music",
-"path": "bank:/music",
-"resource": ExtResource("3_l3del")
+"node_name": "MusicPacks",
+"path": "bank:/MusicPacks",
+"resource": SubResource("BankAsset_ok3f4")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "SFX",
+"path": "bank:/SFX",
+"resource": SubResource("BankAsset_l4fgc")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "UI",
+"path": "bank:/UI",
+"resource": SubResource("BankAsset_mfoxk")
 }]
 event_tree = [{
+"children": [{
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "llamabell_intro",
+"path": "event:/Emotes/llamabell/llamabell_intro",
+"resource": SubResource("EventAsset_28bpm")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "llamabell_loop",
+"path": "event:/Emotes/llamabell/llamabell_loop",
+"resource": SubResource("EventAsset_hwl2c")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "llamabell_main",
+"path": "event:/Emotes/llamabell/llamabell_main",
+"resource": SubResource("EventAsset_j0v2k")
+}],
+"item_type": 7,
+"node_name": "llamabell",
+"path": "",
+"resource": null
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "zirconsweep",
+"path": "event:/Emotes/zirconsweep",
+"resource": SubResource("EventAsset_7wvrn")
+}],
+"item_type": 7,
+"node_name": "Emotes",
+"path": "",
+"resource": null
+}, {
+"children": [{
+"children": [],
+"item_type": 1,
+"node_name": "default_remix",
+"path": "event:/MusicPacks/default_remix",
+"resource": SubResource("EventAsset_qhxny")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "everybodydance",
+"path": "event:/MusicPacks/everybodydance",
+"resource": SubResource("EventAsset_frc6p")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "floss",
+"path": "event:/MusicPacks/floss",
+"resource": SubResource("EventAsset_6i85p")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "future_remix",
+"path": "event:/MusicPacks/future_remix",
+"resource": SubResource("EventAsset_0r3j0")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "homebase",
+"path": "event:/MusicPacks/homebase",
+"resource": SubResource("EventAsset_4m5vo")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "lilwhip",
+"path": "event:/MusicPacks/lilwhip",
+"resource": SubResource("EventAsset_yiaep")
+}, {
+"children": [],
+"item_type": 1,
+"node_name": "llamabell",
+"path": "event:/MusicPacks/llamabell",
+"resource": SubResource("EventAsset_4gnyr")
+}],
+"item_type": 7,
+"node_name": "MusicPacks",
+"path": "",
+"resource": null
+}, {
 "children": [],
 "item_type": 1,
 "node_name": "post",
@@ -55,13 +284,7 @@ event_tree = [{
 "resource": ExtResource("7_ljqvp")
 }]
 bus_tree = [{
-"children": [{
 "children": [],
-"item_type": 4,
-"node_name": "Reverb",
-"path": "bus:/Reverb",
-"resource": ExtResource("5_x6dst")
-}],
 "item_type": 4,
 "node_name": "bus:",
 "path": "bus:/",

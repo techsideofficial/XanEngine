@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://cu10m4t8sml0l"]
+
+[resource]
+file_path = "res://audio/banks/Build/Desktop/Emotes.bank"
+modified_time = 1692225606
+path = "bank:/Emotes"
+guid = "{46eedf6f-d3b4-4ff9-8dae-04e2e693a146}"
+name = "Emotes"

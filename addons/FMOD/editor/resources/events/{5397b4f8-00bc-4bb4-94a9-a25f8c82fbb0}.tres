@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://cecgm71mu7wg1"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/zirconsweep"
+guid = "{5397b4f8-00bc-4bb4-94a9-a25f8c82fbb0}"
+name = "zirconsweep"

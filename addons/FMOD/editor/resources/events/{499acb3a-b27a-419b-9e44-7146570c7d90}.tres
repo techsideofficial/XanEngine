@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://d0pysuvow0r6n"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/floss"
+guid = "{499acb3a-b27a-419b-9e44-7146570c7d90}"
+name = "floss"

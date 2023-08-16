@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dkreg2k817j04"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/llamabell"
+guid = "{ba49b326-d500-4197-a50b-6367be2dd047}"
+name = "llamabell"

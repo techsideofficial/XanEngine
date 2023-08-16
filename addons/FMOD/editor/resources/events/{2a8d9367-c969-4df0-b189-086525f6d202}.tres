@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dmtlfhepchshy"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/future_remix"
+guid = "{2a8d9367-c969-4df0-b189-086525f6d202}"
+name = "future_remix"
