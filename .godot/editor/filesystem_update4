@@ -1,7 +1,2 @@
-res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres
-res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres
-res://addons/FMOD/editor/resources/busses/{b6f84801-e3df-441a-a2c7-d79685596dbc}.tres
-res://addons/FMOD/editor/cache/fmod_project_cache.tres
 res://scenes/lobby_main.tscn
-res://test.gd
-res://scenes/battlepass.tscn
+res://addons/FMOD/editor/cache/fmod_project_cache.tres
