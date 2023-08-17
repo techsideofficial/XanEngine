@@ -1,2 +1,3 @@
 res://scenes/lobby_main.tscn
 res://addons/FMOD/editor/cache/fmod_project_cache.tres
+res://test.gd

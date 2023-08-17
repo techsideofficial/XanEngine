@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=8 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_go54l"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="2_fpco7"]
@@ -32,14 +32,6 @@ path = "bank:/SFX"
 guid = "{9815987a-7dbf-4b95-8120-9e6b10991f19}"
 name = "SFX"
 
-[sub_resource type="EventAsset" id="EventAsset_frc6p"]
-is_oneshot = true
-min_distance = 1.0
-max_distance = 20.0
-path = "event:/MusicPacks/everybodydance"
-guid = "{b5ac4cd7-78ab-4b2e-98c0-5fb5ff1e7129}"
-name = "everybodydance"
-
 [node name="lobby_main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -51,6 +43,7 @@ script = ExtResource("1_go54l")
 
 [node name="StudioBankLoader" type="StudioBankLoader" parent="."]
 load_on = 1
+unload_on = 3
 num_banks = 6
 bank_0 = SubResource("BankAsset_ok3f4")
 bank_1 = SubResource("BankAsset_660mf")
@@ -59,7 +52,7 @@ bank_3 = SubResource("BankAsset_l4fgc")
 bank_4 = ExtResource("2_fpco7")
 bank_5 = ExtResource("3_1j7s2")
 
-[node name="lobbymusic" type="StudioEventEmitter2D" parent="."]
-event = SubResource("EventAsset_frc6p")
+[node name="StudioListener" type="StudioListener2D" parent="." node_paths=PackedStringArray("attenuation_object")]
+attenuation_object = NodePath(".")
 
-[node name="StudioListener2D" type="StudioListener2D" parent="."]
+[node name="MusicPack" type="Node" parent="."]
