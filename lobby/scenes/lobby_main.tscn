@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=9 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_6grq2"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="2_fwgsg"]
 [ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="3_kchhe"]
+[ext_resource type="Script" path="res://lobby/scripts/ConfigInit.gd" id="4_5vmno"]
 
 [sub_resource type="BankAsset" id="BankAsset_ok3f4"]
 file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
@@ -54,4 +55,5 @@ bank_5 = ExtResource("3_kchhe")
 
 [node name="StudioListener" type="StudioListener2D" parent="."]
 
-[node name="MusicPack" type="Node" parent="."]
+[node name="ConfigInit" type="Node" parent="."]
+script = ExtResource("4_5vmno")

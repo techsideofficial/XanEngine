@@ -1,7 +1,7 @@
 extends Node
 
 var config = ConfigFile.new()
-var err = config.load("user://Config/localuser.qucfg")
+var err = config.load_encrypted_pass("user://Config/localuser.qucfg", "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,7 +1,4 @@
-res://lobby/scenes/lobby_main.tscn
+res://lobby/scenes/battlepass.tscn
 res://addons/FMOD/editor/cache/fmod_project_cache.tres
-res://bank_shipping_external.gd
-res://lobby/scripts/audio/MusicPackManager.gd
-res://lobby/scripts/cosmetics/CosmeticConfigInit.gd
-res://lobby/scripts/cosmetics/ConfigInit.gd
-res://lobby/scripts/cosmetics/MusicPackManager.gd
+res://lobby/scenes/lobby_main.tscn
+res://lobby/scripts/ConfigInit.gd

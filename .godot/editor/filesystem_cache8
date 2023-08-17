@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1692241723
+::res://::1692242960
 bank_shipping_external.gd::GDScript::-1::1692241460::0::1::::<>Node<>::
 fn_icon.png::CompressedTexture2D::3358607282619858453::1692228584::1692228674::1::::<><>::
 icon.svg::CompressedTexture2D::3635028141133128536::1692147361::1692147369::1::::<><>::
@@ -12,8 +12,8 @@ plugin.cfg::TextFile::-1::1692147313::0::1::::<><>::
 editor_addon.gd::GDScript::-1::1692147313::0::1::::<>EditorPlugin<>::
 fmod_guids.gd::GDScript::-1::1692223073::0::1::::FMODGuids<>RefCounted<>::
 inspector_browser_plugin.gd::GDScript::-1::1692147313::0::1::::<>EditorInspectorPlugin<>::
-::res://addons/FMOD/editor/cache/::1692241460
-fmod_project_cache.tres::ProjectCache::330856876629662284::1692241460::0::1::::<><>::uid://cu10m4t8sml0l<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws<>uid://5jifof78wef0<>uid://t5w576mttipj<>uid://b7jnegrabihrn<>uid://cerne4r6jd4ks<>uid://b3hjj047wa2pg<>uid://wbocae1nexq6<>uid://d1ukbjhg57fg5<>uid://ccl8emidusooa<>uid://3aap3md0pufo<>uid://cecgm71mu7wg1<>uid://c727j5kuaq5cw<>uid://duboo3qetnnpr<>uid://d0pysuvow0r6n<>uid://dmtlfhepchshy<>uid://yam4v5rpxvf8<>uid://cblm73ueo8030<>uid://dkreg2k817j04
+::res://addons/FMOD/editor/cache/::1692242879
+fmod_project_cache.tres::ProjectCache::330856876629662284::1692242879::0::1::::<><>::uid://cu10m4t8sml0l<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws<>uid://5jifof78wef0<>uid://t5w576mttipj<>uid://b7jnegrabihrn<>uid://cerne4r6jd4ks<>uid://b3hjj047wa2pg<>uid://wbocae1nexq6<>uid://d1ukbjhg57fg5<>uid://ccl8emidusooa<>uid://3aap3md0pufo<>uid://cecgm71mu7wg1<>uid://c727j5kuaq5cw<>uid://duboo3qetnnpr<>uid://d0pysuvow0r6n<>uid://dmtlfhepchshy<>uid://yam4v5rpxvf8<>uid://cblm73ueo8030<>uid://dkreg2k817j04
 ::res://addons/FMOD/editor/images/::1692147433
 bank_icon.svg::CompressedTexture2D::1726163335378955823::1692147313::1692147433::1::::<><>::
 bus_icon.svg::CompressedTexture2D::7598982863429549280::1692147313::1692147433::1::::<><>::
@@ -140,10 +140,10 @@ S13_OGLobbyFuture.ogg::AudioStreamOggVorbis::4083671565433113160::1692174352::16
 ::res://audio/banks/Metadata/SnapshotGroup/::1692222590
 ::res://audio/banks/Metadata/VCA/::1692151115
 ::res://lobby/::1692238044
-::res://lobby/scenes/::1692242007
-battlepass.tscn::PackedScene::2952385989218770577::1692238217::0::1::::<><>::res://test.gd
-lobby_main.tscn::PackedScene::4266477549185250263::1692242007::0::1::::<><>::res://test.gd<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws
-::res://lobby/scripts/::1692241516
-::res://lobby/scripts/cosmetics/::1692242007
-MusicPackManager.gd::GDScript::-1::1692241460::0::1::::<>Node<>::
-CosmeticConfigInit.gd::GDScript::-1::1692242007::0::1::::<>Node<>::
+::res://lobby/scenes/::1692242879
+battlepass.tscn::PackedScene::2952385989218770577::1692242879::0::1::::<><>::res://test.gd
+lobby_main.tscn::PackedScene::4266477549185250263::1692242879::0::1::::<><>::res://test.gd<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws
+::res://lobby/scripts/::1692242960
+ConfigInit.gd::GDScript::-1::1692242178::0::1::::<>Node<>::
+::res://lobby/scripts/cosmetics/::1692242960
+MusicPackManager.gd::GDScript::-1::1692242178::0::1::::<>Node<>::
