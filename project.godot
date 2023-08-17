@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="FortiClone"
-run/main_scene="res://scenes/lobby_main.tscn"
+run/main_scene="res://lobby/scenes/lobby_main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://fn_icon.png"
+
+[audio]
+
+buses/default_bus_layout=""
 
 [autoload]
 
