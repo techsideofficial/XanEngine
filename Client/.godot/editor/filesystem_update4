@@ -1,4 +1,3 @@
-res://lobby/scenes/battlepass.tscn
-res://addons/FMOD/editor/cache/fmod_project_cache.tres
 res://lobby/scenes/lobby_main.tscn
-res://lobby/scripts/ConfigInit.gd
+res://addons/FMOD/editor/cache/fmod_project_cache.tres
+res://lobby/scripts/cosmetics/MusicPackManager.gd

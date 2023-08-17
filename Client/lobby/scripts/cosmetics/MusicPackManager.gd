@@ -9,6 +9,9 @@ var mp_llamabell = "event:/MusicPacks/llamabell"
 var mp_everybodydance = "event:/MusicPacks/everybodydance"
 var mp_floss = "event:/MusicPacks/floss"
 var mp_lilwhip = "event:/MusicPacks/lilwhip"
+var mp_homebase = "event:/MusicPacks/homebase"
+var mp_futureremix = "event:/MusicPacks/futureremix"
+var mp_seizethefuture = "event:/MusicPacks/seizethefuture"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
