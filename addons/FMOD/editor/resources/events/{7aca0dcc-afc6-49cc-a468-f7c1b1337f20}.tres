@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://cjlhk31lyv6ds"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/og_classic"
+guid = "{7aca0dcc-afc6-49cc-a468-f7c1b1337f20}"
+name = "og_classic"
