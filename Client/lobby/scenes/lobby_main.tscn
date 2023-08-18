@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=15 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_6grq2"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="2_fwgsg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="5_ho1dd"]
 [ext_resource type="LabelSettings" uid="uid://b72l2imgvc8vu" path="res://lobby/assets/label/play_button.tres" id="6_0vs87"]
 [ext_resource type="Texture2D" uid="uid://4eal7mm8pms5" path="res://lobby/assets/bg/c4s3_battleroyale.jpeg" id="7_58iqg"]
+[ext_resource type="FontFile" uid="uid://c2lkfnq1l64k6" path="res://lobby/assets/fonts/fortnite.otf" id="8_8aj2s"]
 
 [sub_resource type="BankAsset" id="BankAsset_ok3f4"]
 file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
@@ -35,6 +36,14 @@ modified_time = 1692225606
 path = "bank:/SFX"
 guid = "{9815987a-7dbf-4b95-8120-9e6b10991f19}"
 name = "SFX"
+
+[sub_resource type="LabelSettings" id="LabelSettings_47u5i"]
+font = ExtResource("8_8aj2s")
+font_color = Color(0.458824, 0.784314, 0.945098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xgftj"]
+font = ExtResource("8_8aj2s")
+font_size = 50
 
 [node name="lobby_main" type="Control"]
 layout_mode = 3
@@ -109,3 +118,21 @@ offset_right = 194.0
 offset_bottom = 112.0
 texture = ExtResource("7_58iqg")
 expand_mode = 1
+
+[node name="ChapterTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 83.0
+offset_right = 260.0
+offset_bottom = 106.0
+text = "CHAPTER 4"
+label_settings = SubResource("LabelSettings_47u5i")
+
+[node name="SeasonTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 94.0
+offset_right = 364.0
+offset_bottom = 148.0
+text = "SEASON 3"
+label_settings = SubResource("LabelSettings_xgftj")
