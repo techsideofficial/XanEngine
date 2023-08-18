@@ -1,7 +1,7 @@
-Label
-Node
 ColorRect
 TextureRect
+Label
+Node
 StudioEventEmitter2D
 StudioListener2D
 StudioBankLoader

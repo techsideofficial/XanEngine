@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=12 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_6grq2"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="2_fwgsg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://lobby/scripts/ConfigInit.gd" id="4_5vmno"]
 [ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="5_ho1dd"]
 [ext_resource type="LabelSettings" uid="uid://b72l2imgvc8vu" path="res://lobby/assets/label/play_button.tres" id="6_0vs87"]
+[ext_resource type="Texture2D" uid="uid://4eal7mm8pms5" path="res://lobby/assets/bg/c4s3_battleroyale.jpeg" id="7_58iqg"]
 
 [sub_resource type="BankAsset" id="BankAsset_ok3f4"]
 file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
@@ -61,19 +62,18 @@ bank_5 = ExtResource("3_kchhe")
 [node name="ConfigInit" type="Node" parent="."]
 script = ExtResource("4_5vmno")
 
-[node name="bg" type="TextureRect" parent="."]
+[node name="LobbyBG" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1032.0
 offset_bottom = 514.0
 texture = ExtResource("5_ho1dd")
 expand_mode = 1
 
-[node name="PlayButton" type="Node" parent="."]
-
-[node name="play_bg" type="ColorRect" parent="."]
+[node name="PlayButtonBG" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.032
+anchor_left = -0.0631068
+anchor_top = -0.00885603
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 863.0
@@ -83,12 +83,29 @@ offset_bottom = -23.0
 color = Color(0.756863, 0.694118, 0.133333, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 879.0
-offset_top = 453.0
-offset_right = 982.0
-offset_bottom = 496.0
+[node name="PlayButtonLabel" type="Label" parent="PlayButtonBG"]
+offset_left = 30.0
+offset_top = 2.0
+offset_right = 166.0
+offset_bottom = 76.0
 text = "PLAY!"
 label_settings = ExtResource("6_0vs87")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlaylistBG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 297.0
+offset_right = 996.0
+offset_bottom = 417.0
+color = Color(0.2, 0.580392, 0.74902, 1)
+
+[node name="PlaylistImage01" type="TextureRect" parent="PlaylistBG"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 194.0
+offset_bottom = 112.0
+texture = ExtResource("7_58iqg")
+expand_mode = 1
