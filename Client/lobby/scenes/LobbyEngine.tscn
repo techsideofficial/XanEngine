@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=13 format=3 uid="uid://b11yi50rujsqh"]
 
-[ext_resource type="Script" path="res://test.gd" id="1_esr5x"]
 [ext_resource type="PackedScene" uid="uid://de0xllabdbbn1" path="res://lobby/scenes/PlayTab.tscn" id="2_624st"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="3_sd7qh"]
 [ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="4_u6mhy"]
 [ext_resource type="Script" path="res://lobby/scripts/PlayerDataInit.gd" id="5_rt57j"]
 [ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="6_ft721"]
+[ext_resource type="Script" path="res://lobby/scripts/Config/PlayerDataInit.gd" id="7_gpgr5"]
 [ext_resource type="LabelSettings" uid="uid://sk7oktvg65qe" path="res://lobby/assets/label/NavBarTab.tres" id="7_mwd0e"]
+[ext_resource type="Script" path="res://lobby/scripts/Cosmetics/MusicPackManager.gd" id="8_oo4kn"]
 
 [sub_resource type="BankAsset" id="BankAsset_ok3f4"]
 file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
@@ -44,7 +45,6 @@ offset_right = -112.784
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_esr5x")
 
 [node name="PlayTab" parent="." instance=ExtResource("2_624st")]
 layout_mode = 1
@@ -180,3 +180,11 @@ text = "VBUCKS"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="--RUNTIMELOADER--" type="Node" parent="."]
+
+[node name="ConfigLoader" type="Node" parent="--RUNTIMELOADER--"]
+script = ExtResource("7_gpgr5")
+
+[node name="MusicPackLoader" type="Node" parent="--RUNTIMELOADER--"]
+script = ExtResource("8_oo4kn")

@@ -24,6 +24,7 @@ buses/default_bus_layout=""
 [autoload]
 
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
+ConfigInfo="*res://lobby/scripts/Config/ConfigInfo.gd"
 
 [display]
 

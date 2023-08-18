@@ -8,3 +8,4 @@ res://lobby/scenes/LobbyEngine.tscn
 res://lobby/scripts/ConfigInit.gd
 res://lobby/scripts/Config/ConfigInfo.gd
 res://lobby/scripts/Config/PlayerDataInit.gd
+res://lobby/scenes/BPTab.tscn

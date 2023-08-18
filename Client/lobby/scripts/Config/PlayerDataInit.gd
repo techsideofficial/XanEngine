@@ -1,13 +1,12 @@
 extends Node
 
-var isDebug = true
-
 var config = ConfigFile.new()
-var err = config.load_encrypted_pass("user://Config/localuser.qucfg", "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+var err = config.load_encrypted_pass(config_data.new().configPath, config_data.new().cryptPass)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if err != OK:
+		DirAccess.make_dir_absolute("user://Config/")
 		#AthenaInfo (Config Version, Type)
 		config.set_value("UserProfileMetadata", "Athena", true)
 		config.set_value("UserProfileMetadata", "AthenaVer", "Quantum-01A")
@@ -30,10 +29,10 @@ func _ready():
 		config.set_value("Cosmetics", "OwnedGliders", ["all"])
 		
 		#Save
-		if isDebug == true:
-			config.save("user://Config/localuser.qucfg")
+		if config_data.new().useCrypt == true:
+			config.save(config_data.new().configPath)
 		else:
-			config.save_encrypted_pass("user://Config/localuser.qucfg", "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+			config.save_encrypted_pass(config_data.new().configPath, config_data.new().cryptPass)
 
 
 func _process(delta):
