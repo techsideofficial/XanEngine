@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=3 uid="uid://b11yi50rujsqh"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_esr5x"]
+[ext_resource type="PackedScene" uid="uid://de0xllabdbbn1" path="res://lobby/scenes/PlayTab.tscn" id="2_624st"]
+[ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="3_sd7qh"]
+[ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="4_u6mhy"]
+[ext_resource type="Script" path="res://lobby/scripts/PlayerDataInit.gd" id="5_rt57j"]
+[ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="6_ft721"]
+[ext_resource type="LabelSettings" uid="uid://sk7oktvg65qe" path="res://lobby/assets/label/NavBarTab.tres" id="7_mwd0e"]
+
+[sub_resource type="BankAsset" id="BankAsset_ok3f4"]
+file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
+modified_time = 1692225606
+path = "bank:/MusicPacks"
+guid = "{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}"
+name = "MusicPacks"
+
+[sub_resource type="BankAsset" id="BankAsset_660mf"]
+file_path = "res://audio/banks/Build/Desktop/Emotes.bank"
+modified_time = 1692225606
+path = "bank:/Emotes"
+guid = "{46eedf6f-d3b4-4ff9-8dae-04e2e693a146}"
+name = "Emotes"
+
+[sub_resource type="BankAsset" id="BankAsset_mfoxk"]
+file_path = "res://audio/banks/Build/Desktop/UI.bank"
+modified_time = 1692225606
+path = "bank:/UI"
+guid = "{74234b8e-d6f9-48af-b9d0-cbf4070792b4}"
+name = "UI"
+
+[sub_resource type="BankAsset" id="BankAsset_l4fgc"]
+file_path = "res://audio/banks/Build/Desktop/SFX.bank"
+modified_time = 1692225606
+path = "bank:/SFX"
+guid = "{9815987a-7dbf-4b95-8120-9e6b10991f19}"
+name = "SFX"
+
+[node name="lobby_main" type="Control"]
+layout_mode = 3
+anchor_right = 1.116
+anchor_bottom = 1.0
+offset_right = -112.784
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_esr5x")
+
+[node name="PlayTab" parent="." instance=ExtResource("2_624st")]
+layout_mode = 1
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+load_on = 1
+unload_on = 3
+num_banks = 6
+bank_0 = SubResource("BankAsset_ok3f4")
+bank_1 = SubResource("BankAsset_660mf")
+bank_2 = SubResource("BankAsset_mfoxk")
+bank_3 = SubResource("BankAsset_l4fgc")
+bank_4 = ExtResource("3_sd7qh")
+bank_5 = ExtResource("4_u6mhy")
+
+[node name="StudioListener" type="StudioListener2D" parent="."]
+
+[node name="ConfigInit" type="Node" parent="."]
+script = ExtResource("5_rt57j")
+
+[node name="LobbyBG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1032.0
+offset_bottom = 514.0
+texture = ExtResource("6_ft721")
+expand_mode = 1
+
+[node name="--NAVBAR--" type="Node" parent="."]
+
+[node name="PlayTab" type="Node" parent="--NAVBAR--"]
+
+[node name="PlayHighlight" type="ColorRect" parent="--NAVBAR--/PlayTab"]
+offset_left = 200.0
+offset_top = 24.0
+offset_right = 263.0
+offset_bottom = 45.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/PlayTab"]
+offset_left = 211.0
+offset_top = 25.0
+offset_right = 251.0
+offset_bottom = 48.0
+text = "PLAY"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BPTab" type="Node" parent="--NAVBAR--"]
+
+[node name="BPHighlight" type="ColorRect" parent="--NAVBAR--/BPTab"]
+offset_left = 300.0
+offset_top = 24.0
+offset_right = 363.0
+offset_bottom = 45.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/BPTab"]
+offset_left = 298.0
+offset_top = 25.0
+offset_right = 368.0
+offset_bottom = 47.0
+text = "BATTLE PASS"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestsTab" type="Node" parent="--NAVBAR--"]
+
+[node name="QuestsHighlight" type="ColorRect" parent="--NAVBAR--/QuestsTab"]
+offset_left = 400.0
+offset_top = 24.0
+offset_right = 463.0
+offset_bottom = 45.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/QuestsTab"]
+offset_left = 411.0
+offset_top = 25.0
+offset_right = 451.0
+offset_bottom = 48.0
+text = "QUESTS"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LockerTab" type="Node" parent="--NAVBAR--"]
+
+[node name="Button" type="TextureButton" parent="--NAVBAR--/LockerTab"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/LockerTab"]
+offset_left = 513.0
+offset_top = 25.0
+offset_right = 553.0
+offset_bottom = 48.0
+text = "LOCKER
+"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemShopTab" type="Node" parent="--NAVBAR--"]
+
+[node name="ItemShopHighlight" type="ColorRect" parent="--NAVBAR--/ItemShopTab"]
+offset_left = 600.0
+offset_top = 24.0
+offset_right = 663.0
+offset_bottom = 45.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/ItemShopTab"]
+offset_left = 608.0
+offset_top = 25.0
+offset_right = 656.0
+offset_bottom = 48.0
+text = "ITEM SHOP"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VbucksTab" type="Node" parent="--NAVBAR--"]
+
+[node name="VBucksHighlight" type="ColorRect" parent="--NAVBAR--/VbucksTab"]
+offset_left = 700.0
+offset_top = 24.0
+offset_right = 763.0
+offset_bottom = 45.0
+
+[node name="TabName" type="Label" parent="--NAVBAR--/VbucksTab"]
+offset_left = 713.0
+offset_top = 25.0
+offset_right = 753.0
+offset_bottom = 48.0
+text = "VBUCKS"
+label_settings = ExtResource("7_mwd0e")
+horizontal_alignment = 1
+vertical_alignment = 1

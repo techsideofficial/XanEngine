@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FortiClone"
-run/main_scene="res://lobby/scenes/lobby_main.tscn"
+run/main_scene="res://lobby/scenes/LobbyEngine.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="FortiClone"
 config/features=PackedStringArray("4.0", "GL Compatibility")

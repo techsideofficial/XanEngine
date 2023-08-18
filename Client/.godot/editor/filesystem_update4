@@ -1,4 +1,10 @@
 res://lobby/scenes/lobby_main.tscn
 res://addons/FMOD/editor/cache/fmod_project_cache.tres
-res://lobby/scenes/battlepass.tscn
 res://lobby/assets/label/play_button.tres
+res://lobby/assets/label/NavBarTab.tres
+res://lobby/scenes/battlepass.tscn
+res://lobby/scenes/PlayTab.tscn
+res://lobby/scenes/LobbyEngine.tscn
+res://lobby/scripts/ConfigInit.gd
+res://lobby/scripts/Config/ConfigInfo.gd
+res://lobby/scripts/Config/PlayerDataInit.gd
