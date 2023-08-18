@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=11 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_6grq2"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="2_fwgsg"]
 [ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="3_kchhe"]
 [ext_resource type="Script" path="res://lobby/scripts/ConfigInit.gd" id="4_5vmno"]
+[ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="5_ho1dd"]
+[ext_resource type="LabelSettings" uid="uid://b72l2imgvc8vu" path="res://lobby/assets/label/play_button.tres" id="6_0vs87"]
 
 [sub_resource type="BankAsset" id="BankAsset_ok3f4"]
 file_path = "res://audio/banks/Build/Desktop/MusicPacks.bank"
@@ -57,3 +59,35 @@ bank_5 = ExtResource("3_kchhe")
 
 [node name="ConfigInit" type="Node" parent="."]
 script = ExtResource("4_5vmno")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -14.0
+offset_right = 2169.0
+offset_bottom = 1104.0
+texture = ExtResource("5_ho1dd")
+expand_mode = 1
+
+[node name="PlayButton" type="Node" parent="."]
+
+[node name="play_bg" type="ColorRect" parent="PlayButton"]
+anchors_preset = -1
+anchor_left = 0.138672
+anchor_top = 0.0888889
+offset_left = 1414.0
+offset_top = 857.0
+offset_right = 2011.0
+offset_bottom = 1059.0
+color = Color(0.756863, 0.694118, 0.133333, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayButton"]
+offset_left = 1645.0
+offset_top = 926.0
+offset_right = 2069.0
+offset_bottom = 1109.0
+text = "PLAY"
+label_settings = ExtResource("6_0vs87")
+horizontal_alignment = 1
+vertical_alignment = 1

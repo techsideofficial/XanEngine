@@ -1,4 +1,7 @@
+Label
 Node
+ColorRect
+TextureRect
 StudioEventEmitter2D
 StudioListener2D
 StudioBankLoader

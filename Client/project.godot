@@ -25,6 +25,11 @@ buses/default_bus_layout=""
 
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 
+[display]
+
+window/size/viewport_width=2048
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
