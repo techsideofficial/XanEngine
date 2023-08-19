@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1692327564
+::res://::1692410281
 bank_shipping_external.gd::GDScript::-1::1692260753::0::1::::<>Node<>::
 fn_icon.png::CompressedTexture2D::3358607282619858453::1692260753::1692260753::1::::<><>::
 icon.svg::CompressedTexture2D::3635028141133128536::1692260753::1692262475::1::::<><>::
@@ -165,13 +165,13 @@ fortnite.otf::FontFile::6691265108522618703::1692323265::1692323355::1::::<><>::
 ::res://lobby/assets/label/::1692326574
 NavBarTab.tres::LabelSettings::1286011463456576980::1692326574::0::1::::<><>::uid://c2lkfnq1l64k6
 play_button.tres::LabelSettings::4688918421850861826::1692326574::0::1::::<><>::uid://c2lkfnq1l64k6
-::res://lobby/scenes/::1692327564
-BPTab.tscn::PackedScene::2952385989218770577::1692326574::0::1::::<><>::res://test.gd
-LobbyEngine.tscn::PackedScene::4266477549185250263::1692327564::0::1::::<><>::res://test.gd<>uid://de0xllabdbbn1<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws<>res://lobby/scripts/PlayerDataInit.gd<>uid://dpbfnrh07xdgv<>uid://sk7oktvg65qe
-PlayTab.tscn::PackedScene::7493043581855846576::1692326765::0::1::::<><>::uid://c2lkfnq1l64k6<>uid://b72l2imgvc8vu<>uid://4eal7mm8pms5
+::res://lobby/scenes/::1692328722
+BPTab.tscn::PackedScene::2952385989218770577::1692328539::0::1::::<><>::res://test.gd
+LobbyEngine.tscn::PackedScene::4266477549185250263::1692328722::0::1::::<><>::uid://de0xllabdbbn1<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws<>res://lobby/scripts/PlayerDataInit.gd<>uid://dpbfnrh07xdgv<>res://lobby/scripts/Config/PlayerDataInit.gd<>uid://sk7oktvg65qe<>res://lobby/scripts/Cosmetics/MusicPackManager.gd
+PlayTab.tscn::PackedScene::7493043581855846576::1692328539::0::1::::<><>::uid://c2lkfnq1l64k6<>uid://b72l2imgvc8vu<>uid://4eal7mm8pms5<>uid://dpbfnrh07xdgv
 ::res://lobby/scripts/::1692327610
-::res://lobby/scripts/Config/::1692327603
-ConfigInit.gd::GDScript::-1::1692327564::0::1::::<>Node<>::
-PlayerDataInit.gd::GDScript::-1::1692260753::0::1::::<>Node<>::
+::res://lobby/scripts/Config/::1692328722
+ConfigInfo.gd::GDScript::-1::1692328384::0::1::::config_data<>Node<>::
+PlayerDataInit.gd::GDScript::-1::1692328722::0::1::::<>Node<>::
 ::res://lobby/scripts/Cosmetics/::1692262623
 MusicPackManager.gd::GDScript::-1::1692262623::0::1::::<>Node<>::
