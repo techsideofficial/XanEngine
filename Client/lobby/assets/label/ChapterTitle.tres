@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://t7ww18y38h0t"]
+
+[ext_resource type="FontFile" uid="uid://c2lkfnq1l64k6" path="res://lobby/assets/fonts/fortnite.otf" id="1_v1rrm"]
+
+[resource]
+font = ExtResource("1_v1rrm")
+font_size = 41
+font_color = Color(0.458824, 0.784314, 0.945098, 1)

@@ -2,3 +2,8 @@ res://lobby/scenes/PlayTab.tscn
 res://addons/FMOD/editor/cache/fmod_project_cache.tres
 res://lobby/assets/label/play_button.tres
 res://lobby/assets/label/NavBarTab.tres
+res://lobby/scenes/BPTab.tscn
+res://lobby/scenes/LobbyEngine.tscn
+res://lobby/assets/label/SeasonTitle.tres
+res://lobby/assets/label/ChapterTitle.tres
+res://lobby/scripts/UI/NavBarLoader.gd

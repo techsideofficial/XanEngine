@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b11yi50rujsqh"]
+[gd_scene load_steps=12 format=3 uid="uid://b11yi50rujsqh"]
 
 [ext_resource type="PackedScene" uid="uid://de0xllabdbbn1" path="res://lobby/scenes/PlayTab.tscn" id="2_624st"]
 [ext_resource type="BankAsset" uid="uid://btu4xg7fuya1p" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="3_sd7qh"]
 [ext_resource type="BankAsset" uid="uid://bi2swl6kutmws" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="4_u6mhy"]
 [ext_resource type="Script" path="res://lobby/scripts/PlayerDataInit.gd" id="5_rt57j"]
-[ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="6_ft721"]
 [ext_resource type="Script" path="res://lobby/scripts/Config/PlayerDataInit.gd" id="7_gpgr5"]
 [ext_resource type="LabelSettings" uid="uid://sk7oktvg65qe" path="res://lobby/assets/label/NavBarTab.tres" id="7_mwd0e"]
 [ext_resource type="Script" path="res://lobby/scripts/Cosmetics/MusicPackManager.gd" id="8_oo4kn"]
@@ -46,9 +45,6 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayTab" parent="." instance=ExtResource("2_624st")]
-layout_mode = 1
-
 [node name="StudioBankLoader" type="StudioBankLoader" parent="."]
 load_on = 1
 unload_on = 3
@@ -65,13 +61,6 @@ bank_5 = ExtResource("4_u6mhy")
 [node name="ConfigInit" type="Node" parent="."]
 script = ExtResource("5_rt57j")
 
-[node name="LobbyBG" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1032.0
-offset_bottom = 514.0
-texture = ExtResource("6_ft721")
-expand_mode = 1
-
 [node name="--NAVBAR--" type="Node" parent="."]
 
 [node name="PlayTab" type="Node" parent="--NAVBAR--"]
@@ -81,6 +70,7 @@ offset_left = 200.0
 offset_top = 24.0
 offset_right = 263.0
 offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/PlayTab"]
 offset_left = 211.0
@@ -91,6 +81,7 @@ text = "PLAY"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BPTab" type="Node" parent="--NAVBAR--"]
 
@@ -99,6 +90,7 @@ offset_left = 300.0
 offset_top = 24.0
 offset_right = 363.0
 offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/BPTab"]
 offset_left = 298.0
@@ -109,16 +101,20 @@ text = "BATTLE PASS"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="QuestsTab" type="Node" parent="--NAVBAR--"]
 
 [node name="QuestsHighlight" type="ColorRect" parent="--NAVBAR--/QuestsTab"]
+visible = false
 offset_left = 400.0
 offset_top = 24.0
 offset_right = 463.0
 offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/QuestsTab"]
+visible = false
 offset_left = 411.0
 offset_top = 25.0
 offset_right = 451.0
@@ -127,23 +123,38 @@ text = "QUESTS"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="LockerTab" type="Node" parent="--NAVBAR--"]
 
+[node name="LockerHighlight" type="ColorRect" parent="--NAVBAR--/LockerTab"]
+offset_left = 396.0
+offset_top = 24.0
+offset_right = 459.0
+offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
+
 [node name="Button" type="TextureButton" parent="--NAVBAR--/LockerTab"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 0.0148437
+anchor_bottom = -0.0236111
+offset_left = 400.0
+offset_top = 21.0
+offset_right = 440.0
+offset_bottom = 61.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/LockerTab"]
-offset_left = 513.0
+offset_left = 408.0
 offset_top = 25.0
-offset_right = 553.0
+offset_right = 448.0
 offset_bottom = 48.0
 text = "LOCKER
 "
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemShopTab" type="Node" parent="--NAVBAR--"]
 
@@ -152,6 +163,7 @@ offset_left = 600.0
 offset_top = 24.0
 offset_right = 663.0
 offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/ItemShopTab"]
 offset_left = 608.0
@@ -162,6 +174,7 @@ text = "ITEM SHOP"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="VbucksTab" type="Node" parent="--NAVBAR--"]
 
@@ -170,6 +183,7 @@ offset_left = 700.0
 offset_top = 24.0
 offset_right = 763.0
 offset_bottom = 45.0
+metadata/_edit_use_anchors_ = true
 
 [node name="TabName" type="Label" parent="--NAVBAR--/VbucksTab"]
 offset_left = 713.0
@@ -180,6 +194,7 @@ text = "VBUCKS"
 label_settings = ExtResource("7_mwd0e")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="--RUNTIMELOADER--" type="Node" parent="."]
 
@@ -188,3 +203,6 @@ script = ExtResource("7_gpgr5")
 
 [node name="MusicPackLoader" type="Node" parent="--RUNTIMELOADER--"]
 script = ExtResource("8_oo4kn")
+
+[node name="PlayTab" parent="." instance=ExtResource("2_624st")]
+layout_mode = 1

@@ -1,96 +1,95 @@
 [gd_scene load_steps=7 format=3 uid="uid://de0xllabdbbn1"]
 
-[ext_resource type="FontFile" uid="uid://c2lkfnq1l64k6" path="res://lobby/assets/fonts/fortnite.otf" id="1_o83hp"]
+[ext_resource type="LabelSettings" uid="uid://t7ww18y38h0t" path="res://lobby/assets/label/ChapterTitle.tres" id="1_150nk"]
+[ext_resource type="LabelSettings" uid="uid://b8gdsi2nxw3lu" path="res://lobby/assets/label/SeasonTitle.tres" id="2_2a505"]
 [ext_resource type="LabelSettings" uid="uid://b72l2imgvc8vu" path="res://lobby/assets/label/play_button.tres" id="2_ghlwn"]
 [ext_resource type="Texture2D" uid="uid://4eal7mm8pms5" path="res://lobby/assets/bg/c4s3_battleroyale.jpeg" id="3_u3ar1"]
 [ext_resource type="Texture2D" uid="uid://dpbfnrh07xdgv" path="res://lobby/assets/bg/c4s3_lobbybg.jpg" id="4_wsanm"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_prw7o"]
-font = ExtResource("1_o83hp")
-font_size = 30
-font_color = Color(0.458824, 0.784314, 0.945098, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_v54js"]
-font = ExtResource("1_o83hp")
-font_size = 70
+[ext_resource type="Texture2D" uid="uid://c4u6qhp1xhfei" path="res://lobby/assets/sprites/ui_menu_nobg.png" id="6_2tn4e"]
 
 [node name="PlayTab" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="--CSINFO--" type="Node" parent="."]
 
 [node name="ChapterTitle" type="Label" parent="--CSINFO--"]
-offset_left = 83.0
-offset_top = 83.0
-offset_right = 195.0
-offset_bottom = 117.0
+offset_left = 131.0
+offset_top = 119.0
+offset_right = 283.0
+offset_bottom = 164.0
 text = "CHAPTER 4"
-label_settings = SubResource("LabelSettings_prw7o")
+label_settings = ExtResource("1_150nk")
 
 [node name="SeasonTitle" type="Label" parent="--CSINFO--"]
-offset_left = 80.0
-offset_top = 112.0
-offset_right = 310.0
-offset_bottom = 186.0
+offset_left = 131.0
+offset_top = 153.0
+offset_right = 502.0
+offset_bottom = 270.0
 text = "SEASON 3"
-label_settings = SubResource("LabelSettings_v54js")
+label_settings = ExtResource("2_2a505")
 
 [node name="--PLAYLIST--" type="Node" parent="."]
 
 [node name="PlayButtonBG" type="ColorRect" parent="--PLAYLIST--"]
 anchors_preset = -1
-anchor_left = -0.0631068
+anchor_left = -0.0685756
 anchor_top = -0.00885603
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 862.621
-offset_top = 431.534
-offset_right = -34.3787
-offset_bottom = -23.0177
+anchor_right = 0.790018
+anchor_bottom = 0.726632
+offset_left = 1143.78
+offset_top = 624.376
+offset_right = 246.777
+offset_bottom = 169.825
 color = Color(0.756863, 0.694118, 0.133333, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayButtonLabel" type="Label" parent="--PLAYLIST--/PlayButtonBG"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 2.0
-offset_right = 166.0
-offset_bottom = 76.0
+offset_left = 37.0
+offset_top = 7.0
+offset_right = 173.0
+offset_bottom = 81.0
 text = "PLAY!"
 label_settings = ExtResource("2_ghlwn")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlaylistBG" type="ColorRect" parent="--PLAYLIST--"]
-offset_left = 794.0
-offset_top = 297.0
-offset_right = 996.0
-offset_bottom = 417.0
+offset_left = 1054.0
+offset_top = 473.0
+offset_right = 1256.0
+offset_bottom = 593.0
 color = Color(0.2, 0.580392, 0.74902, 1)
 
 [node name="PlaylistImage01" type="TextureRect" parent="--PLAYLIST--/PlaylistBG"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 194.0
-offset_bottom = 112.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 192.0
+offset_bottom = 111.0
 texture = ExtResource("3_u3ar1")
 expand_mode = 1
 
 [node name="LobbyBG" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1032.0
-offset_bottom = 514.0
+offset_left = -96.0
+offset_right = 1366.0
+offset_bottom = 728.0
 texture = ExtResource("4_wsanm")
 expand_mode = 1
 
 [node name="--HBMENU--" type="Node" parent="."]
 
 [node name="ui_open" type="TextureButton" parent="--HBMENU--"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 99.0
+offset_bottom = 99.0
+texture_normal = ExtResource("6_2tn4e")
+ignore_texture_size = true
+stretch_mode = 0
