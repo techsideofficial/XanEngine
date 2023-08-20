@@ -83,7 +83,14 @@ texture = ExtResource("3_u3ar1")
 expand_mode = 1
 
 [node name="LobbyBG" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1032.0
 offset_bottom = 514.0
 texture = ExtResource("4_wsanm")
 expand_mode = 1
+
+[node name="--HBMENU--" type="Node" parent="."]
+
+[node name="ui_open" type="TextureButton" parent="--HBMENU--"]
+offset_right = 40.0
+offset_bottom = 40.0
