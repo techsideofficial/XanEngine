@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://byrm58fu1g4yw"]
+[gd_scene load_steps=5 format=3 uid="uid://byrm58fu1g4yw"]
 
 [ext_resource type="BankAsset" uid="uid://y2oy8ukps473" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="1_q8j03"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_wnt0e"]
 [ext_resource type="BankAsset" uid="uid://dy1vygcrag5w7" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="2_4ekia"]
 [ext_resource type="BankAsset" uid="uid://diup85or5lblb" path="res://addons/FMOD/editor/resources/banks/{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}.tres" id="3_r3kjn"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wnt0e")
 
 [node name="StudioListener2D" type="StudioListener2D" parent="."]
 

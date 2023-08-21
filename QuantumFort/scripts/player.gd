@@ -2,16 +2,11 @@ extends Node
 class_name qplayer
 
 func get_songs():
-	print(RuntimeManager.get_meta_list())
-
-
-
-
-
-
+	var bPak = FMODStudioModule.get_studio_system().get_bank("bank:/MusicPacks")
+	print(bPak.get_event_list(11))
 
 func _ready():
-	pass
+	get_songs()
 
 func _process(delta):
 	pass
