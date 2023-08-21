@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://mcg4a4b6tjr"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/flipreset"
+guid = "{c095381b-6597-4c44-be3b-9ac4cb5c7dd1}"
+name = "flipreset"

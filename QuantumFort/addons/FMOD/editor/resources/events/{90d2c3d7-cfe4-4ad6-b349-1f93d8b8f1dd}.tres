@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://boxgsabihq85"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/llamabell/llamabell_main"
+guid = "{90d2c3d7-cfe4-4ad6-b349-1f93d8b8f1dd}"
+name = "llamabell_main"

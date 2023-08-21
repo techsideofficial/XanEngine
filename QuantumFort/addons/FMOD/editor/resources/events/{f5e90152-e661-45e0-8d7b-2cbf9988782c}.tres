@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://1c46jn54rrv3"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/lilwhip"
+guid = "{f5e90152-e661-45e0-8d7b-2cbf9988782c}"
+name = "lilwhip"

@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dvdbsyml6bhdy"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/onearmfloss"
+guid = "{3a2860fa-0f95-46c5-8e67-b5f9a5f406a4}"
+name = "onearmfloss"

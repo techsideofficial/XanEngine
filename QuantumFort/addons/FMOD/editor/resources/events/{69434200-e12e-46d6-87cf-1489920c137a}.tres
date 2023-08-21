@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://m3wptduhffap"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/UI/BP_Whoosh/BPShortRev"
+guid = "{69434200-e12e-46d6-87cf-1489920c137a}"
+name = "BPShortRev"
