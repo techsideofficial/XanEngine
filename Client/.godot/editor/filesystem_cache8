@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1692570800
+::res://::1692579588
 bank_shipping_external.gd::GDScript::-1::1692260753::0::1::::<>Node<>::
 fn_icon.png::CompressedTexture2D::3358607282619858453::1692260753::1692260753::1::::<><>::
 icon.svg::CompressedTexture2D::3635028141133128536::1692260753::1692262475::1::::<><>::
@@ -175,6 +175,7 @@ BPTab.tscn::PackedScene::2952385989218770577::1692563123::0::1::::<><>::res://te
 LobbyEngine.tscn::PackedScene::4266477549185250263::1692564006::0::1::::<><>::uid://de0xllabdbbn1<>uid://btu4xg7fuya1p<>uid://bi2swl6kutmws<>res://lobby/scripts/PlayerDataInit.gd<>res://lobby/scripts/Config/PlayerDataInit.gd<>uid://sk7oktvg65qe<>res://lobby/scripts/Cosmetics/MusicPackManager.gd
 PlayTab.tscn::PackedScene::7493043581855846576::1692564008::0::1::::<><>::uid://t7ww18y38h0t<>uid://b8gdsi2nxw3lu<>uid://b72l2imgvc8vu<>uid://4eal7mm8pms5<>uid://dpbfnrh07xdgv<>uid://c4u6qhp1xhfei
 ::res://lobby/scripts/::1692563849
+ui.gd::GDScript::-1::1692579614::0::1::::<>Node<>::
 ::res://lobby/scripts/Config/::1692328722
 ConfigInfo.gd::GDScript::-1::1692328384::0::1::::config_data<>Node<>::
 PlayerDataInit.gd::GDScript::-1::1692328722::0::1::::<>Node<>::
