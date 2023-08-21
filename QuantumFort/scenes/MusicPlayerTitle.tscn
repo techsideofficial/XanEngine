@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3wetbkfevaug"]
+
+[ext_resource type="LabelSettings" uid="uid://txs41sipa8pr" path="res://label/errorBig.tres" id="1_mytmi"]
+[ext_resource type="LabelSettings" uid="uid://3gtm0rm4mkv5" path="res://label/errorDesc.tres" id="2_oidj5"]
+[ext_resource type="AudioStream" uid="uid://c2cv6b41eyt60" path="res://fmod/Assets/MusicPacks/MusicPack_RL_Everybody_Dance.ogg" id="3_cnef3"]
+
+[node name="titletest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="eCode" type="Label" parent="."]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 210.0
+offset_right = 742.0
+offset_bottom = 309.0
+text = "ERROR 102"
+label_settings = ExtResource("1_mytmi")
+
+[node name="eMessage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 362.0
+offset_right = 869.0
+offset_bottom = 420.0
+text = "Failed to initialize sound banks."
+label_settings = ExtResource("2_oidj5")
+
+[node name="placeholder" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cnef3")
+autoplay = true

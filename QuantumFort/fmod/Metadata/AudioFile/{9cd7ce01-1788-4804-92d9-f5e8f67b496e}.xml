@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9cd7ce01-1788-4804-92d9-f5e8f67b496e}">
+		<property name="assetPath">
+			<value>MusicPacks/MusicPack_RL_Everybody_Dance.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>152.69704166666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d5ca6e2f-831c-4ef3-8c13-7065530b9fe4}</destination>
+		</relationship>
+	</object>
+</objects>

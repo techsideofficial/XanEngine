@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{612e16e5-ee09-462a-8b91-5545fa6b5341}">
+		<property name="name">
+			<value>llamabell</value>
+		</property>
+		<relationship name="folder">
+			<destination>{2e730748-5b71-4f43-8e68-bf45daea798b}</destination>
+		</relationship>
+	</object>
+</objects>

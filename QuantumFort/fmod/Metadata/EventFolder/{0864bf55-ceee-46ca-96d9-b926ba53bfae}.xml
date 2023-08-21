@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{0864bf55-ceee-46ca-96d9-b926ba53bfae}">
+		<property name="name">
+			<value>BP_Whoosh</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7f20dd2d-1bda-4d74-9c5e-e423fc98d0cc}</destination>
+		</relationship>
+	</object>
+</objects>
