@@ -17,6 +17,7 @@ script = ExtResource("1_wnt0e")
 [node name="StudioListener2D" type="StudioListener2D" parent="."]
 
 [node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+load_on = 1
 num_banks = 3
 bank_0 = ExtResource("1_q8j03")
 bank_1 = ExtResource("2_4ekia")
