@@ -2,11 +2,16 @@ extends Node
 class_name qplayer
 
 func get_songs():
-	var bPak = FMODStudioModule.get_studio_system().get_bank("res://fmod/Build/Desktop/MusicPacks.bank")
-	print(bPak.get_event_list(2))
+	var config = ConfigFile.new()
+	var err = config.load("user://fmod.qcfg")
+
+	if err != OK:
+		error.new().banks()
+	
+	var songs = config.get_value("BankEvents", "LocalEvents")
 
 func _ready():
-	get_songs()
+	pass
 
 func _process(delta):
 	pass

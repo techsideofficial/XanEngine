@@ -1,23 +1,30 @@
 extends Node
 class_name error
+var errorCode = ""
 
 func unknown():
-	return "Error Code 100: Unknown error."
+	get_tree().change_scene("res://scenes/error.tscn")
+	errorCode = "Error Code 100: Unknown error."
 	
 func banks():
-	return "Error Code 101: Failed to initialize banks."
+	SceneTree.new().get
+	errorCode = "Error Code 101: Failed to initialize banks."
 	
 func net():
-	return "Error Code 102: Failed to connect to QuantumNet services."
+	get_tree().change_scene("res://scenes/error.tscn")
+	errorCode = "Error Code 102: Failed to connect to QuantumNet services."
 	
 func outdated():
-	return "Error Code 103: Outdated client."
+	get_tree().change_scene("res://scenes/error.tscn")
+	errorCode = "Error Code 103: Outdated client."
 	
 func aparse():
-	return "Error Code 104: Failed to parse audio."
+	get_tree().change_scene("res://scenes/error.tscn")
+	errorCode = "Error Code 104: Failed to parse audio."
 	
 func access():
-	return "Error Code 105: Access denied."
+	get_tree().change_scene("res://scenes/error.tscn")
+	errorCode = "Error Code 105: Access denied."
 	
 func _ready():
 	pass

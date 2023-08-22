@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://crnwaf3jyxpn5"]
+
+[ext_resource type="FontFile" uid="uid://cj01ilv7lu82a" path="res://fonts/fortnite.otf" id="1_vcjnx"]
+
+[resource]
+font = ExtResource("1_vcjnx")
+font_size = 99
