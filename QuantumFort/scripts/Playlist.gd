@@ -6,7 +6,8 @@ func get_songs():
 	var err = config.load("user://fmod.qcfg")
 
 	if err != OK:
-		error.new().banks()
+		print(XanPaths.new().XanErrorPath)
+		get_node(XanPaths.new().XanErrorPath).banks()
 	
 	var songs = config.get_value("BankEvents", "LocalEvents")
 

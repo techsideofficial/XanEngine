@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://byrm58fu1g4yw"]
+[gd_scene load_steps=7 format=3 uid="uid://byrm58fu1g4yw"]
 
 [ext_resource type="Script" path="res://scripts/songBrowser.gd" id="1_hgqeb"]
 [ext_resource type="BankAsset" uid="uid://y2oy8ukps473" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="1_q8j03"]
 [ext_resource type="BankAsset" uid="uid://dy1vygcrag5w7" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="2_4ekia"]
 [ext_resource type="BankAsset" uid="uid://diup85or5lblb" path="res://addons/FMOD/editor/resources/banks/{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}.tres" id="3_r3kjn"]
-[ext_resource type="Script" path="res://scripts/errorcodes.gd" id="5_vkvgm"]
+[ext_resource type="Script" path="res://_XAN/XanError.gd" id="5_byjo3"]
+[ext_resource type="Script" path="res://scripts/Playlist.gd" id="6_0brnm"]
 
-[node name="songList" type="Control"]
+[node name="XanTree" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,5 +25,15 @@ bank_0 = ExtResource("1_q8j03")
 bank_1 = ExtResource("2_4ekia")
 bank_2 = ExtResource("3_r3kjn")
 
-[node name="quantumCrashManager" type="Node" parent="."]
-script = ExtResource("5_vkvgm")
+[node name="XAN" type="Node" parent="."]
+
+[node name="XanError" type="Node" parent="XAN"]
+script = ExtResource("5_byjo3")
+
+[node name="XanPlaylistManager" type="Node" parent="XAN"]
+script = ExtResource("6_0brnm")
+
+[node name="XanFort" type="Node" parent="."]
+
+[node name="Playlist" type="Node" parent="XanFort"]
+script = ExtResource("6_0brnm")

@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 
 RuntimeManager="*res://addons/FMOD/runtime/runtime_manager.gd"
 Errorcodes="*res://scripts/errorcodes.gd"
-Player="*res://scripts/player.gd"
+Player="*res://scripts/Playlist.gd"
 
 [editor_plugins]
 
