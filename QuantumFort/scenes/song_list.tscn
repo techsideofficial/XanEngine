@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://byrm58fu1g4yw"]
+[gd_scene load_steps=8 format=3 uid="uid://byrm58fu1g4yw"]
 
 [ext_resource type="Script" path="res://scripts/songBrowser.gd" id="1_hgqeb"]
 [ext_resource type="BankAsset" uid="uid://y2oy8ukps473" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="1_q8j03"]
@@ -6,6 +6,7 @@
 [ext_resource type="BankAsset" uid="uid://diup85or5lblb" path="res://addons/FMOD/editor/resources/banks/{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}.tres" id="3_r3kjn"]
 [ext_resource type="Script" path="res://_XAN/XanError.gd" id="5_byjo3"]
 [ext_resource type="Script" path="res://scripts/Playlist.gd" id="6_0brnm"]
+[ext_resource type="Script" path="res://addons/XanEngine/XanEngine.gd" id="7_pujtm"]
 
 [node name="XanTree" type="Control"]
 layout_mode = 3
@@ -37,3 +38,6 @@ script = ExtResource("6_0brnm")
 
 [node name="Playlist" type="Node" parent="XanFort"]
 script = ExtResource("6_0brnm")
+
+[node name="XanEngine" type="Node" parent="."]
+script = ExtResource("7_pujtm")

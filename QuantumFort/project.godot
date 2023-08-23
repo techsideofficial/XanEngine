@@ -14,7 +14,7 @@ config/name="QuantumFort"
 run/main_scene="res://scenes/song_list.tscn"
 config/custom_user_dir_name="QuantumFort"
 config/features=PackedStringArray("4.0", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://fn_icon.png"
 
 [autoload]
 
@@ -24,7 +24,7 @@ Player="*res://scripts/Playlist.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
+enabled=PackedStringArray("res://addons/FMOD/plugin.cfg", "res://addons/XanEngine/plugin.cfg")
 
 [fmod]
 
