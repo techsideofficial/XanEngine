@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dw72e3vgqvi6m"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/lookatthesky"
+guid = "{832a6d87-f958-48bb-bb99-4c8bc5e13962}"
+name = "lookatthesky"

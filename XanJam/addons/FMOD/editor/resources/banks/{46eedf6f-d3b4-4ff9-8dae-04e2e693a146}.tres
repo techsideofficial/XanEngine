@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://tf78a1s3mvx8"]
+
+[resource]
+file_path = "res://fmod/Build/Desktop/Emotes.bank"
+modified_time = 1692262346
+path = "bank:/Emotes"
+guid = "{46eedf6f-d3b4-4ff9-8dae-04e2e693a146}"
+name = "Emotes"

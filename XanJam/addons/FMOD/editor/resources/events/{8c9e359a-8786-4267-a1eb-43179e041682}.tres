@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://bei1jir85yx28"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/MusicPacks/homebase"
+guid = "{8c9e359a-8786-4267-a1eb-43179e041682}"
+name = "homebase"

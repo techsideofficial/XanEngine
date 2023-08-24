@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://cw0qdspny385n"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/kpop1"
+guid = "{4827cde3-de44-4edb-ba71-863cbd62d55e}"
+name = "kpop1"

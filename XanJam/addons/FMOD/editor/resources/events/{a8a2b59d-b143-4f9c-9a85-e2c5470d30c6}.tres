@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://3ccl3e8r3a15"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/BattlePass/post"
+guid = "{a8a2b59d-b143-4f9c-9a85-e2c5470d30c6}"
+name = "post"

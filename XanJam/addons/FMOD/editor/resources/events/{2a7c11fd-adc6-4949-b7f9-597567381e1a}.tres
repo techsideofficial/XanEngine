@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://dpy3ccqywfqpu"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/crabdance"
+guid = "{2a7c11fd-adc6-4949-b7f9-597567381e1a}"
+name = "crabdance"

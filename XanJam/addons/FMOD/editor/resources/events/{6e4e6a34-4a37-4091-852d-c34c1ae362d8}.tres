@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://qf4lodcrr5n5"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/sayso"
+guid = "{6e4e6a34-4a37-4091-852d-c34c1ae362d8}"
+name = "sayso"

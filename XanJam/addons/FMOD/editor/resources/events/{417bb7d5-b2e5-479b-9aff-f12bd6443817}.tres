@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://c432yabti3gtr"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/canwefind_heartburst"
+guid = "{417bb7d5-b2e5-479b-9aff-f12bd6443817}"
+name = "canwefind_heartburst"

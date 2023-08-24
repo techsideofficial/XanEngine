@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://qro22jpmgdlf"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Emotes/windmillfloss"
+guid = "{44eaccf1-1685-4543-a65b-e9809b26d4e2}"
+name = "windmillfloss"
