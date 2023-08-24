@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qv0wx46ug0gr"
-path="res://.godot/imported/xan-icon.png-d8192967c1c6ece5db456ddf6516a407.ctex"
+uid="uid://b8sqyyca2ffc0"
+path="res://.godot/imported/ico_xan256.png-b22c13b7b2b32004707e49749f1cb750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/XanEngine/xan-icon.png"
-dest_files=["res://.godot/imported/xan-icon.png-d8192967c1c6ece5db456ddf6516a407.ctex"]
+source_file="res://addons/XanEngine/assets/ico_xan256.png"
+dest_files=["res://.godot/imported/ico_xan256.png-b22c13b7b2b32004707e49749f1cb750.ctex"]
 
 [params]
 

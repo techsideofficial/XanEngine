@@ -1,9 +1,6 @@
 extends Node
-class_name XanEngine
+class_name XanDRM
 
-func SceneChange(path: String):
-	get_tree().change_scene_to_file(path)
-	
 func ConfigExists(path):
 	var config = ConfigFile.new()
 	var err = config.load(path)
@@ -12,8 +9,6 @@ func ConfigExists(path):
 	else:
 		return false
 
-func _ready():
-	pass
+func _ready(): pass
 
-func _process(delta):
-	pass
+func _process(delta): pass

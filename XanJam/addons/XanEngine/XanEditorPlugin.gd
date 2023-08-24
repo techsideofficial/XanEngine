@@ -3,7 +3,7 @@ extends EditorPlugin
 
 
 func _enter_tree():
-	add_custom_type("XanEngine", "Node", preload("XanEngine.gd"), preload("xan-icon.png"))
+	add_custom_type("XanEngine", "Node", preload("scripts/XanEngine.gd"), preload("assets/ico_xan16.png"))
 
 
 func _exit_tree():
