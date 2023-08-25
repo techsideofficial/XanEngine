@@ -5,7 +5,9 @@ extends Node
 func _ready():
 	#XanEngine.new().ConfigSave("TestData", "TestVersion", 1.0, "XanDefaultEngine")
 	var events = XanEngine.new().ConfigLoad("BankEventCache", "xcache", "BankCache", "DownloadedEvents")
-	RuntimeManager.play_one_shot_path("event:/MusicPacks/" + events[2])
+	print(events)
+	print("event:/MusicPacks/" + events[1])
+	#RuntimeManager.play_one_shot_path(bankFile + events[1])
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

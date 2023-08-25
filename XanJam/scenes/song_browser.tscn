@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxa21u4pscje"]
+[gd_scene load_steps=6 format=3 uid="uid://dxa21u4pscje"]
 
 [ext_resource type="Script" path="res://addons/XanEngine/scripts/XanEngine.gd" id="1_ist1q"]
 [ext_resource type="Script" path="res://scripts/SongList.gd" id="2_222ie"]
+[ext_resource type="BankAsset" uid="uid://y2oy8ukps473" path="res://addons/FMOD/editor/resources/banks/{225be7eb-048e-4e61-997f-b16601010e2e}.tres" id="3_l4m7n"]
+[ext_resource type="BankAsset" uid="uid://dy1vygcrag5w7" path="res://addons/FMOD/editor/resources/banks/{ba46c73f-75f5-0223-1f36-3b98f0f208b6}.tres" id="4_larm3"]
+[ext_resource type="BankAsset" uid="uid://diup85or5lblb" path="res://addons/FMOD/editor/resources/banks/{7eb7cd4e-5869-48ae-8b21-3a3ac0ea25a0}.tres" id="5_1vatd"]
 
 [node name="SongBrowser" type="Control"]
 layout_mode = 3
@@ -24,3 +27,13 @@ item_0/selectable = false
 
 [node name="SongList" type="Node" parent="."]
 script = ExtResource("2_222ie")
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+load_on = 1
+unload_on = 3
+num_banks = 3
+bank_0 = ExtResource("3_l4m7n")
+bank_1 = ExtResource("4_larm3")
+bank_2 = ExtResource("5_1vatd")
+
+[node name="StudioListener2D" type="StudioListener2D" parent="."]
