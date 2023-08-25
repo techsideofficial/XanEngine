@@ -7,9 +7,10 @@ func _ready():
 	var events = XanEngine.new().ConfigLoad("BankEventCache", "xcache", "BankCache", "DownloadedEvents")
 	
 	ProjectSettings.load_resource_pack("user://XanEngine/Banks/banks.pck")
-	print(events)
+	var loaded = FMODStudioModule.get_studio_system().load_bank_file("res://MusicPacks.bank", 0, false)
 	print(events[1])
-	RuntimeManager.play_one_shot_path("res://MusicPacks.bank/events/" + events[1])
+	print(loaded)
+	RuntimeManager.play_one_shot_path("event:/MusicPacks/everybodydance")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
