@@ -25,8 +25,8 @@ func ConfigSave(section, key, value, configName):
 	var config = ConfigFile.new()
 	config.set_value("XanEngine", "Version", 1.0)
 	config.set_value("XanEngine", "CodeName", "Athena")
+	config.set_value("XanEngine", "ConfigType", "Config")
 	config.set_value(section, key, value)
-	DirAccess.make_dir_absolute("user://XanEngine/Config/")
 	config.save("user://XanEngine/Config/" + configName + ".xfg")
 	
 func fmodExists():
@@ -51,4 +51,9 @@ func keyGen(length):
 		key = key + comRand.pick_random()
 	return key
 		
-	
+func ConfigLoad(configName, fileType, section, key):
+	var config = ConfigFile.new()
+	var err = config.load("user://XanEngine/Config/" + configName + "." + fileType)
+	if err != OK:
+		XanEngine.new().log("ERROR! You need to create a config before you can load it. This can be done with 'XanEngine.new().ConfigSave(section, key, value, configName)'.")
+	return config.get_value(section, key)

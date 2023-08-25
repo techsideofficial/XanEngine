@@ -11,6 +11,9 @@ config_version=5
 [application]
 
 config/name="XanJam"
+run/main_scene="res://scenes/song_browser.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="XanJam"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://ico_jam.png"
 
@@ -24,7 +27,7 @@ enabled=PackedStringArray("res://addons/FMOD/plugin.cfg", "res://addons/XanEngin
 
 [fmod]
 
-settings/banks_path="res://banks/Desktop"
+settings/banks_path="user://XanEngine/Banks"
 settings/fmod_output_type=0
 settings/fmod_debug_flags=0
 settings/fmod_debug_mode=1

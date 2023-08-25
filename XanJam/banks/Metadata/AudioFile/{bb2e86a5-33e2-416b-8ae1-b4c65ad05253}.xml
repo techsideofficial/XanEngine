@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bb2e86a5-33e2-416b-8ae1-b4c65ad05253}">
+		<property name="assetPath">
+			<value>UI/BattlePassWhoosh/BP_Short.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1325416666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d5ca6e2f-831c-4ef3-8c13-7065530b9fe4}</destination>
+		</relationship>
+	</object>
+</objects>

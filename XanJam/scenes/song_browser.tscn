@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxa21u4pscje"]
+[gd_scene load_steps=3 format=3 uid="uid://dxa21u4pscje"]
 
 [ext_resource type="Script" path="res://addons/XanEngine/scripts/XanEngine.gd" id="1_ist1q"]
+[ext_resource type="Script" path="res://scripts/SongList.gd" id="2_222ie"]
 
 [node name="SongBrowser" type="Control"]
 layout_mode = 3
@@ -20,3 +21,6 @@ offset_bottom = 632.0
 item_count = 1
 item_0/text = "XanJam"
 item_0/selectable = false
+
+[node name="SongList" type="Node" parent="."]
+script = ExtResource("2_222ie")
