@@ -1,0 +1,15 @@
+2a60927148abd1d33b818b535e306557
+::res://::1692410504
+control.tscn::PackedScene::6372394918691408734::1692253867::0::1::::<><>::res://test.gd
+icon.svg::CompressedTexture2D::3284454955502509154::1692253449::1692253452::1::::<><>::
+router.gd::GDScript::-1::1692253810::0::1::::testrouter<>HttpRouter<>::
+test.gd::GDScript::-1::1692253810::0::1::::<>Node<>::
+::res://addons/::1692253471
+::res://addons/godottpd/::1692253515
+http_file_router.gd::GDScript::-1::1692253471::0::1::::HttpFileRouter<>HttpRouter<>::
+http_request.gd::GDScript::-1::1692253471::0::1::::HttpRequest<>Reference<>::
+http_response.gd::GDScript::-1::1692253471::0::1::::HttpResponse<>Reference<>::
+http_router.gd::GDScript::-1::1692253471::0::1::::HttpRouter<>Reference<>::
+http_server.gd::GDScript::-1::1692253471::0::1::::HttpServer<>Node<>::
+plugin.cfg::TextFile::-1::1692253471::0::1::::<><>::
+plugin.gd::GDScript::-1::1692253515::0::1::::<>EditorPlugin<>::
