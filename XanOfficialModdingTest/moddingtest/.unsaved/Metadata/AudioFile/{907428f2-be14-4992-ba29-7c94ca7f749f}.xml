@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{907428f2-be14-4992-ba29-7c94ca7f749f}">
+		<property name="assetPath">
+			<value>Emote_Noodles_MX_Intro.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.4083333333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b43982e4-8557-4cd3-b345-a1d0af9fa36c}</destination>
+		</relationship>
+	</object>
+</objects>
