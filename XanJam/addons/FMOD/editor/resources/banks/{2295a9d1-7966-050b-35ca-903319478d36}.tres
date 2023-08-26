@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://dei3euveaetr3"]
+
+[resource]
+file_path = "res://XanMod/content/Master.strings.bank"
+modified_time = 1693092181
+path = "bank:/Master.strings"
+guid = "{2295a9d1-7966-050b-35ca-903319478d36}"
+name = "Master.strings"

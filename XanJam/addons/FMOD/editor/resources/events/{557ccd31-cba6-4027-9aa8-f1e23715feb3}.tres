@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://c5qfwfq2eale6"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/looktothesky"
+guid = "{557ccd31-cba6-4027-9aa8-f1e23715feb3}"
+name = "looktothesky"

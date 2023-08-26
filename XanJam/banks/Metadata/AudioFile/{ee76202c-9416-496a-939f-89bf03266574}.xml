@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ee76202c-9416-496a-939f-89bf03266574}">
+		<property name="assetPath">
+			<value>S25_Musicpack_Silent_Tempo_loop.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>180.375</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b43982e4-8557-4cd3-b345-a1d0af9fa36c}</destination>
+		</relationship>
+	</object>
+</objects>

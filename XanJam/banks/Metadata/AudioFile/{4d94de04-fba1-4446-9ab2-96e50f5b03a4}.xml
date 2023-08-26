@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4d94de04-fba1-4446-9ab2-96e50f5b03a4}">
+		<property name="assetPath">
+			<value>MusicPack_073_RL2PromoTrack.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>184.76189583333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b43982e4-8557-4cd3-b345-a1d0af9fa36c}</destination>
+		</relationship>
+	</object>
+</objects>

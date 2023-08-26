@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://bl0jtlj4o2ge3"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/floss"
+guid = "{ed9f31dc-aadb-4c62-a300-5b622babb04e}"
+name = "floss"

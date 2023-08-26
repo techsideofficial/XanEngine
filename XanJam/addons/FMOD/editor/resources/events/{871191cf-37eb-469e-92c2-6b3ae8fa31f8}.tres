@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://b43n0ihpencwn"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/everybodydance"
+guid = "{871191cf-37eb-469e-92c2-6b3ae8fa31f8}"
+name = "everybodydance"

@@ -1,0 +1,9 @@
+[gd_resource type="EventAsset" format=3 uid="uid://t61eqv4dqpht"]
+
+[resource]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/llamabell"
+guid = "{d53eb536-654a-4a28-9c59-5b588fc5a12e}"
+name = "llamabell"
