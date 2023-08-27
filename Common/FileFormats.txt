@@ -7,4 +7,4 @@ XEN - Xan Engine Data
 XAN - Xan General File
 XINFO - Xan Information
 XCACHE - Xan Cache
-XSTRUCT - Xan Directory Structure
+XTRUCT - Xan Directory Structure
