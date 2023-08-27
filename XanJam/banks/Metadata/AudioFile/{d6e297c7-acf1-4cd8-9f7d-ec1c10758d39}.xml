@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d6e297c7-acf1-4cd8-9f7d-ec1c10758d39}">
+		<property name="assetPath">
+			<value>MusicPack_CerealBox.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>144</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b43982e4-8557-4cd3-b345-a1d0af9fa36c}</destination>
+		</relationship>
+	</object>
+</objects>

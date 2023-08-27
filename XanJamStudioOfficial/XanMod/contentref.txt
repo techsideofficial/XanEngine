@@ -1,3 +1,3 @@
 [BankCache]
 
-LoadedContent=["floss", "og", "llamabell", "everybodydance", "lobbyfuture", "looktothesky", "wingit", "sayso", "seizethefuture", "bp_upsell", "bp_subscription", "bp_purchase"] #List your event names separatedby commas. MAKE SURE THEY ARE STRINGS, OR THEY WONT LOAD!
+LoadedContent=["floss", "og", "llamabell", "everybodydance", "lobbyfuture", "looktothesky", "wingit", "sayso", "seizethefuture", "bp_upsell", "bp_subscription", "bp_purchase", "zirconsweep", "cerealbox", "makeitrain", "ninjadance"] #List your event names separatedby commas. MAKE SURE THEY ARE STRINGS, OR THEY WONT LOAD!
