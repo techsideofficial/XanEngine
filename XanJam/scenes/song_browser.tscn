@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxa21u4pscje"]
+[gd_scene load_steps=5 format=3 uid="uid://dxa21u4pscje"]
 
 [ext_resource type="Script" path="res://addons/XanEngine/scripts/XanEngine.gd" id="1_ist1q"]
 [ext_resource type="Script" path="res://scripts/SongList.gd" id="2_222ie"]
+[ext_resource type="Texture2D" uid="uid://obqhbx3gfkyw" path="res://addons/XanEngine/assets/ico_xan16.png" id="2_f0cps"]
+[ext_resource type="Texture2D" uid="uid://c6vloi3qxl6gv" path="res://addons/XanEngine/assets/ico_ram16.png" id="3_uqlrl"]
 
 [node name="SongBrowser" type="Control"]
 layout_mode = 3
@@ -18,9 +20,12 @@ script = ExtResource("1_ist1q")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 632.0
-item_count = 1
+item_count = 2
 item_0/text = "XanJam"
+item_0/icon = ExtResource("2_f0cps")
 item_0/selectable = false
+item_1/text = "FLUSH MEMORY"
+item_1/icon = ExtResource("3_uqlrl")
 
 [node name="SongList" type="Node" parent="."]
 script = ExtResource("2_222ie")
