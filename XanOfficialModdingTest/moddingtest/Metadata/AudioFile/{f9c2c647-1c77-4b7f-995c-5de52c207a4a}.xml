@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f9c2c647-1c77-4b7f-995c-5de52c207a4a}">
+		<property name="assetPath">
+			<value>Emote_WindmillFloss_Music_04.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>34.133333333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b43982e4-8557-4cd3-b345-a1d0af9fa36c}</destination>
+		</relationship>
+	</object>
+</objects>
