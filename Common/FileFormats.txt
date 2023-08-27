@@ -5,6 +5,8 @@ XPK - Xan Package
 XPH - Xan Placeholder
 XEN - Xan Engine Data
 XAN - Xan General File
+XMOD - Xan Mod File
+XEXT - Xan Extension
 XINFO - Xan Information
 XCACHE - Xan Cache
 XTRUCT - Xan Directory Structure
