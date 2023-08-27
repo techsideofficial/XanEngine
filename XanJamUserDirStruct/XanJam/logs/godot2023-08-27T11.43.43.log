@@ -1,0 +1,30 @@
+Godot Engine v4.0.3.stable.official.5222a99f5 - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 536.99 - Compatibility - Using Device: NVIDIA Corporation - NVIDIA GeForce RTX 2060
+ 
+[FMOD] Initialized Runtime System
+["floss", "og", "llamabell", "everybodydance", "lobbyfuture", "looktothesky"]
+[FMOD] Shut down Runtime System
+USER ERROR: Error calling from custom monitor 'FMOD/DSP CPU Usage (%)' to callable: 'get_cpu_dsp_usage': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/DSP CPU Usage (%)' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
+USER ERROR: Error calling from custom monitor 'FMOD/Studio CPU Update (%)' to callable: 'get_cpu_studio_update': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/Studio CPU Update (%)' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
+USER ERROR: Error calling from custom monitor 'FMOD/Memory Allocation (MB)' to callable: 'get_current_memory_alloc': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/Memory Allocation (MB)' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
+USER ERROR: Error calling from custom monitor 'FMOD/Max Memory Allocation (MB)' to callable: 'get_max_memory_alloc': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/Max Memory Allocation (MB)' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
+USER ERROR: Error calling from custom monitor 'FMOD/Channels' to callable: 'get_channels': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/Channels' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
+USER ERROR: Error calling from custom monitor 'FMOD/Real Channels' to callable: 'get_real_channels': Instance is null
+   at: get_custom_monitor (main/performance.cpp:294)
+USER ERROR: Value of custom monitor 'FMOD/Real Channels' is not a number
+   at: tick (core/debugger/remote_debugger.cpp:79)
