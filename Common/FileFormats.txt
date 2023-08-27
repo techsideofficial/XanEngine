@@ -1,0 +1,10 @@
+XAX - Xan DevExtension
+XFG - Xan Config
+XDL - Xan Dynamic Link
+XPK - Xan Package
+XPH - Xan Placeholder
+XEN - Xan Engine Data
+XAN - Xan General File
+XINFO - Xan Information
+XCACHE - Xan Cache
+XSTRUCT - Xan Directory Structure
