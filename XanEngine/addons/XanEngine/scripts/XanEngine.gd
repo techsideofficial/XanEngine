@@ -51,9 +51,16 @@ func keyGen(length):
 		key = key + comRand.pick_random()
 	return key
 		
-func ConfigLoad(configName, fileType, section, key):
+func ConfigLoad(path, section, key):
 	var config = ConfigFile.new()
-	var err = config.load("user://XanEngine/Config/" + configName + "." + fileType)
+	var err = config.load(path)
 	if err != OK:
 		XanEngine.new().log("ERROR! You need to create a config before you can load it. This can be done with 'XanEngine.new().ConfigSave(section, key, value, configName)'.")
 	return config.get_value(section, key)
+	
+func reloadBanks(pakpath):
+		FMODStudioModule.get_studio_system().unload_all()
+		ProjectSettings.load_resource_pack(pakpath)
+		FMODStudioModule.get_studio_system().load_bank_file("res://XanMod/content/Master.bank", 0, false)
+		FMODStudioModule.get_studio_system().load_bank_file("res://XanMod/content/Master.strings.bank", 0, false)
+		FMODStudioModule.get_studio_system().load_bank_file("res://XanMod/content/Xan.bank", 0, false)
