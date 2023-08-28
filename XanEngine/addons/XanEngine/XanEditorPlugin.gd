@@ -13,3 +13,18 @@ func _enter_tree():
 func _exit_tree():
 	XanEngine.new().log("Shutting Down XanEngine")
 	remove_custom_type("XanEngine")
+
+func _has_main_screen():
+	return true
+
+
+func _make_visible(visible):
+	pass
+
+
+func _get_plugin_name():
+	return "Main Screen Plugin"
+
+
+func _get_plugin_icon():
+	return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons")
