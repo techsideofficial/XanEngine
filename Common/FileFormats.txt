@@ -8,5 +8,7 @@ XAN - Xan General File
 XMOD - Xan Mod File
 XEXT - Xan Extension
 XINFO - Xan Information
+XCOMM - Xan Community File
 XCACHE - Xan Cache
 XTRUCT - Xan Directory Structure
+XCRYPT - Xan Crypt File
