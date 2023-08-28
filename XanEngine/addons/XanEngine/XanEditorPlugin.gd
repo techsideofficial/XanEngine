@@ -2,7 +2,7 @@
 extends EditorPlugin
 
 
-const MainPanel: PackedScene = preload("res://addons/XanEngine/studio/xan_utils.tscn")
+const MainPanel: PackedScene = preload("res://addons/XanEngine/studio/main_panel.tscn")
 
 var main_panel_instance
 
@@ -12,7 +12,6 @@ func _enter_tree():
 	DirAccess.make_dir_absolute("user://XanEngine/")
 	DirAccess.make_dir_absolute("user://XanEngine/Config")
 	DirAccess.make_dir_absolute("user://XanEngine/Banks")
-	XanEngine.new().log("Initialised XanEngine")
 	main_panel_instance = MainPanel.instantiate()
 	get_editor_interface().get_editor_main_screen().add_child(main_panel_instance)
 	_make_visible(false)
@@ -21,8 +20,6 @@ func _enter_tree():
 func _exit_tree():
 	if main_panel_instance:
 		main_panel_instance.queue_free()
-	
-	XanEngine.new().log("Shutting Down XanEngine")
 	remove_custom_type("XanEngine")
 
 
