@@ -1,3 +1,0 @@
-[BankCache]
-
-LoadedContent=["SONG_1", "SONG_2", "..."]

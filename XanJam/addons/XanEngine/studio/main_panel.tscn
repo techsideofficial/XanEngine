@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexxjpdbwxk2w"]
+
+[ext_resource type="Script" path="res://addons/XanEngine/studio/dir_structure.gd" id="1_layc2"]
+
+[node name="MainPanel" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_layc2")
+
+[node name="Cat1" type="Label" parent="."]
+layout_mode = 2
+text = "MODDING"
+
+[node name="DirStruct" type="Button" parent="."]
+layout_mode = 2
+text = "Generate Directory Structure"
+
+[connection signal="pressed" from="DirStruct" to="." method="_on_dirstruct_pressed"]
