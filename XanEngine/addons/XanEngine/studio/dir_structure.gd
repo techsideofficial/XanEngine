@@ -1,8 +1,7 @@
 @tool
-extends Button
+extends CenterContainer
 
-
-func _on_gen_dir_pressed():
+func _on_dirstruct_pressed():
 	DirAccess.make_dir_absolute("res://XanMod/")
 	DirAccess.make_dir_absolute("res://XanMod/content/")
 	var conf = ConfigFile.new()
