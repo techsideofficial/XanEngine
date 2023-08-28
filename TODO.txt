@@ -1,0 +1,10 @@
+- Xan Studio | Prepare for shipping and compile custom engine with directory structure. [REFER - XANENGINEPLUGIN]
+- Xan Launcher | Prepare Steam style launcher with SteamEmu API Emulator.
+- Xan AntiCheat | Scan files and verify hashes with server maybe?
+- Xan Engine Plugin | Main Screen Plugin setup for custom editor to set up directory? [REFER - XANSTUDIO]
+- Xan Mods | Create mods and get AntiCheat to verify scripts. [REFER - XANANTICHEAT]
+- Xan Workflow | Make it easier for modders. [REFER - XANSTUDIO]
+- Xan Online | Friends and update download.
+- Xan Auth | Authentication and login server.
+- Xan WorkShop | UGC Support.
+- Xan Store | Ecommerce server.
