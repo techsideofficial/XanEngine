@@ -48,7 +48,7 @@ text = "------------------------------------------------------------------------
 
 [node name="DevInfo" type="Label" parent="."]
 layout_mode = 2
-text = "XanEngine 3.0 ATHENA (DEV)"
+text = "XanEngine 2.0 APOLLO (DEV)"
 label_settings = ExtResource("4_nx3hd")
 horizontal_alignment = 1
 vertical_alignment = 1
