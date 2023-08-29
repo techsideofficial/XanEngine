@@ -7,7 +7,7 @@ func _on_dirstruct_pressed():
 	var conf = ConfigFile.new()
 	var conf2 = ConfigFile.new()
 	conf.set_value("BankCache", "LoadedContent", ["SONG_1", "SONG_2", "..."])
-	conf2.set_value("INFO", "INFO", " This folder should contain the files 'Master.bank, Master.strings.bank, and Xan.bank'")
+	conf2.set_value("INFO", "INFO", "This folder should contain the files 'Master.bank, Master.strings.bank, and Xan.bank'")
 	conf.save("res://XanMod/contentref.txt")
 	conf2.save("res://XanMod/content/README.txt")
 	
