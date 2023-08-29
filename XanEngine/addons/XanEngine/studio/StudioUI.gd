@@ -19,4 +19,4 @@ func _on_update_pressed():
 	
 func _on_template_pressed():
 	var dir = DirAccess.open("res://")
-	dir.new().copy("res://addons/XanEngine/staging/export_presets.cfg", "res://export_presets.cfg")
+	dir.copy("res://addons/XanEngine/staging/export_presets.cfg", "res://export_presets.cfg")
