@@ -1,19 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://cexxjpdbwxk2w"]
+[gd_scene load_steps=4 format=3 uid="uid://cexxjpdbwxk2w"]
 
 [ext_resource type="Script" path="res://addons/XanEngine/studio/dir_structure.gd" id="1_layc2"]
+[ext_resource type="LabelSettings" uid="uid://balc35ankps2" path="res://addons/XanEngine/latres/ls_title.tres" id="2_qbs8t"]
+[ext_resource type="LabelSettings" uid="uid://3ksgetnqr1fx" path="res://addons/XanEngine/latres/ls_cat.tres" id="3_su1cs"]
 
-[node name="MainPanel" type="CenterContainer"]
+[node name="MainPanel" type="GridContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_layc2")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "XanEngine"
+label_settings = ExtResource("2_qbs8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer1" type="Label" parent="."]
+layout_mode = 2
+text = "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 [node name="Cat1" type="Label" parent="."]
 layout_mode = 2
 text = "MODDING"
+label_settings = ExtResource("3_su1cs")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DirStruct" type="Button" parent="."]
 layout_mode = 2

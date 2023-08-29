@@ -1,5 +1,5 @@
 @tool
-extends CenterContainer
+extends GridContainer
 
 func _on_dirstruct_pressed():
 	DirAccess.make_dir_absolute("res://XanMod/")
