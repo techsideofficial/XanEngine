@@ -18,5 +18,5 @@ func _on_update_pressed():
 	OS.shell_open("https://github.com/techsideofficial/XanEngine/releases")
 	
 func _on_template_pressed():
-	var dir = Directory.new()
-	dir.copy("res://addons/XanEngine/staging/export_presets.cfg", "res://export_presets.cfg")
+	var dir = DirAccess.open("res://")
+	dir.new().copy("res://addons/XanEngine/staging/export_presets.cfg", "res://export_presets.cfg")

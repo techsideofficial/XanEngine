@@ -34,6 +34,9 @@ label_settings = ExtResource("3_su1cs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GenTemp" type="Button" parent="."]
+layout_mode = 2
+
 [node name="Update" type="Button" parent="."]
 layout_mode = 2
 text = "Check For Updates"
@@ -68,6 +71,7 @@ label_settings = ExtResource("4_nx3hd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="GenTemp" to="." method="_on_template_pressed"]
 [connection signal="pressed" from="Update" to="." method="_on_update_pressed"]
 [connection signal="pressed" from="HelpPage" to="." method="_on_help_pressed"]
 [connection signal="pressed" from="DirStruct" to="." method="_on_dirstruct_pressed"]
