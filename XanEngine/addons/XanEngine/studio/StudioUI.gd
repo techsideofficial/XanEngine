@@ -13,3 +13,6 @@ func _on_dirstruct_pressed():
 	
 func _on_help_pressed():
 	OS.shell_open("https://github.com/techsideofficial/XanEngine/blob/main/Docs/DOCS.md")
+	
+func _on_update_pressed():
+	OS.shell_open("https://github.com/techsideofficial/XanEngine/releases")
