@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cexxjpdbwxk2w"]
 
-[ext_resource type="Script" path="res://addons/XanEngine/studio/buttons/btn_gendirstruct.gd" id="1_tyvpn"]
+[ext_resource type="Script" path="res://addons/XanEngine/studio/buttons.gd" id="1_dp3vl"]
 [ext_resource type="LabelSettings" uid="uid://balc35ankps2" path="res://addons/XanEngine/latres/ls_title.tres" id="2_qbs8t"]
 [ext_resource type="LabelSettings" uid="uid://3ksgetnqr1fx" path="res://addons/XanEngine/latres/ls_cat.tres" id="3_su1cs"]
 
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_tyvpn")
+script = ExtResource("1_dp3vl")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 2
@@ -35,5 +35,9 @@ vertical_alignment = 1
 [node name="DirStruct" type="Button" parent="."]
 layout_mode = 2
 text = "Generate Directory Structure"
+
+[node name="HelpPage" type="Button" parent="."]
+layout_mode = 2
+text = "Help"
 
 [connection signal="pressed" from="DirStruct" to="." method="_on_dirstruct_pressed"]

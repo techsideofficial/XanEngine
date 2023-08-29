@@ -11,3 +11,5 @@ func _on_dirstruct_pressed():
 	conf.save("res://XanMod/contentref.txt")
 	conf2.save("res://XanMod/content/README.txt")
 	
+func _on_help_pressed():
+	OS.shell_open("https://github.com/techsideofficial/XanEngine/blob/main/Docs/DOCS.md")
