@@ -65,19 +65,19 @@ func reloadBanks(pakpath):
 		FMODStudioModule.get_studio_system().load_bank_file("res://XanMod/content/Master.strings.bank", 0, false)
 		FMODStudioModule.get_studio_system().load_bank_file("res://XanMod/content/Xan.bank", 0, false)
 		
-func searchMods(path):
-	var files = []
-	var dir = DirAccess.new()
-	dir.open(path)
-	dir.list_dir_begin()
-
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not file.begins_with("."):
-			files.append(file)
-
-	dir.list_dir_end()
-
-	return files
+#func searchMods(path):
+#	var files = []
+#	var dir = DirAccess
+#	dir.open(path)
+#	dir.list_dir_begin()
+#
+#	while true:
+#		var file = dir.get_next()
+#		if file == "":
+#			break
+#		elif not file.begins_with("."):
+#			files.append(file)
+#
+#	dir.list_dir_end()
+#
+#	return files
