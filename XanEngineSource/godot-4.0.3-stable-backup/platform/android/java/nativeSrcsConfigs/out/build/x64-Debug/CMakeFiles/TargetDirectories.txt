@@ -1,0 +1,3 @@
+C:/Users/wiene/Documents/GitHub/XanEngine/XanEngineSource/godot-4.0.3-stable/platform/android/java/nativeSrcsConfigs/out/build/x64-Debug/CMakeFiles/godot.dir
+C:/Users/wiene/Documents/GitHub/XanEngine/XanEngineSource/godot-4.0.3-stable/platform/android/java/nativeSrcsConfigs/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/Users/wiene/Documents/GitHub/XanEngine/XanEngineSource/godot-4.0.3-stable/platform/android/java/nativeSrcsConfigs/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
