@@ -1,0 +1,1 @@
+When you open a project, move the addons folder into your project!
