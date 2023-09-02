@@ -18,7 +18,7 @@ generous deed immortalized in the next stable release of Godot Engine.
 
 ## Gold sponsors
 
-    None currently, become one! <https://godotengine.org/donate>
+    TechSide (Lead Dev)
 
 ## Silver sponsors
 

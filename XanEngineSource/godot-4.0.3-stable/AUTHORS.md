@@ -17,11 +17,11 @@ name is available.
 
 ## Lead Developer
 
-    Juan Linietsky (reduz)
+    TechSide
 
 ## Project Manager
 
-    Rémi Verschelde (akien-mga)
+    TechSide
 
 ## Developers
 
@@ -244,6 +244,7 @@ name is available.
     Swarnim Arun (minraws)
     TC (floppyhammer)
     TechnoPorg
+    TechSide (techsideofficial)
     Thakee Nathees (ThakeeNathees)
     thebestnom
     Theo Hallenius (TheoXD)

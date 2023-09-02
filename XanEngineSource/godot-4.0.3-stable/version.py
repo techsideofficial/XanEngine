@@ -1,7 +1,7 @@
 short_name = "xan"
 name = "Xan Engine"
 major = 3
-minor = 0
+minor = 3
 patch = 0
 status = "stable"
 module_config = ""
