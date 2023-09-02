@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://cexxjpdbwxk2w"]
+
+[ext_resource type="Script" path="res://addons/XanEngine/studio/buttons.gd" id="1_dp3vl"]
+[ext_resource type="LabelSettings" uid="uid://balc35ankps2" path="res://addons/XanEngine/latres/ls_title.tres" id="2_qbs8t"]
+[ext_resource type="LabelSettings" uid="uid://3ksgetnqr1fx" path="res://addons/XanEngine/latres/ls_cat.tres" id="3_su1cs"]
+[ext_resource type="LabelSettings" uid="uid://xdmm3kqqbe6t" path="res://addons/XanEngine/latres/ls_vinfo.tres" id="4_nx3hd"]
+
+[node name="MainPanel" type="GridContainer"]
+anchors_preset = -1
+anchor_right = 1.234
+anchor_bottom = 1.0
+offset_right = -234.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dp3vl")
+
+[node name="XanEngine" type="Label" parent="."]
+layout_mode = 2
+text = "XanEngine"
+label_settings = ExtResource("2_qbs8t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer1" type="Label" parent="."]
+layout_mode = 2
+text = "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+
+[node name="Cat1" type="Label" parent="."]
+layout_mode = 2
+text = "MODDING"
+label_settings = ExtResource("3_su1cs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DirStruct" type="Button" parent="."]
+layout_mode = 2
+text = "Generate Directory Structure"
+
+[node name="HelpPage" type="Button" parent="."]
+layout_mode = 2
+text = "Help"
+
+[node name="Spacer2" type="Label" parent="."]
+layout_mode = 2
+text = "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+
+[node name="DevInfo" type="Label" parent="."]
+layout_mode = 2
+text = "XanEngine 3.0 ATHENA (DEV)"
+label_settings = ExtResource("4_nx3hd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DirStruct" to="." method="_on_dirstruct_pressed"]
+[connection signal="pressed" from="HelpPage" to="." method="_on_help_pressed"]
