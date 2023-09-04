@@ -1,0 +1,1 @@
+XanSetup-[VERSION]-win64-shipping
