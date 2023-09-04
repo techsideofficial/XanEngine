@@ -2,18 +2,18 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Xan Engine"
-#define MyAppVersion "3.3"
+#define MyAppVersion "3.4"
 #define MyAppPublisher "TechSide"
 #define MyAppURL "https://github.com/techsideofficial/XanEngine"
 #define MyAppExeName "xan.exe"
-#define MyAppAssocName "Xan Config File"
-#define MyAppAssocExt ".xfg"
+#define MyAppAssocName MyAppName + " File"
+#define MyAppAssocExt ".xan"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{B573A8E0-58B6-4CE8-94D2-3DE953D58693}
+AppId={{FF64A3BF-4FB1-4272-A64E-81C40B52F7EB}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -29,9 +29,9 @@ LicenseFile=C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\LICENSE.tx
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\Compiler
-OutputBaseFilename=XanSetup-3.3-win64-shipping
-SetupIconFile=C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\assets\icon.ico
+OutputDir=C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\Compiler
+OutputBaseFilename=xansetuptoname
+SetupIconFile=C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\assets\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -43,15 +43,15 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\binaries\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\README.txt"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\launch.bat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\xac\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\temp\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\plugins\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\binaries\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\base\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.3\PF3.3\assets\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\assets\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\base\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\binaries\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\plugins\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\temp\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\xac\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\launch.bat"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\wiene\Documents\GitHub\XanEngine\XanEngineSource\3.4\PF3.4\README.txt"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
