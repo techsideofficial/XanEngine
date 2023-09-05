@@ -1,0 +1,1 @@
+%CD%/binaries/xan.exe
