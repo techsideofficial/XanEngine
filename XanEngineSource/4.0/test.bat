@@ -1,7 +1,7 @@
 ::[Bat To Exe Converter]
 ::
-::YAwzoRdxOk+EWAnk
-::fBw5plQjdG8=
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCyDJGyX8VAjFAxdSQqHAE+1BaAR7ebv/Nagq1k1QeADQI7V/7qJKe4W1n3le7Mj0XNUnfgDGQlbey7/IF8ImUgW+DS5NtSPthvydkGK6UV+EmZ75w==
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
@@ -26,10 +26,11 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wSA==
 ::Zg8zqx1/OA3MEVWAtB9wSA==
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFAxdSQqHAE+1BaAR7ebv/Nagq1k1QeADQI7V/7qJKe4W1n3le7Mj0XNUnfgDGQlbey7/IF8IkW9M+GGdMqc=
+::Zh4grVQjdCyDJGyX8VAjFAxdSQqHAE+1BaAR7ebv/Nagq1k1QeADQI7V/7qJKe4W1n3le7Mj0XNUnfgDGQlbey7/IF8ImUgW+DS5D8aS/Qr5Tyg=
 ::YB416Ek+ZG8=
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
 @echo off
-%CD%/binaries/XanLauncher.exe
+cd binaries
+XanLauncher.exe
