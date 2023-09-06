@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://4od8kcf7484q"]
+[gd_scene load_steps=9 format=3 uid="uid://4od8kcf7484q"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1o31"]
 [ext_resource type="Texture2D" uid="uid://bw5enuv2fydkc" path="res://XEBannerBG.png" id="1_tnoxv"]
 [ext_resource type="Texture2D" uid="uid://rfre8m0nxg4o" path="res://icon.png" id="2_0wvmo"]
+[ext_resource type="FontFile" uid="uid://cxy3laq6hicsr" path="res://Amaranth-Regular.ttf" id="4_kop6n"]
 
 [sub_resource type="Animation" id="Animation_01ux7"]
 length = 0.001
@@ -41,6 +42,10 @@ _data = {
 "logospin": SubResource("Animation_7hvbf")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_i21fy"]
+font = ExtResource("4_kop6n")
+font_size = 24
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -52,17 +57,28 @@ script = ExtResource("1_g1o31")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 649.0
+offset_right = 640.0
+offset_bottom = 360.0
 texture = ExtResource("1_tnoxv")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(63, 594)
-scale = Vector2(0.345528, 0.345528)
+position = Vector2(26, 332)
+scale = Vector2(0.132114, 0.132114)
 texture = ExtResource("2_0wvmo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_mi8qr")
 }
+
+[node name="xacmessage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = -2.0
+offset_right = 426.0
+offset_bottom = 40.0
+text = "XAN ANTI-CHEAT"
+label_settings = SubResource("LabelSettings_i21fy")
+horizontal_alignment = 1
+vertical_alignment = 1
