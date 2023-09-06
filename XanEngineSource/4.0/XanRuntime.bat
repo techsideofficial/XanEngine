@@ -1,11 +1,11 @@
 ::[Bat To Exe Converter]
 ::
 ::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFAxdSQqHAE+1BaAR7ebv/Nagq1k1QeADQI7V/7qJKe4W1n3le7Mj0XNUnfgDGQlbey74IFYImUgR+D25NtSPthvydkGK6UV+EmZ75w==
+::fBw5plQjdCyDJGyX8VAjFAxdSQqHAE+1BaAR7ebv/Nagq1k1QeADQI7V/7qJKe4W1n3le7Mj0XNUnfgDGQlbey7/IF8ImUgW+DS5NtSPthvydkGK6UV+EmZ75w==
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
 ::Yhs/ulQjdF+5
-::cxAkpRVqdFKZSTk=
+::cxAkpRVqdFKZSDk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
 ::eBoioBt6dFKZSDk=
@@ -31,6 +31,5 @@
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
-taskkill /IM /f XanLauncher.exe
 xan.exe
 del xan.exe
