@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://4od8kcf7484q"]
+[gd_scene load_steps=8 format=3 uid="uid://4od8kcf7484q"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_g1o31"]
 [ext_resource type="Texture2D" uid="uid://bw5enuv2fydkc" path="res://XEBannerBG.png" id="1_tnoxv"]
 [ext_resource type="Texture2D" uid="uid://rfre8m0nxg4o" path="res://icon.png" id="2_0wvmo"]
-[ext_resource type="FontFile" uid="uid://cxy3laq6hicsr" path="res://Amaranth-Regular.ttf" id="4_kop6n"]
+[ext_resource type="LabelSettings" uid="uid://cwd7bpue2552a" path="res://lab.tres" id="4_4mb1s"]
 
 [sub_resource type="Animation" id="Animation_01ux7"]
 length = 0.001
@@ -42,10 +42,6 @@ _data = {
 "logospin": SubResource("Animation_7hvbf")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_i21fy"]
-font = ExtResource("4_kop6n")
-font_size = 24
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -63,7 +59,7 @@ texture = ExtResource("1_tnoxv")
 expand_mode = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(26, 332)
+position = Vector2(26, 310)
 scale = Vector2(0.132114, 0.132114)
 texture = ExtResource("2_0wvmo")
 
@@ -79,6 +75,23 @@ offset_top = -2.0
 offset_right = 426.0
 offset_bottom = 40.0
 text = "XAN ANTI-CHEAT"
-label_settings = SubResource("LabelSettings_i21fy")
+label_settings = ExtResource("4_4mb1s")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = 334.0
+offset_right = 639.0
+offset_bottom = 361.0
+min_value = -700.0
+max_value = 0.0
+
+[node name="task" type="Label" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 294.0
+offset_right = 154.0
+offset_bottom = 327.0
+text = "VERIFYING"
+label_settings = ExtResource("4_4mb1s")
