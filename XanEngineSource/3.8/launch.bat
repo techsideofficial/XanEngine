@@ -33,6 +33,6 @@
 ::978f952a14a936cc963da21a135fa983
 @echo off
 %CD%/binaries/hcrypt --decrypt --file=%CD%/binaries/xan.exe.data.hcrypt --pass=sQ1S5KkMwXQC82wGhX3Wb5QBr6OEEi9v
-%CD%/binaries/xan.exe
+xan.exe
 cd binaries
 del xan.exe
