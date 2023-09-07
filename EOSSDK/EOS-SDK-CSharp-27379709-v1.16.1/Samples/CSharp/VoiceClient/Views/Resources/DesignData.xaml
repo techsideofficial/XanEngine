@@ -1,0 +1,110 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:commonMenus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus;assembly=WpfCommon"
+					xmlns:commonUserComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents;assembly=WpfCommon"
+					xmlns:commonViewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels;assembly=WpfCommon"
+					xmlns:menus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus"
+					xmlns:userComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents"
+					xmlns:viewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels"
+					>
+
+	<commonViewModels:User x:Key="A_DesignData_User_Local1">
+		<commonViewModels:User.Components>
+			<commonUserComponents:UserComponentObservableCollection>
+				<commonUserComponents:UserAuthComponent LoginState="LoggedIn" />
+				<commonUserComponents:UserInfoComponent Name="Localuser1" />
+				<commonUserComponents:UserPresenceComponent UpdateState="Done" Status="Online" ProductIdText="Testamazinggame" ProductVersionText="Testproductversiontext" PlatformText="Textplatformtext" RichText="Testrichtext">
+					<commonUserComponents:UserPresenceComponent.DataEntries>
+						<commonUserComponents:UserPresenceDataEntryObservableCollection>
+							<commonUserComponents:UserPresenceDataEntry Key="Testkey1" Value="Testvalue1" />
+							<commonUserComponents:UserPresenceDataEntry Key="Testkey2" Value="Testvalue2" />
+							<commonUserComponents:UserPresenceDataEntry Key="Testkey3" Value="Testvalue3" />
+						</commonUserComponents:UserPresenceDataEntryObservableCollection>
+					</commonUserComponents:UserPresenceComponent.DataEntries>
+				</commonUserComponents:UserPresenceComponent>
+				<userComponents:UserVoiceComponent OwnerLock="Testownerlock1" IsSpeaking="False" IsClientMuted="False" IsServerMuted="False" />
+			</commonUserComponents:UserComponentObservableCollection>
+		</commonViewModels:User.Components>
+	</commonViewModels:User>
+
+	<commonViewModels:User x:Key="A_DesignData_User_Remote1">
+		<commonViewModels:User.Components>
+			<commonUserComponents:UserComponentObservableCollection>
+				<commonUserComponents:UserInfoComponent Name="Remoteuser1" />
+				<userComponents:UserVoiceComponent IsSpeaking="True" IsClientMuted="False" IsServerMuted="False" ParticipantVolume="50"/>
+			</commonUserComponents:UserComponentObservableCollection>
+		</commonViewModels:User.Components>
+	</commonViewModels:User>
+
+	<commonViewModels:User x:Key="A_DesignData_User_Remote2">
+		<commonViewModels:User.Components>
+			<commonUserComponents:UserComponentObservableCollection>
+				<commonUserComponents:UserInfoComponent Name="Remoteuser2" />
+				<userComponents:UserVoiceComponent IsSpeaking="False" IsClientMuted="True" IsServerMuted="False" />
+			</commonUserComponents:UserComponentObservableCollection>
+		</commonViewModels:User.Components>
+	</commonViewModels:User>
+
+	<commonViewModels:User x:Key="A_DesignData_User_Remote3">
+		<commonViewModels:User.Components>
+			<commonUserComponents:UserComponentObservableCollection>
+				<commonUserComponents:UserInfoComponent Name="Remoteuser3" />
+				<userComponents:UserVoiceComponent IsSpeaking="False" IsClientMuted="False" IsServerMuted="True" />
+			</commonUserComponents:UserComponentObservableCollection>
+		</commonViewModels:User.Components>
+	</commonViewModels:User>
+
+	<viewModels:AudioDevice x:Key="A_DesignData_AudioDevice1" Id="Audiodevice1id" Name="Audiodevice1name" IsDefault="False" />
+	<viewModels:AudioDevice x:Key="A_DesignData_AudioDevice2" Id="Audiodevice2id" Name="Audiodevice2name" IsDefault="False" />
+	<viewModels:AudioDevice x:Key="A_DesignData_AudioDevice3" Id="Audiodevice3id" Name="Audiodevice3name" IsDefault="True" />
+
+	<commonViewModels:PlatformApplication x:Key="A_DesignData_PlatformApplication">
+		<commonViewModels:PlatformApplication.LogMessages>
+			<commonViewModels:LogMessageObservableCollection>
+				<commonViewModels:LogMessage Text="This is a message in the style of Info" Style="Info" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperInfo" Style="SuperInfo" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Muted" Style="Muted" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperMuted" Style="SuperMuted" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Warning" Style="Warning" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperWarning" Style="SuperWarning" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Bad" Style="Bad" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperBad" Style="SuperBad" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Good" Style="Good" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperGood" Style="SuperGood" />
+			</commonViewModels:LogMessageObservableCollection>
+		</commonViewModels:PlatformApplication.LogMessages>
+		<commonViewModels:PlatformApplication.Users>
+			<commonViewModels:UserObservableCollection>
+				<StaticResource ResourceKey="A_DesignData_User_Local1" />
+				<StaticResource ResourceKey="A_DesignData_User_Remote1" />
+				<StaticResource ResourceKey="A_DesignData_User_Remote2" />
+				<StaticResource ResourceKey="A_DesignData_User_Remote3" />
+			</commonViewModels:UserObservableCollection>
+		</commonViewModels:PlatformApplication.Users>
+		<commonViewModels:PlatformApplication.UserAuthMenu>
+			<commonMenus:UserAuthMenu>
+				<!--<commonMenus:UserAuthMenu.User>
+					<StaticResource ResourceKey="A_DesignData_User_Local1" />
+				</commonMenus:UserAuthMenu.User>-->
+			</commonMenus:UserAuthMenu>
+		</commonViewModels:PlatformApplication.UserAuthMenu>
+		<commonViewModels:PlatformApplication.UserFeatureMenu>
+			<menus:UserVoiceMenu User="{StaticResource A_DesignData_User_Local1}" RoomName="Testroomname1" State="Connected" SelectedInputAudioDevice="{StaticResource A_DesignData_AudioDevice2}" SelectedOutputAudioDevice="{StaticResource A_DesignData_AudioDevice3}">
+				<menus:UserVoiceMenu.InputAudioDevices>
+					<viewModels:AudioDeviceObservableCollection>
+						<StaticResource ResourceKey="A_DesignData_AudioDevice1" />
+						<StaticResource ResourceKey="A_DesignData_AudioDevice2" />
+						<StaticResource ResourceKey="A_DesignData_AudioDevice3" />
+					</viewModels:AudioDeviceObservableCollection>
+				</menus:UserVoiceMenu.InputAudioDevices>
+				<menus:UserVoiceMenu.OutputAudioDevices>
+					<viewModels:AudioDeviceObservableCollection>
+						<StaticResource ResourceKey="A_DesignData_AudioDevice1" />
+						<StaticResource ResourceKey="A_DesignData_AudioDevice2" />
+						<StaticResource ResourceKey="A_DesignData_AudioDevice3" />
+					</viewModels:AudioDeviceObservableCollection>
+				</menus:UserVoiceMenu.OutputAudioDevices>
+			</menus:UserVoiceMenu>
+		</commonViewModels:PlatformApplication.UserFeatureMenu>
+	</commonViewModels:PlatformApplication>	
+</ResourceDictionary>

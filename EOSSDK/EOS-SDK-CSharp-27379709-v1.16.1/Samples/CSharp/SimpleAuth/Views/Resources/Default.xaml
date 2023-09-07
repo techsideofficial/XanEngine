@@ -1,0 +1,76 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:menus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus"
+					xmlns:commonUserComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents;assembly=WpfCommon"
+					>
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/WpfCommon;component/Views/Resources/Default.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+	<Style x:Key="A_Style_ItemsControl_UserPresenceDataEntry_DefaultEmpty" TargetType="ItemsControl">
+		<Style.Triggers>
+			<Trigger Property="HasItems" Value="False">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate>
+							<TextBlock Text="No data entries in the list." FontSize="16" FontWeight="Light" LineHeight="16" Foreground="#44ffffff" Style="{StaticResource A_Style_TextBlock_Default}" Margin="0 4 0 0" />
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<DataTemplate x:Key="A_DataTemplate_PresenceForm_PresenceDataEntry" DataType="{x:Type commonUserComponents:UserPresenceDataEntry}">
+		<Grid>
+			<DockPanel>
+				<Grid Margin="0 0 0 0">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="4" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="4" />
+						<ColumnDefinition Width="33" />
+					</Grid.ColumnDefinitions>
+					<Grid Grid.Column="0">
+						<TextBox Text="{Binding Key, UpdateSourceTrigger=PropertyChanged}" />
+						<TextBlock Text="Key" IsHitTestVisible="False" Visibility="{Binding Key, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#99ffffff" Background="#00000000" />
+					</Grid>
+					<Grid Grid.Column="2">
+						<TextBox Text="{Binding Value, UpdateSourceTrigger=PropertyChanged}" />
+						<TextBlock Text="Value" IsHitTestVisible="False" Visibility="{Binding Value, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#99ffffff" Background="#00000000" />
+					</Grid>
+					<Grid Grid.Column="4">
+						<Button Command="{Binding RemoveCommand}" Content="x" Background="DarkRed" />
+					</Grid>
+				</Grid>
+			</DockPanel>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate DataType="{x:Type menus:UserPresenceMenu}">
+		<StackPanel Name="Root">
+			<ComboBox SelectedItem="{Binding Status}" ItemsSource="{Binding Status, Converter={StaticResource A_Converter_EnumCollection}}" />
+
+			<Grid Margin="0 16 0 0">
+				<TextBox Text="{Binding RichText, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AcceptsReturn="True" />
+				<TextBlock Text="Rich text" IsHitTestVisible="False" Visibility="{Binding RichText, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" />
+			</Grid>
+
+			<Button Command="{Binding AddEntryCommand}" Content="Add data entry" Margin="0 16 0 0" />
+
+			<Grid Margin="0 4 0 0">
+				<ItemsControl ItemsSource="{Binding DataEntries}" Style="{StaticResource A_Style_ItemsControl_UserPresenceDataEntry_DefaultEmpty}" ItemTemplate="{StaticResource A_DataTemplate_PresenceForm_PresenceDataEntry}" Margin="0 -4 0 0">
+					<ItemsControl.ItemContainerStyle>
+						<Style>
+							<Setter Property="FrameworkElement.Margin" Value="0 4 0 0" />
+						</Style>
+					</ItemsControl.ItemContainerStyle>
+				</ItemsControl>
+			</Grid>
+
+			<Button Command="{Binding SubmitCommand}" Content="Submit update" Margin="0 16 0 0" Background="Green" />
+		</StackPanel>
+	</DataTemplate>
+</ResourceDictionary>

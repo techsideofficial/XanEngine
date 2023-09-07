@@ -1,0 +1,32 @@
+<Window x:Class="Epic.OnlineServices.Samples.Views.Windows.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		Title="Voice Client" Width="1280" Height="720">
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="../Resources/DesignData.xaml"/>
+				<ResourceDictionary Source="../Resources/Default.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Grid d:DataContext="{Binding Source={StaticResource A_DesignData_PlatformApplication}}" Background="{StaticResource A_Brush_Background}">
+		<ContentControl Content="{Binding}">
+			<ContentControl.Tag>
+				<StackPanel>
+					<TextBlock Text="Welcome to Voice Client" Style="{StaticResource A_Style_TextBlock_Large}" />
+					<TextBlock LineHeight="26" Foreground="#aaaaaa" TextWrapping="Wrap" Margin="0 8 0 0"  Style="{StaticResource A_Style_TextBlock_Default}">
+						<TextBlock.Inlines>
+							This sample demonstrates how to communicate with a voice server and other voice clients. Ensure the <Run Text="Voice Server sample" FontWeight="Medium" /> is running before proceeding.
+						</TextBlock.Inlines>
+					</TextBlock>
+				</StackPanel>
+			</ContentControl.Tag>
+		</ContentControl>
+	</Grid>
+</Window>

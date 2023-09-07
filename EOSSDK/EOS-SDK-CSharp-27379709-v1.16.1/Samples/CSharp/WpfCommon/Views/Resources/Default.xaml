@@ -1,0 +1,522 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:viewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels"
+					xmlns:auth="clr-namespace:Epic.OnlineServices.Auth;assembly=Common"
+					xmlns:presence="clr-namespace:Epic.OnlineServices.Presence;assembly=Common"
+					xmlns:common="clr-namespace:Epic.OnlineServices.Samples;assembly=Common"
+					xmlns:converters="clr-namespace:Epic.OnlineServices.Samples.Views.Converters"
+					xmlns:controls="clr-namespace:Epic.OnlineServices.Samples.Views.Controls"
+					xmlns:extensions="clr-namespace:Epic.OnlineServices.Samples.Views.Extensions"
+					xmlns:menus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus"
+					xmlns:userComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents"
+					>
+
+	<converters:EnumCollectionConverter x:Key="A_Converter_EnumCollection" />
+	<converters:EnumComparisonConverter x:Key="A_Converter_EnumComparison" />
+	<converters:StringVisibilityConverter x:Key="A_Converter_StringVisibility" />
+	<converters:IsLocalUserConverter x:Key="A_Converter_IsLocalUser" />
+	<converters:StringUriConverter x:Key="A_Converter_StringUri" />
+	<converters:IsNullConverter x:Key="A_Converter_IsNull" />
+	<converters:UserComponentConverter x:Key="A_Converter_UserAuthComponent" UserComponentType="{x:Type userComponents:UserAuthComponent}" />
+	<converters:UserComponentConverter x:Key="A_Converter_UserInfoComponent" UserComponentType="{x:Type userComponents:UserInfoComponent}" />
+	<converters:UserComponentConverter x:Key="A_Converter_UserPresenceComponent" UserComponentType="{x:Type userComponents:UserPresenceComponent}" />
+
+	<SolidColorBrush x:Key="A_Brush_Background" Color="#1d1d1d" />
+	<SolidColorBrush x:Key="A_Brush_ControlBorder" Color="#33ffffff" />
+	<SolidColorBrush x:Key="A_Brush_ControlBorder_Selected" Color="#66ffffff" />
+	<SolidColorBrush x:Key="A_Brush_ControlBackground" Color="#11ffffff" />
+	<SolidColorBrush x:Key="A_Brush_ControlBackground_Selected" Color="#33ffffff" />
+
+	<Style x:Key="A_Style_TextBlock_Default" TargetType="{x:Type TextBlock}">
+		<Setter Property="FontSize" Value="18" />
+		<Setter Property="LineHeight" Value="18" />
+		<Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+		<Setter Property="FontWeight" Value="Light" />
+		<Setter Property="Foreground" Value="White" />
+	</Style>
+
+	<Style x:Key="A_Style_TextBlock_Large" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource A_Style_TextBlock_Default}">
+		<Setter Property="FontSize" Value="32" />
+		<Setter Property="LineHeight" Value="32" />
+		<Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+	</Style>
+
+	<Style x:Key="A_Style_TextBlock_Small" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource A_Style_TextBlock_Default}">
+		<Setter Property="FontSize" Value="14" />
+		<Setter Property="LineHeight" Value="14" />
+		<Setter Property="LineStackingStrategy" Value="BlockLineHeight" />
+		<Setter Property="Foreground" Value="#66ffffff" />
+	</Style>
+
+	<Style TargetType="{x:Type TextBox}">
+		<Setter Property="Background" Value="{StaticResource A_Brush_ControlBackground}" />
+		
+		<Setter Property="SnapsToDevicePixels" Value="True" />
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="AllowDrop" Value="true" />
+
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="FontWeight" Value="Light" />
+		<Setter Property="Foreground" Value="White" />
+		<Setter Property="CaretBrush" Value="White" />
+
+		<Setter Property="Height" Value="38" />
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBoxBase}">
+					<Grid>
+						<Rectangle Fill="{TemplateBinding Background}" />
+
+						<Border Name="Border" Padding="4 6 4 6" BorderThickness="2" BorderBrush="{StaticResource A_Brush_ControlBorder}">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal" />
+									<VisualState x:Name="Disabled" />
+									<VisualState x:Name="ReadOnly" />
+									<VisualState x:Name="MouseOver" />
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Grid>
+								<ScrollViewer Margin="0" x:Name="PART_ContentHost" />
+							</Grid>
+						</Border>
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource A_Brush_ControlBorder_Selected}" />
+						</Trigger>
+
+						<Trigger Property="IsFocused" Value="True">
+							<Setter TargetName="Border" Property="Background" Value="{StaticResource A_Brush_ControlBackground_Selected}" />
+							<Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource A_Brush_ControlBorder_Selected}" />
+						</Trigger>
+
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Opacity" Value="0.5" />
+							<Setter TargetName="Border" Property="Background" Value="#99444444"/>
+							<Setter TargetName="Border" Property="BorderBrush" Value="#99444444"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="controls:MaskedTextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+	</Style>
+
+	<ControlTemplate x:Key="A_ControlTemplate_ToggleButton_ComboBox" TargetType="{x:Type ToggleButton}">
+		<Grid Background="Transparent">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition Width="38" />
+			</Grid.ColumnDefinitions>
+
+			<Border x:Name="Border" Grid.ColumnSpan="2" BorderThickness="0" Background="#11ffffff" Visibility="Collapsed" />
+
+			<Border Grid.Column="0" CornerRadius="0" Margin="0" >
+				<Border.Background>
+					<SolidColorBrush Color="Transparent" />
+				</Border.Background>
+			</Border>
+
+			<Path x:Name="Arrow" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Fill="{StaticResource A_Brush_ControlBorder_Selected}" />
+		</Grid>
+	</ControlTemplate>
+
+	<Style x:Key="A_Style_ComboBoxItem" TargetType="{x:Type ComboBoxItem}">
+		<Setter Property="SnapsToDevicePixels" Value="true" />
+		<Setter Property="OverridesDefaultStyle" Value="true" />
+
+		<Setter Property="Height" Value="38" />
+
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ComboBoxItem}">
+					<Border x:Name="Border" Background="Transparent">
+						<Grid Name="Panel" VerticalAlignment="Center">
+							<ContentPresenter VerticalAlignment="Center" Margin="6" TextBlock.Foreground="White" TextBlock.FontSize="16" TextBlock.FontWeight="Thin" />
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsHighlighted" Value="True">
+							<Setter Property="Background" TargetName="Border" Value="{StaticResource A_Brush_ControlBackground_Selected}" />
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter TargetName="Panel" Property="Opacity" Value="0.5"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+		<Setter Property="Background" Value="{StaticResource A_Brush_ControlBackground}" />
+		<Setter Property="SnapsToDevicePixels" Value="true" />
+		<Setter Property="OverridesDefaultStyle" Value="true" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+
+		<Setter Property="Height" Value="38" />
+
+		<Setter Property="ItemContainerStyle" Value="{StaticResource A_Style_ComboBoxItem}" />
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ComboBox}">
+					<Grid>
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal" />
+								<VisualState x:Name="MouseOver" />
+								<VisualState x:Name="Disabled" />
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="EditStates">
+								<VisualState x:Name="Editable" />
+								<VisualState x:Name="Uneditable" />
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+
+						<Rectangle Fill="{TemplateBinding Background}" />
+
+						<ToggleButton x:Name="ToggleButton" Template="{StaticResource A_ControlTemplate_ToggleButton_ComboBox}" Grid.Column="2" Focusable="false" ClickMode="Press" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+
+						<Border Name="Border" Padding="6 6" BorderThickness="2" BorderBrush="{StaticResource A_Brush_ControlBorder}" IsHitTestVisible="False">
+							<ContentPresenter x:Name="ContentSite" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" VerticalAlignment="Stretch" HorizontalAlignment="Left" TextBlock.Foreground="White" TextBlock.FontSize="16" TextBlock.FontWeight="Thin" />
+						</Border>
+
+						<Popup x:Name="Popup" Placement="Bottom" HorizontalOffset="0" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="None" MinWidth="200" VerticalOffset="-2">
+							<Border SnapsToDevicePixels="True" Background="{StaticResource A_Brush_Background}" >
+								<Border.Effect>
+									<DropShadowEffect ShadowDepth="3" BlurRadius="3" Opacity="0.4"/>
+								</Border.Effect>
+
+								<Border BorderThickness="2" BorderBrush="{StaticResource A_Brush_ControlBorder_Selected}">
+									<ScrollViewer CanContentScroll="True">
+										<StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+									</ScrollViewer>
+								</Border>
+							</Border>
+						</Popup>
+					</Grid>
+
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource A_Brush_ControlBorder_Selected}"/>
+						</Trigger>
+
+						<Trigger Property="IsDropDownOpen" Value="True">
+							<Setter TargetName="Border" Property="Background" Value="{StaticResource A_Brush_ControlBackground_Selected}"/>
+						</Trigger>
+
+						<Trigger Property="UIElement.IsEnabled" Value="False">
+							<Setter Property="Opacity" Value="0.5" />
+							<Setter TargetName="Border" Property="Background" Value="#99444444"/>
+							<Setter TargetName="Border" Property="BorderBrush" Value="#99444444"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<Style TargetType="{x:Type Button}">
+		<Setter Property="Background" Value="{StaticResource A_Brush_ControlBackground}" />
+		<Setter Property="Foreground" Value="White" />
+		<Setter Property="FontSize" Value="16" />
+		<Setter Property="SnapsToDevicePixels" Value="True" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+
+		<Setter Property="Height" Value="36" />
+
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid>
+						<Rectangle Fill="{TemplateBinding Background}" />
+
+						<Border Name="Border" Padding="4 8" BorderThickness="2" BorderBrush="{StaticResource A_Brush_ControlBorder}">
+							<ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="{TemplateBinding FontSize}" TextBlock.LineHeight="16" TextBlock.LineStackingStrategy="BlockLineHeight" TextBlock.FontWeight="Thin" Margin="0" />
+						</Border>
+					</Grid>
+				
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource A_Brush_ControlBorder_Selected}"/>
+						</Trigger>
+
+						<Trigger Property="IsPressed" Value="True">
+							<Setter TargetName="Border" Property="Background" Value="{StaticResource A_Brush_ControlBackground_Selected}"/>
+						</Trigger>
+
+						<Trigger Property="UIElement.IsEnabled" Value="False">
+							<Setter Property="Opacity" Value="0.5" />
+							<Setter TargetName="Border" Property="Background" Value="#99444444"/>
+							<Setter TargetName="Border" Property="BorderBrush" Value="#99444444"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+	<DataTemplate x:Key="A_DataTemplate_UserPresenceDataEntry_User" DataType="{x:Type userComponents:UserPresenceDataEntry}">
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="8" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<StackPanel Grid.Column="0">
+				<TextBlock Text="{Binding Key}" LineHeight="22" Foreground="#aaaaaa" Style="{StaticResource A_Style_TextBlock_Default}" FontWeight="Medium" HorizontalAlignment="Right" />
+			</StackPanel>
+			<StackPanel Grid.Column="2">
+				<TextBlock Text="{Binding Value}" LineHeight="22" Foreground="#aaaaaa" Style="{StaticResource A_Style_TextBlock_Default}" />
+			</StackPanel>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate DataType="{x:Type menus:UserAuthMenu}">
+		<Border Name="Root">
+			<StackPanel>
+				<StackPanel Name="CredentialTypePanel">
+					<ComboBox Name="CredentialTypeInput" SelectedItem="{Binding CredentialType}" ItemsSource="{Binding CredentialType, Converter={StaticResource A_Converter_EnumCollection}}" />
+				</StackPanel>
+
+				<Grid Name="IdPanel" Margin="0 4 0 0" Visibility="Collapsed">
+					<TextBox Name="IdInput" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+					<TextBlock Name="IdLabel" IsHitTestVisible="False" Visibility="{Binding Id, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" />
+				</Grid>
+
+				<StackPanel Margin="0 4 0 0" Name="ExternalCredentialTypePanel" Visibility="Collapsed">
+					<ComboBox Name="ExternalCredentialTypeInput" SelectedItem="{Binding ExternalCredentialType}" ItemsSource="{Binding ExternalCredentialType, Converter={StaticResource A_Converter_EnumCollection}}" />
+				</StackPanel>
+
+				<Grid Name="TokenPanel" Margin="0 4 0 0" Visibility="Collapsed">
+					<controls:MaskedTextBox x:Name="TokenInput" RealText="{Binding Token, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Visibility="Collapsed" />
+					<TextBlock Name="TokenLabel" IsHitTestVisible="False" Visibility="{Binding Token, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" />
+				</Grid>
+
+				<Grid Margin="0 16 0 0">
+					<Button Name="LoginButton" Command="{Binding LoginCommand}" Content="Log in" Visibility="Collapsed" Background="Green" />
+				</Grid>
+			</StackPanel>
+		</Border>
+
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.Password}}" Value="True">
+				<Setter TargetName="IdLabel" Property="Text" Value="Email" />
+				<Setter TargetName="TokenLabel" Property="Text" Value="Password" />
+
+				<Setter TargetName="IdPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenInput" Property="Visibility" Value="Visible" />
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="TokenInput" Property="IsMasked" Value="True" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.ExchangeCode}}" Value="True">
+				<Setter TargetName="IdPanel" Property="Visibility" Value="Collapsed" />
+				<Setter TargetName="TokenLabel" Property="Text" Value="Exchange code" />
+
+				<Setter TargetName="TokenPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenInput" Property="Visibility" Value="Visible" />
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.PersistentAuth}}" Value="True">
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.DeviceCode}}" Value="False"/>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.Developer}}"  Value="True">
+				<Setter TargetName="IdLabel" Property="Text" Value="Host" />
+				<Setter TargetName="TokenLabel" Property="Text" Value="Credential" />
+
+				<Setter TargetName="IdPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenInput" Property="Visibility" Value="Visible" />
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.RefreshToken}}" Value="True">
+				<Setter TargetName="TokenLabel" Property="Text" Value="Refresh token" />
+
+				<Setter TargetName="TokenPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenInput" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.AccountPortal}}" Value="True">
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding CredentialType, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static auth:LoginCredentialType.ExternalAuth}}" Value="True">
+				<Setter TargetName="TokenLabel" Property="Text" Value="External auth token" />
+
+				<Setter TargetName="ExternalCredentialTypePanel" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="TokenPanel" Property="Visibility" Value="Visible" />
+				<Setter TargetName="TokenInput" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="LoginButton" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding UserComponent.LoginState, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static userComponents:UserAuthLoginState.LoggingIn}}" Value="True">
+				<Setter TargetName="LoginButton" Property="IsEnabled" Value="False" />
+				<Setter TargetName="CredentialTypeInput" Property="IsEnabled" Value="False" />
+				<Setter TargetName="IdInput" Property="IsEnabled" Value="False" />
+				<Setter TargetName="TokenInput" Property="IsEnabled" Value="False" />
+				<Setter TargetName="LoginButton" Property="IsEnabled" Value="False" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding UserComponent.LoginState, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static userComponents:UserAuthLoginState.LoggingOut}}" Value="True">
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_UserPresenceComponent_Status" DataType="{x:Type userComponents:UserPresenceComponent}">
+		<Ellipse Name="StatusCircle" Width="24" Height="24" Fill="#00FF00" />
+
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding Status, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static presence:Status.Offline}}" Value="True">
+				<Setter TargetName="StatusCircle" Property="Fill" Value="Gray" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding Status, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static presence:Status.Online}}" Value="True">
+				<Setter TargetName="StatusCircle" Property="Fill" Value="#00FF00" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding Status, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static presence:Status.Away}}" Value="True">
+				<Setter TargetName="StatusCircle" Property="Fill" Value="Yellow" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding Status, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static presence:Status.ExtendedAway}}" Value="True">
+				<Setter TargetName="StatusCircle" Property="Fill" Value="Yellow" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding Status, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static presence:Status.DoNotDisturb}}" Value="True">
+				<Setter TargetName="StatusCircle" Property="Fill" Value="Red" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_LocalUser" DataType="{x:Type viewModels:User}">
+		<StackPanel>
+			<DockPanel VerticalAlignment="Center" LastChildFill="False">
+				<ContentControl DataContext="{Binding Converter={StaticResource A_Converter_UserPresenceComponent}}" Content="{Binding}" ContentTemplate="{StaticResource A_DataTemplate_UserPresenceComponent_Status}" Width="24" Height="24" />
+				<TextBlock DataContext="{Binding Converter={StaticResource A_Converter_UserInfoComponent}}" Text="{Binding Name}" Style="{StaticResource A_Style_TextBlock_Large}" LineHeight="36"  Margin="8 0 0 0" />
+				<Button DataContext="{Binding Converter={StaticResource A_Converter_UserAuthComponent}}"  Command="{Binding LogoutCommand}" Content="Log out" Margin="16 0 0 0" Background="DarkRed" DockPanel.Dock="Right" />
+			</DockPanel>
+
+			<TextBlock DataContext="{Binding Converter={StaticResource A_Converter_UserPresenceComponent}}" Text="{Binding RichText}" TextWrapping="Wrap" LineHeight="22" Foreground="#99ffffff" Style="{StaticResource A_Style_TextBlock_Default}" Margin="0 8 0 0" />
+			<ItemsControl DataContext="{Binding Converter={StaticResource A_Converter_UserPresenceComponent}}" ItemsSource="{Binding DataEntries}" ItemTemplate="{StaticResource A_DataTemplate_UserPresenceDataEntry_User}" Margin="0 8 0 0" />
+		</StackPanel>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_PlatformApplication_LogMessages" DataType="{x:Type viewModels:PlatformApplication}">
+		<Grid>
+			<RichTextBox IsReadOnly="True" extensions:RichTextBoxExtensions.InlinesSource="{Binding LogMessages}" FontFamily="Consolas" VerticalScrollBarVisibility="Auto" Padding="-5 0 -5 0" AutoWordSelection="False">
+				<RichTextBox.Resources>
+					<ResourceDictionary>
+						<Style TargetType="Paragraph">
+							<Setter Property="Margin" Value="0" />
+						</Style>
+						<Style TargetType="Run">
+							<Setter Property="Foreground" Value="White" />	
+							<Style.Triggers>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.Info}}" Value="True">
+									<Setter Property="Foreground" Value="White" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.SuperInfo}}" Value="True">
+									<Setter Property="Background" Value="White" />
+									<Setter Property="Foreground" Value="Black" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.Muted}}" Value="True">
+									<Setter Property="Foreground" Value="DarkGray" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.SuperMuted}}" Value="True">
+									<Setter Property="Background" Value="Gray" />
+									<Setter Property="Foreground" Value="Black" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.Warning}}" Value="True">
+									<Setter Property="Foreground" Value="Yellow" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.SuperWarning}}" Value="True">
+									<Setter Property="Background" Value="Yellow" />
+									<Setter Property="Foreground" Value="Black" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.Bad}}" Value="True">
+									<Setter Property="Foreground" Value="Red" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.SuperBad}}" Value="True">
+									<Setter Property="Background" Value="Red" />
+									<Setter Property="Foreground" Value="Black" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.Good}}" Value="True">
+									<Setter Property="Foreground" Value="#00FF00" />
+								</DataTrigger>
+								<DataTrigger Binding="{Binding Style, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static common:LogStyle.SuperGood}}" Value="True">
+									<Setter Property="Background" Value="#00FF00" />
+									<Setter Property="Foreground" Value="Black" />
+								</DataTrigger>
+							</Style.Triggers>
+						</Style>
+					</ResourceDictionary>
+				</RichTextBox.Resources>
+
+				<RichTextBox.Template>
+					<ControlTemplate>
+						<ScrollViewer Padding="0" Margin="0" x:Name="PART_ContentHost"/>
+					</ControlTemplate>
+				</RichTextBox.Template>
+			</RichTextBox>
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate DataType="{x:Type viewModels:PlatformApplication}">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" MinHeight="50" />
+				<RowDefinition Height="2" />
+				<RowDefinition Height="200" MinHeight="50" />
+			</Grid.RowDefinitions>
+
+			<Grid Grid.Row="0">
+				<Grid Name="AuthPanel">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="128" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<ContentControl Grid.Column="0" Width="400" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding Tag, RelativeSource={RelativeSource AncestorType=ContentControl}}" />
+					<ContentControl Grid.Column="2" Width="400" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding UserAuthMenu}" />
+				</Grid>
+
+				<Grid Name="FeaturePanel" Visibility="Collapsed">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition />
+						<ColumnDefinition Width="128" />
+						<ColumnDefinition />
+					</Grid.ColumnDefinitions>
+
+					<ContentControl Grid.Column="0" Width="400" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding FirstLocalUser}" ContentTemplate="{StaticResource A_DataTemplate_LocalUser}" />
+					<ContentControl Grid.Column="2" Width="400" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding UserFeatureMenu}" />
+				</Grid>
+			</Grid>
+
+			<GridSplitter Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="{StaticResource A_Brush_ControlBorder}" ShowsPreview="True" />
+
+			<Grid Grid.Row="2" Background="Black">
+				<ContentControl Content="{Binding}" ContentTemplate="{StaticResource A_DataTemplate_PlatformApplication_LogMessages}" />
+			</Grid>
+		</Grid>
+
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding UserAuthMenu.User, Converter={StaticResource A_Converter_IsNull}}" Value="True">
+				<Setter TargetName="AuthPanel" Property="Visibility" Value="Collapsed" />
+				<Setter TargetName="FeaturePanel" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+</ResourceDictionary>

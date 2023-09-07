@@ -1,0 +1,284 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:system="clr-namespace:System;assembly=mscorlib"
+					xmlns:windowsBaseComponentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+					xmlns:converters="clr-namespace:Epic.OnlineServices.Samples.Views.Converters"
+					xmlns:userComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents"
+					xmlns:menus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus"
+					xmlns:viewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels"
+					xmlns:commonConverters="clr-namespace:Epic.OnlineServices.Samples.Views.Converters;assembly=WpfCommon"
+					xmlns:commonViewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels;assembly=WpfCommon"
+					>
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/WpfCommon;component/Views/Resources/Default.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+	<commonConverters:UserComponentConverter x:Key="A_Converter_UserVoiceComponent" UserComponentType="{x:Type userComponents:UserVoiceComponent}" />
+	<converters:IsLocalUserAdminConverter x:Key="A_Converter_IsLocalUserAdmin" />
+
+	<DataTemplate x:Key="A_Graphic_Speaker_Loud">
+		<Viewbox>
+			<Grid Width="100" Height="100">
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 0,25 L 0,75 L 17,75 L 17,25" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 21,25 L 21,75 L 50,100 L 50,0" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 54,40 Q 70,50 54,60" />
+				<Path                                                                                          Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="8" Data="M 65,30 Q 85,50 65,70" />
+				<Path                                                                                          Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="8" Data="M 75,15 Q 108,50 75,85" />
+			</Grid>
+		</Viewbox>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_Graphic_Speaker_Quiet">
+		<Viewbox>
+			<Grid Width="100" Height="100">
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 0,25 L 0,75 L 17,75 L 17,25" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 21,25 L 21,75 L 50,100 L 50,0" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 54,40 Q 70,50 54,60" />
+			</Grid>
+		</Viewbox>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_Graphic_Speaker_Muted" DataType="{x:Type userComponents:UserVoiceComponent}">
+		<Viewbox>
+			<Grid Width="100" Height="100">
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 0,25 L 0,75 L 17,75 L 17,25" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 21,25 L 21,75 L 50,100 L 50,0" />
+				<Path Fill="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Background, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="1" Data="M 54,40 Q 70,50 54,60" />
+				<Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" StrokeThickness="8" Data="M 0,100 L 70,0" />
+			</Grid>
+		</Viewbox>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_UserVoiceMenu_User_Status" DataType="{x:Type userComponents:UserVoiceComponent}">
+		<ContentControl Name="Icon" ContentTemplate="{StaticResource A_Graphic_Speaker_Quiet}" Background="#66ffffff" Width="24" Height="24" />
+		
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding IsSpeaking}" Value="True">
+				<Setter TargetName="Icon" Property="ContentTemplate" Value="{StaticResource A_Graphic_Speaker_Loud}" />
+				<Setter TargetName="Icon" Property="Background" Value="#bbffffff" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding IsClientMuted}" Value="True">
+				<Setter TargetName="Icon" Property="ContentTemplate" Value="{StaticResource A_Graphic_Speaker_Muted}" />
+				<Setter TargetName="Icon" Property="Background" Value="#33ffffff" />
+				<Setter TargetName="Icon" Property="Foreground" Value="#ffff0000" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding IsServerMuted}" Value="True">
+				<Setter TargetName="Icon" Property="ContentTemplate" Value="{StaticResource A_Graphic_Speaker_Muted}" />
+				<Setter TargetName="Icon" Property="Background" Value="#66ff0000" />
+				<Setter TargetName="Icon" Property="Foreground" Value="#ffff0000" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_UserVoiceMenu_User_Controls" DataType="{x:Type userComponents:UserVoiceComponent}">
+		<StackPanel Orientation="Horizontal">
+			<Slider Name="ParticipantVolumeSlider" Minimum="0" Maximum="100" Value="{Binding ParticipantVolume}" Width="60" Background="DarkRed" Visibility="Collapsed"/>
+			<Button Name="ToggleClientMuteButton" Command="{Binding ToggleClientMuteCommand}" Content="Mute" Background="DarkRed" Margin="4 0 0 0" Visibility="Visible" />
+			<Button Name="ToggleServerMuteButton" Command="{Binding ToggleServerMuteCommand}" Content="Remote mute" Background="DarkRed" Margin="4 0 0 0" Visibility="Collapsed" />
+			<Button Name="ServerKickCommand" Command="{Binding ServerKickCommand}" Content="Kick" Background="DarkRed" Margin="4 0 0 0" Visibility="Collapsed" />
+		</StackPanel>
+
+		<DataTemplate.Triggers>
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding IsServerMuted}" Value="True" />
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter TargetName="ToggleClientMuteButton" Property="Visibility" Value="Collapsed" />
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding IsClientMuted}" Value="True" />
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter TargetName="ToggleClientMuteButton" Property="Content" Value="Unmute" />
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding User.IsLocalUser}" Value="False" />
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter TargetName="ParticipantVolumeSlider" Property="Visibility" Value="Visible" />
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+
+			<MultiDataTrigger>
+				<MultiDataTrigger.Conditions>
+					<Condition Binding="{Binding User.IsLocalUser}" Value="False" />
+					<Condition Binding="{Binding User.PlatformApplication, Converter={StaticResource A_Converter_IsLocalUserAdmin}}" Value="True" />
+				</MultiDataTrigger.Conditions>
+				<MultiDataTrigger.Setters>
+					<Setter TargetName="ToggleServerMuteButton" Property="Visibility" Value="Visible" />
+					<Setter TargetName="ServerKickCommand" Property="Visibility" Value="Visible" />
+				</MultiDataTrigger.Setters>
+			</MultiDataTrigger>
+
+			<DataTrigger Binding="{Binding IsServerMuted}" Value="True">
+				<Setter TargetName="ToggleServerMuteButton" Property="Content" Value="Remote unmute" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<DataTemplate x:Key="A_DataTemplate_UserVoiceMenu_User" DataType="{x:Type commonViewModels:User}">
+		<Grid Height="38">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="Auto" />
+			</Grid.ColumnDefinitions>
+
+			<ContentControl Grid.Column="0" Name="SpeakerIcon" DataContext="{Binding Converter={StaticResource A_Converter_UserVoiceComponent}}" Content="{Binding}" ContentTemplate="{StaticResource A_DataTemplate_UserVoiceMenu_User_Status}" VerticalAlignment="Center" />
+			<TextBlock Grid.Column="1" DataContext="{Binding Converter={StaticResource A_Converter_UserInfoComponent}}" Text="{Binding Name}" Foreground="#99ffffff" Style="{StaticResource A_Style_TextBlock_Default}" VerticalAlignment="Center" Margin="8 0 0 0" />
+			<ContentControl Grid.Column="2" DataContext="{Binding Converter={StaticResource A_Converter_UserVoiceComponent}}" Content="{Binding}" ContentTemplate="{StaticResource A_DataTemplate_UserVoiceMenu_User_Controls}" VerticalAlignment="Center" />
+		</Grid>
+	</DataTemplate>
+
+	<DataTemplate DataType="{x:Type viewModels:AudioDevice}">
+		<Grid>
+			<TextBlock Name="OtherTextBlock" Text="{Binding Name}" />
+			<TextBlock Name="DefaultTextBlock" Visibility="Collapsed">
+				<TextBlock.Inlines>
+					<Run Text="(Default) " Foreground="#66ffffff" />
+					<Run Text="{Binding Name}" />
+				</TextBlock.Inlines>
+			</TextBlock>
+		</Grid>
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding IsDefault}" Value="True">
+				<Setter TargetName="OtherTextBlock" Property="Visibility" Value="Collapsed" />
+				<Setter TargetName="DefaultTextBlock" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+
+	<Style x:Key="A_Style_ItemsControl_User_DefaultEmpty" TargetType="ItemsControl">
+		<Style.Triggers>
+			<Trigger Property="HasItems" Value="False">
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate>
+							<TextBlock Text="No users in the list." FontSize="16" FontWeight="Light" LineHeight="16" Foreground="#44ffffff" Style="{StaticResource A_Style_TextBlock_Default}" Margin="0 4 0 0" />
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	
+	<DataTemplate DataType="{x:Type menus:UserVoiceMenu}">
+		<StackPanel Name="Root">
+			<StackPanel.Resources>
+				<CollectionViewSource x:Key="A_CollectionViewSource_InputAudioDevices" Source="{Binding InputAudioDevices}" IsLiveSortingRequested="True">
+					<CollectionViewSource.LiveSortingProperties>
+						<system:String>Name</system:String>
+					</CollectionViewSource.LiveSortingProperties>
+					<CollectionViewSource.SortDescriptions>
+						<windowsBaseComponentModel:SortDescription PropertyName="Name" Direction="Ascending" />
+					</CollectionViewSource.SortDescriptions>
+				</CollectionViewSource>
+
+				<CollectionViewSource x:Key="A_CollectionViewSource_OutputAudioDevices" Source="{Binding OutputAudioDevices}" IsLiveSortingRequested="True">
+					<CollectionViewSource.LiveSortingProperties>
+						<system:String>Name</system:String>
+					</CollectionViewSource.LiveSortingProperties>
+					<CollectionViewSource.SortDescriptions>
+						<windowsBaseComponentModel:SortDescription PropertyName="Name" Direction="Ascending" />
+					</CollectionViewSource.SortDescriptions>
+				</CollectionViewSource>
+			</StackPanel.Resources>
+
+			<StackPanel>
+				<TextBlock Text="Input device" FontSize="13" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" />
+				<ComboBox SelectedItem="{Binding SelectedInputAudioDevice}" ItemsSource="{Binding Source={StaticResource A_CollectionViewSource_InputAudioDevices}}" Margin="0 2 0 0"  />
+				<TextBlock Text="Output device" FontSize="13" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" Margin="0 4 0 0"  />
+				<ComboBox SelectedItem="{Binding SelectedOutputAudioDevice}" ItemsSource="{Binding Source={StaticResource A_CollectionViewSource_OutputAudioDevices}}" Margin="0 2 0 0" />
+			</StackPanel>
+
+			<Grid Margin="0 16 0 0">
+				<TextBox Name="RoomNameTextBox" Text="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}" />
+				<TextBlock Text="Room name" IsHitTestVisible="False" Visibility="{Binding RoomName, Converter={StaticResource A_Converter_StringVisibility}}" Margin="8 8 0 0" FontSize="16" FontWeight="Light" Foreground="#44ffffff" Background="#00000000" />
+			</Grid>
+
+			<StackPanel Margin="0 4 0 0">
+				<Button Name="JoinButton" Command="{Binding JoinCommand}" Content="Join room" Background="Green" />
+				<Button Name="LeaveButton" Command="{Binding LeaveCommand}" Content="Leave room" Background="DarkRed" />
+			</StackPanel>
+
+			<StackPanel Name="VolumeControl" Orientation="Vertical" Visibility="Collapsed">
+				<StackPanel Orientation="Horizontal" Margin="0 4 0 0">
+					<TextBlock Text="Receiving volume" FontSize="16" FontWeight="Light" Style="{StaticResource A_Style_TextBlock_Default}" Margin="4 0 0 0" />
+					<Slider Name="ReceivingVolume" Minimum="0" Maximum="100" Value="{Binding ReceivingVolume}" Width="60" Background="DarkRed" Visibility="Visible" />
+					<Button Name="ResetParticipantVolume" Content="Reset Participant's volume" Command="{Binding ResetParticipantVolumeCommand}" Background="DarkRed" Margin="4 0 0 0" Visibility="Visible" />
+				</StackPanel>
+			</StackPanel>
+
+			<Grid Name="ConnectedUsersPanel" Margin="0 16 0 0">
+				<ItemsControl ItemsSource="{Binding PlatformApplication.Users}" Style="{StaticResource A_Style_ItemsControl_User_DefaultEmpty}" ItemTemplate="{StaticResource A_DataTemplate_UserVoiceMenu_User}" Margin="0 -4 0 0">
+					<ItemsControl.ItemContainerStyle>
+						<Style>
+							<Setter Property="FrameworkElement.Margin" Value="0 4 0 0" />
+						</Style>
+					</ItemsControl.ItemContainerStyle>
+				</ItemsControl>
+			</Grid>
+		</StackPanel>
+
+		<DataTemplate.Triggers>
+			<DataTrigger Binding="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}" Value="{x:Null}">
+				<Setter TargetName="JoinButton" Property="Content" Value="Create room" />
+			</DataTrigger>
+			<DataTrigger Binding="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}" Value="">
+				<Setter TargetName="JoinButton" Property="Content" Value="Create room" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding State, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static menus:UserVoiceMenuState.NotConnected}}" Value="True">
+				<Setter TargetName="JoinButton" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="LeaveButton" Property="Visibility" Value="Collapsed" />
+
+				<Setter TargetName="ConnectedUsersPanel" Property="Visibility" Value="Collapsed" />
+				<Setter TargetName="VolumeControl" Property="Visibility" Value="Collapsed" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding State, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static menus:UserVoiceMenuState.Connecting}}" Value="True">
+				<Setter TargetName="JoinButton" Property="Visibility" Value="Visible" />
+				<Setter TargetName="JoinButton" Property="IsEnabled" Value="False" />
+
+				<Setter TargetName="LeaveButton" Property="Visibility" Value="Collapsed" />
+
+				<Setter TargetName="ConnectedUsersPanel" Property="Visibility" Value="Collapsed" />
+
+				<Setter TargetName="RoomNameTextBox" Property="IsReadOnly" Value="True" />
+				<Setter TargetName="VolumeControl" Property="Visibility" Value="Collapsed" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding State, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static menus:UserVoiceMenuState.Connected}}" Value="True">
+				<Setter TargetName="JoinButton" Property="Visibility" Value="Collapsed" />
+
+				<Setter TargetName="LeaveButton" Property="Visibility" Value="Visible" />
+
+				<Setter TargetName="RoomNameTextBox" Property="IsReadOnly" Value="True" />
+				<Setter TargetName="VolumeControl" Property="Visibility" Value="Visible" />
+			</DataTrigger>
+
+			<DataTrigger Binding="{Binding State, Converter={StaticResource A_Converter_EnumComparison}, ConverterParameter={x:Static menus:UserVoiceMenuState.Disconnecting}}" Value="True">
+				<Setter TargetName="JoinButton" Property="Visibility" Value="Collapsed" />
+
+				<Setter TargetName="LeaveButton" Property="Visibility" Value="Visible" />
+				<Setter TargetName="LeaveButton" Property="IsEnabled" Value="False" />
+
+				<Setter TargetName="ConnectedUsersPanel" Property="IsEnabled" Value="False" />
+
+				<Setter TargetName="RoomNameTextBox" Property="IsReadOnly" Value="True" />
+				<Setter TargetName="VolumeControl" Property="Visibility" Value="Collapsed" />
+			</DataTrigger>
+		</DataTemplate.Triggers>
+	</DataTemplate>
+</ResourceDictionary>

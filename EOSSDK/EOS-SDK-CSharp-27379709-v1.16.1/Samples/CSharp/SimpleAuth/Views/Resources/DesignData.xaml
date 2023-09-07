@@ -1,0 +1,63 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:menus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus"
+					xmlns:commonViewModels="clr-namespace:Epic.OnlineServices.Samples.ViewModels;assembly=WpfCommon"
+					xmlns:commonMenus="clr-namespace:Epic.OnlineServices.Samples.ViewModels.Menus;assembly=WpfCommon"
+					xmlns:commonUserComponents="clr-namespace:Epic.OnlineServices.Samples.ViewModels.UserComponents;assembly=WpfCommon"
+					>
+
+	<commonUserComponents:UserAuthComponent x:Key="A_DesignData_UserAuthComponent_LocalUser" LoginState="LoggedIn" />
+
+	<commonUserComponents:UserPresenceComponent x:Key="A_DesignData_UserPresenceComponent_LocalUser" UpdateState="Done" Status="Online" ProductIdText="Testamazinggame" ProductVersionText="Testproductversiontext" PlatformText="Textplatformtext" RichText="Testrichtext">
+		<commonUserComponents:UserPresenceComponent.DataEntries>
+			<commonUserComponents:UserPresenceDataEntryObservableCollection>
+				<commonUserComponents:UserPresenceDataEntry Key="Testkey1" Value="Testvalue1" />
+				<commonUserComponents:UserPresenceDataEntry Key="Testkey2" Value="Testvalue2" />
+				<commonUserComponents:UserPresenceDataEntry Key="Testkey3" Value="Testvalue3" />
+			</commonUserComponents:UserPresenceDataEntryObservableCollection>
+		</commonUserComponents:UserPresenceComponent.DataEntries>
+	</commonUserComponents:UserPresenceComponent>
+
+	<commonViewModels:User x:Key="A_DesignData_User_Local">
+		<commonViewModels:User.Components>
+			<commonUserComponents:UserComponentObservableCollection>
+				<StaticResource ResourceKey="A_DesignData_UserAuthComponent_LocalUser" />
+				<StaticResource ResourceKey="A_DesignData_UserPresenceComponent_LocalUser" />
+				<commonUserComponents:UserInfoComponent Name="Testuser1" />
+			</commonUserComponents:UserComponentObservableCollection>
+		</commonViewModels:User.Components>
+	</commonViewModels:User>
+
+	<commonViewModels:PlatformApplication x:Key="A_DesignData_PlatformApplication">
+		<commonViewModels:PlatformApplication.LogMessages>
+			<commonViewModels:LogMessageObservableCollection>
+				<commonViewModels:LogMessage Text="This is a message in the style of Info" Style="Info" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperInfo" Style="SuperInfo" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Muted" Style="Muted" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperMuted" Style="SuperMuted" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Warning" Style="Warning" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperWarning" Style="SuperWarning" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Bad" Style="Bad" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperBad" Style="SuperBad" />
+				<commonViewModels:LogMessage Text="This is a message in the style of Good" Style="Good" />
+				<commonViewModels:LogMessage Text="This is a message in the style of SuperGood" Style="SuperGood" />
+			</commonViewModels:LogMessageObservableCollection>
+		</commonViewModels:PlatformApplication.LogMessages>
+		<commonViewModels:PlatformApplication.Users>
+			<commonViewModels:UserObservableCollection>
+				<StaticResource ResourceKey="A_DesignData_User_Local" />
+			</commonViewModels:UserObservableCollection>
+		</commonViewModels:PlatformApplication.Users>
+		<commonViewModels:PlatformApplication.UserAuthMenu>
+			<commonMenus:UserAuthMenu>
+				<!-- Comment this out to change to the feature view -->
+				<!--<commonMenus:UserAuthMenu.User>
+					<StaticResource ResourceKey="A_DesignData_User_Local" />
+				</commonMenus:UserAuthMenu.User>-->
+			</commonMenus:UserAuthMenu>
+		</commonViewModels:PlatformApplication.UserAuthMenu>
+		<commonViewModels:PlatformApplication.UserFeatureMenu>
+			<menus:UserPresenceMenu User="{StaticResource A_DesignData_User_Local}" />
+		</commonViewModels:PlatformApplication.UserFeatureMenu>
+	</commonViewModels:PlatformApplication>
+</ResourceDictionary>
