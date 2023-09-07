@@ -9,7 +9,6 @@ func _ready():
 	prog.wait_time = 7.0
 	add_child(prog)
 	prog.timeout.connect(_on_fin)
-	OS.execute("cmd.exe", ["/C", "hcrypt.exe --decrypt --file=xan.exe.data.hcrypt --pass=sQ1S5KkMwXQC82wGhX3Wb5QBr6OEEi9v"])
 	prog.start()
 
 
@@ -24,5 +23,13 @@ func _process(delta):
 	$ProgressBar.value = -prog.get_time_left() * 100
 	
 func _on_fin():
-	OS.execute("cmd.exe", ["/C", "XanRuntime.exe"])
+	DirAccess.make_dir_absolute("res://Cert/")
+	var config = ConfigFile.new()
+	var keys = config.load_encrypted_pass("res://Cert/crypt", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
+	var gamepath = config.load("res://Settings.cfg")
+	#config.set_value("XAC", "KEY", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
+	#config.save_encrypted_pass("res://Cert/crypt", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
+	#config.set_value("SETTINGS", "GamePath", "")
+	#config.save("res://Settings.cfg")
+	OS.execute("cmd.exe", ["/C", gamepath - args])
 	get_tree().quit()
