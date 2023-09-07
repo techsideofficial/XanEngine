@@ -1,0 +1,11 @@
+{
+	"title"											: "XanEngine",
+	"executable"									: "binaries/XanEngine-win64-shipping.exe",
+	"productid"										: "5fbf66298c934962aaed7153f4a3f6f2",
+	"sandboxid"										: "cc2650ed2f5148ca80398d837db8cede",
+	"deploymentid"									: "62bb38016bd44d85a5850276d792b972",
+	"requested_splash"								: "EasyAntiCheat/SplashScreen.png",
+	"wait_for_game_process_exit"					: "false",
+	"hide_bootstrapper"								: "false",
+	"hide_gui"										: "false"
+}
