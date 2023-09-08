@@ -1,0 +1,51 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj",
+        "projectName": "TestProj",
+        "projectPath": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj",
+        "packagesPath": "C:\\Users\\wiene\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Users\\wiene\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\wiene\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wiene\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

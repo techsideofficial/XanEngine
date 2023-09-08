@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RefCounted",
+"class": "BaseClass",
+"language": "GDScript",
+"path": "res://EOS/Scripts/BaseClass.gd"
+}, {
+"base": "RefCounted",
+"class": "EOS",
+"language": "GDScript",
+"path": "res://EOS/Scripts/EOS.gd"
+} ]
+_global_script_class_icons={
+"BaseClass": "",
+"EOS": ""
+}
+
+[application]
+
+config/name="TestProj"
+run/main_scene="res://Control.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Ieos="*res://EOS/Scripts/IEOS.cs"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[mono]
+
+project/assembly_name="TestProj"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

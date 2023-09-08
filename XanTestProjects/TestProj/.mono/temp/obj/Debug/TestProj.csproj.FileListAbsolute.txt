@@ -1,0 +1,5 @@
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.csproj.AssemblyReference.cache
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.AssemblyInfoInputs.cache
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.AssemblyInfo.cs
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.csproj.CoreCompileInputs.cache
