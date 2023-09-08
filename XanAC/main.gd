@@ -19,17 +19,13 @@ func _process(delta):
 		$task.text = "PREPARING"
 	if prog.get_time_left() * 100 <= 150:
 		$task.text = "LAUNCHING"
-	print(prog.get_time_left() * 100)
+	#print(prog.get_time_left() * 100)
 	$ProgressBar.value = -prog.get_time_left() * 100
 	
 func _on_fin():
-	DirAccess.make_dir_absolute("res://Cert/")
 	var config = ConfigFile.new()
-	var keys = config.load_encrypted_pass("res://Cert/crypt", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
-	var gamepath = config.load("res://Settings.cfg")
-	#config.set_value("XAC", "KEY", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
-	#config.save_encrypted_pass("res://Cert/crypt", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
-	#config.set_value("SETTINGS", "GamePath", "")
-	#config.save("res://Settings.cfg")
-	OS.execute("cmd.exe", ["/C", gamepath - args])
+	config.load_encrypted_pass("res://XanAntiCheat/xac", "YnWfWyFtzQ818bCXgWUoz0ZzmHW8hTYL")
+	var key = config.get_value("XAC", "KEY")
+	var gamePath = config.get_value("SETTINGS", "GamePath")
+	OS.execute("cmd.exe", ["/C", gamePath + " -xac-" + key])
 	get_tree().quit()

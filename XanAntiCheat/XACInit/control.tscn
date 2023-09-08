@@ -37,9 +37,14 @@ layout_mode = 2
 placeholder_text = "Encryption Key..."
 alignment = 1
 
-[node name="cert" type="Button" parent="VBoxContainer"]
+[node name="gpath" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
-text = "Generate Cert Key"
+placeholder_text = "Game Path..."
+alignment = 1
+
+[node name="set" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Generate Settings"
 
 [node name="Cat2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -47,15 +52,10 @@ text = "Game Launch Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="set" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Generate Settings"
-
 [node name="help" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "This is the configuration tool for XAC. Please DO NOT SHIP THIS EXECUTABLE WITH YOUR GAME!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/cert" to="." method="_on_cert_pressed"]
 [connection signal="pressed" from="VBoxContainer/set" to="." method="_on_set_pressed"]
