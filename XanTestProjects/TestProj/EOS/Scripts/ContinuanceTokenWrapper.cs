@@ -1,7 +1,7 @@
 using Godot;
 using Epic.OnlineServices;
 
-public partial class ContinuanceTokenWrapper : RefCounted
+public class ContinuanceTokenWrapper : Reference
 {
     public ContinuanceTokenWrapper(ContinuanceToken token)
     {

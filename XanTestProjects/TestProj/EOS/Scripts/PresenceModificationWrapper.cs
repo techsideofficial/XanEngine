@@ -4,9 +4,9 @@ using Epic.OnlineServices;
 using Epic.OnlineServices.Presence;
 using System.Linq;
 
-public partial class PresenceModificationWrapper : RefCounted
+public class PresenceModificationWrapper : Reference
 {
-    public Result delete_data(RefCounted p_options)
+    public Result delete_data(Reference p_options)
     {
         var p_records = ((System.Collections.IEnumerable)p_options.Get("records")).Cast<string>().Select(x =>
         {
@@ -25,7 +25,7 @@ public partial class PresenceModificationWrapper : RefCounted
         return _internalPresenceModification.DeleteData(ref options);
     }
 
-    public Result set_data(RefCounted p_options)
+    public Result set_data(Reference p_options)
     {
         var p_records = ((System.Collections.IEnumerable)p_options.Get("records")).Cast<Dictionary>().Select(x =>
        {
@@ -44,7 +44,7 @@ public partial class PresenceModificationWrapper : RefCounted
         return _internalPresenceModification.SetData(ref options);
     }
 
-    public Result set_join_info(RefCounted p_options)
+    public Result set_join_info(Reference p_options)
     {
         var options = new PresenceModificationSetJoinInfoOptions()
         {
@@ -53,7 +53,7 @@ public partial class PresenceModificationWrapper : RefCounted
         return _internalPresenceModification.SetJoinInfo(ref options);
     }
 
-    public Result set_raw_rich_text(RefCounted p_options)
+    public Result set_raw_rich_text(Reference p_options)
     {
         var options = new PresenceModificationSetRawRichTextOptions()
         {
@@ -62,7 +62,7 @@ public partial class PresenceModificationWrapper : RefCounted
         return _internalPresenceModification.SetRawRichText(ref options);
     }
 
-    public Result set_status(RefCounted p_options)
+    public Result set_status(Reference p_options)
     {
         var options = new PresenceModificationSetStatusOptions()
         {

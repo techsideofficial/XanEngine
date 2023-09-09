@@ -4,60 +4,52 @@
 
 # Wrapper for EOS C# SDK
 
-extends RefCounted
+extends Reference
 class_name EOS
 
 
 class Achievements:
 	class CopyAchievementDefinitionV2ByAchievementIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyAchievementDefinitionV2ByAchievementIdOptions")
+		func _init().("CopyAchievementDefinitionV2ByAchievementIdOptions"): pass
 
 		var achievement_id: String
 
 	class CopyAchievementDefinitionV2ByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyAchievementDefinitionV2ByIndexOptions")
+		func _init().("CopyAchievementDefinitionV2ByIndexOptions"): pass
 
 		var achievement_index: int
 
 	class CopyPlayerAchievementByAchievementIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyPlayerAchievementByAchievementIdOptions")
+		func _init().("CopyPlayerAchievementByAchievementIdOptions"): pass
 
 		var target_user_id: String
 		var achievement_id: String
 		var local_user_id: String
 
 	class CopyPlayerAchievementByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyPlayerAchievementByIndexOptions")
+		func _init().("CopyPlayerAchievementByIndexOptions"): pass
 
 		var target_user_id: String
 		var achievement_index: int
 		var local_user_id: String
 
 	class GetAchievementDefinitionCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetAchievementDefinitionCountOptions")
+		func _init().("GetAchievementDefinitionCountOptions"): pass
 
 	class QueryDefinitionsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryDefinitionsOptions")
+		func _init().("QueryDefinitionsOptions"): pass
 
 		var local_user_id = ""
 
 		var client_data = null
 
 	class GetPlayerAchievementCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetPlayerAchievementCountOptions")
+		func _init().("GetPlayerAchievementCountOptions"): pass
 
 		var user_id: String
 
 	class QueryPlayerAchievementsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryPlayerAchievementsOptions")
+		func _init().("QueryPlayerAchievementsOptions"): pass
 
 		var target_user_id: String
 		var local_user_id: String
@@ -65,8 +57,7 @@ class Achievements:
 		var client_data = null
 
 	class UnlockAchievementsOptions extends BaseClass:
-		func _init(): pass
-			super("UnlockAchievementsOptions")
+		func _init().("UnlockAchievementsOptions"): pass
 
 		var user_id: String
 		var achievement_ids = []  # [String]
@@ -111,21 +102,18 @@ class Achievements:
 
 class Connect:
 	class Credentials extends BaseClass:
-		func _init(): pass
-			super("Credentials")
+		func _init().("Credentials"): pass
 
 		var type: int  # ExternalCredentialType
 		var token = null
 
 	class UserLoginInfo extends BaseClass:
-		func _init(): pass
-			super("UserLoginInfo")
+		func _init().("UserLoginInfo"): pass
 
 		var display_name: String
 
 	class LoginOptions extends BaseClass:
-		func _init(): pass
-			super("LoginOptions")
+		func _init().("LoginOptions"): pass
 
 		var credentials: Credentials
 		var user_login_info = null  # UserLoginInfo
@@ -133,85 +121,73 @@ class Connect:
 		var client_data = null
 
 	class CopyIdTokenOptions extends BaseClass:
-		func _init(): pass
-			super("CopyIdTokenOptions")
+		func _init().("CopyIdTokenOptions"): pass
 
 		var local_user_id: String
 
 	class CopyProductUserExternalAccountByAccountIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyProductUserExternalAccountByAccountIdOptions")
+		func _init().("CopyProductUserExternalAccountByAccountIdOptions"): pass
 
 		var target_user_id: String
 		var account_id: String
 
 	class CopyProductUserExternalAccountByAccountTypeOptions extends BaseClass:
-		func _init(): pass
-			super("CopyProductUserExternalAccountByAccountTypeOptions")
+		func _init().("CopyProductUserExternalAccountByAccountTypeOptions"): pass
 
 		var target_user_id: String
 		var account_id_type: int  # ExternalAccountType
 
 	class CopyProductUserExternalAccountByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyProductUserExternalAccountByIndexOptions")
+		func _init().("CopyProductUserExternalAccountByIndexOptions"): pass
 
 		var target_user_id: String
 		var external_account_info_index: int
 
 	class CopyProductUserInfoOptions extends BaseClass:
-		func _init(): pass
-			super("CopyProductUserInfoOptions")
+		func _init().("CopyProductUserInfoOptions"): pass
 
 		var target_user_id: String
 
 	class CreateDeviceIdOptions extends BaseClass:
-		func _init(): pass
-			super("CreateDeviceIdOptions")
+		func _init().("CreateDeviceIdOptions"): pass
 
 		var device_model: String
 
 		var client_data = null
 
 	class DeleteDeviceIdOptions extends BaseClass:
-		func _init(): pass
-			super("DeleteDeviceIdOptions")
+		func _init().("DeleteDeviceIdOptions"): pass
 
 		var client_data = null
 
 	class CreateUserOptions extends BaseClass:
-		func _init(): pass
-			super("CreateUserOptions")
+		func _init().("CreateUserOptions"): pass
 
-		var continuance_token: RefCounted # ContinuanceTokenWrapper
+		var continuance_token: Reference # ContinuanceTokenWrapper
 
 		var client_data = null
 
 	class GetExternalAccountMappingsOptions extends BaseClass:
-		func _init(): pass
-			super("GetExternalAccountMappingsOptions")
+		func _init().("GetExternalAccountMappingsOptions"): pass
 
 		var local_user_id: String
 		var account_id_type: int # ExternalAccountType
 		var target_external_user_id: String
 
 	class GetProductUserExternalAccountCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetProductUserExternalAccountCountOptions")
+		func _init().("GetProductUserExternalAccountCountOptions"): pass
 
 		var target_user_id: String
 
 	class GetProductUserIdMappingOptions extends BaseClass:
-		func _init(): pass
-			super("GetProductUserIdMappingOptions")
+		func _init().("GetProductUserIdMappingOptions"): pass
 
 		var local_user_id: String
 		var account_id_type: int # ExternalAccountType
 		var target_product_user_id: String
 
 	class LinkAccountOptions extends BaseClass:
-		func _init(): pass
-			super("LinkAccountOptions")
+		func _init().("LinkAccountOptions"): pass
 
 		var continuance_token = null # ContinuanceTokenWrapper
 		var local_user_id = null # String
@@ -219,23 +195,20 @@ class Connect:
 		var client_data = null
 
 	class IdToken extends BaseClass:
-		func _init(): pass
-			super("IdToken")
+		func _init().("IdToken"): pass
 
 		var product_user_id: String
 		var json_web_token: String
 
 	class VerifyIdTokenOptions extends BaseClass:
-		func _init(): pass
-			super("VerifyIdTokenOptions")
+		func _init().("VerifyIdTokenOptions"): pass
 
 		var id_token: IdToken
 
 		var client_data = null
 
 	class TransferDeviceIdAccountOptions extends BaseClass:
-		func _init(): pass
-			super("TransferDeviceIdAccountOptions")
+		func _init().("TransferDeviceIdAccountOptions"): pass
 
 		var primary_local_user_id: String
 		var local_device_user_id: String
@@ -244,8 +217,7 @@ class Connect:
 		var client_data = null
 
 	class UnlinkAccountOptions extends BaseClass:
-		func _init(): pass
-			super("UnlinkAccountOptions")
+		func _init().("UnlinkAccountOptions"): pass
 
 		var local_user_id: String
 
@@ -344,8 +316,7 @@ class Auth:
 	}
 
 	class LoginOptions extends BaseClass:
-		func _init(): pass
-			super("LoginOptions")
+		func _init().("LoginOptions"): pass
 
 		var type: int
 		var credentials: Credentials
@@ -354,16 +325,14 @@ class Auth:
 		var client_data = null
 
 	class LogoutOptions extends BaseClass:
-		func _init(): pass
-			super("LogoutOptions")
+		func _init().("LogoutOptions"): pass
 
 		var local_user_id: String
 
 		var client_data = null
 
 	class Credentials extends BaseClass:
-		func _init(): pass
-			super("Credentials")
+		func _init().("Credentials"): pass
 
 		var type: int  # LoginCredentialType
 		var id = null  # String
@@ -371,35 +340,30 @@ class Auth:
 		var external_type = null  # ExternalCredentialType
 
 	class CopyIdTokenOptions extends BaseClass:
-		func _init(): pass
-			super("CopyIdTokenOptions")
+		func _init().("CopyIdTokenOptions"): pass
 
 		var account_id: String
 
 	class CopyUserAuthTokenOptions extends BaseClass:
-		func _init(): pass
-			super("CopyUserAuthTokenOptions")
+		func _init().("CopyUserAuthTokenOptions"): pass
 
 	class DeletePersistentAuthOptions extends BaseClass:
-		func _init(): pass
-			super("DeletePersistentAuthOptions")
+		func _init().("DeletePersistentAuthOptions"): pass
 
 		var refresh_token = null
 		var client_data = null
 
 	class LinkAccountOptions extends BaseClass:
-		func _init(): pass
-			super("LinkAccountOptions")
+		func _init().("LinkAccountOptions"): pass
 
 		var link_account_flags: int # LinkAccountFlags
-		var continuance_token: RefCounted # ContinuanceTokenWrapper
+		var continuance_token: Reference # ContinuanceTokenWrapper
 		var local_user_id: String
 
 		var client_data = null
 
 	class QueryIdTokenOptions extends BaseClass:
-		func _init(): pass
-			super("QueryIdTokenOptions")
+		func _init().("QueryIdTokenOptions"): pass
 
 		var local_user_id: String
 		var target_account_id: String
@@ -407,23 +371,20 @@ class Auth:
 		var client_data = null
 
 	class IdToken extends BaseClass:
-		func _init(): pass
-			super("IdToken")
+		func _init().("IdToken"): pass
 
 		var account_id: String
 		var json_web_token: String
 
 	class VerifyIdTokenOptions extends BaseClass:
-		func _init(): pass
-			super("VerifyIdTokenOptions")
+		func _init().("VerifyIdTokenOptions"): pass
 
 		var id_token: IdToken
 
 		var client_data = null
 
 	class Token extends BaseClass:
-		func _init(): pass
-			super("Token")
+		func _init().("Token"): pass
 
 		var app: String
 		var client_id: String
@@ -437,8 +398,7 @@ class Auth:
 		var refresh_expires_at: String
 
 	class VerifyUserAuthOptions extends BaseClass:
-		func _init(): pass
-			super("VerifyUserAuthOptions")
+		func _init().("VerifyUserAuthOptions"): pass
 
 		var auth_token: Token
 
@@ -511,23 +471,20 @@ class Auth:
 class CustomInvites:
 
 	class SetCustomInviteOptions extends BaseClass:
-		func _init(): pass
-			super("SetCustomInviteOptions")
+		func _init().("SetCustomInviteOptions"): pass
 
 		var local_user_id: String
 		var payload: String
 
 	class SendCustomInviteOptions extends BaseClass:
-		func _init(): pass
-			super("SendCustomInviteOptions")
+		func _init().("SendCustomInviteOptions"): pass
 
 		var local_user_id: String
 		var target_user_ids = [] # [String]
 		var client_data = null
 
 	class FinalizeInviteOptions extends BaseClass:
-		func _init(): pass
-			super("FinalizeInviteOptions")
+		func _init().("FinalizeInviteOptions"): pass
 
 		var target_user_id: String
 		var local_user_id: String
@@ -548,28 +505,24 @@ class CustomInvites:
 class Stats:
 
 	class CopyStatByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyStatByIndexOptions")
+		func _init().("CopyStatByIndexOptions"): pass
 
 		var target_user_id: String
 		var stat_index: int
 
 	class CopyStatByNameOptions extends BaseClass:
-		func _init(): pass
-			super("CopyStatByNameOptions")
+		func _init().("CopyStatByNameOptions"): pass
 
 		var target_user_id: String
 		var name: String
 
 	class GetStatsCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetStatsCountOptions")
+		func _init().("GetStatsCountOptions"): pass
 
 		var target_user_id: String
 
 	class IngestStatOptions extends BaseClass:
-		func _init(): pass
-			super("IngestStatOptions")
+		func _init().("IngestStatOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -578,8 +531,7 @@ class Stats:
 		var client_data = null
 
 	class QueryStatsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryStatsOptions")
+		func _init().("QueryStatsOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -632,15 +584,13 @@ class Platform:
 	}
 
 	class InitializeOptions extends BaseClass:
-		func _init(): pass
-			super("InitializeOptions")
+		func _init().("InitializeOptions"): pass
 
 		var product_name: String
 		var product_version: String
 
 	class CreateOptions extends BaseClass:
-		func _init(): pass
-			super("CreateOptions")
+		func _init().("CreateOptions"): pass
 
 		var product_id: String
 		var sandbox_id: String
@@ -714,167 +664,144 @@ class Ecom:
 	enum OwnershipStatus { NotOwned = 0, Owned = 1 }
 
 	class CheckoutOptions extends BaseClass:
-		func _init(): pass
-			super("CheckoutOptions")
+		func _init().("CheckoutOptions"): pass
 
 		var local_user_id: String
 		var entries: Array # [{offer_id: String}]
 		var override_catalog_namespace = null # String
 
 	class CopyEntitlementByIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyEntitlementByIdOptions")
+		func _init().("CopyEntitlementByIdOptions"): pass
 
 		var local_user_id: String
 		var entitlement_id: String
 
 	class CopyEntitlementByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyEntitlementByIndexOptions")
+		func _init().("CopyEntitlementByIndexOptions"): pass
 
 		var local_user_id: String
 		var entitlement_index: int
 
 	class CopyEntitlementByNameAndIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyEntitlementByNameAndIndexOptions")
+		func _init().("CopyEntitlementByNameAndIndexOptions"): pass
 
 		var local_user_id: String
 		var entitlement_name: String
 		var index: int
 
 	class CopyItemByIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyItemByIdOptions")
+		func _init().("CopyItemByIdOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 
 	class CopyItemImageInfoByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyItemImageInfoByIndexOptions")
+		func _init().("CopyItemImageInfoByIndexOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 		var image_info_index: int
 
 	class CopyItemReleaseByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyItemReleaseByIndexOptions")
+		func _init().("CopyItemReleaseByIndexOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 		var release_index: int
 
 	class CopyOfferByIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyOfferByIdOptions")
+		func _init().("CopyOfferByIdOptions"): pass
 
 		var local_user_id: String
 		var offer_id: String
 
 	class CopyOfferByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyOfferByIndexOptions")
+		func _init().("CopyOfferByIndexOptions"): pass
 
 		var local_user_id: String
 		var offer_index: int
 
 	class CopyOfferImageInfoByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyOfferImageInfoByIndexOptions")
+		func _init().("CopyOfferImageInfoByIndexOptions"): pass
 
 		var local_user_id: String
 		var offer_id: String
 		var image_info_index: int
 
 	class CopyOfferItemByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyOfferItemByIndexOptions")
+		func _init().("CopyOfferItemByIndexOptions"): pass
 
 		var local_user_id: String
 		var offer_id: String
 		var item_index: int
 
 	class CopyTransactionByIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyTransactionByIdOptions")
+		func _init().("CopyTransactionByIdOptions"): pass
 
 		var local_user_id: String
 		var transaction_id: String
 
 	class CopyTransactionByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyTransactionByIndexOptions")
+		func _init().("CopyTransactionByIndexOptions"): pass
 
 		var local_user_id: String
 		var transaction_index: int
 
 	class GetEntitlementsByNameCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetEntitlementsByNameCountOptions")
+		func _init().("GetEntitlementsByNameCountOptions"): pass
 
 		var local_user_id: String
 		var entitlement_name: String
 
 	class GetEntitlementsCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetEntitlementsCountOptions")
+		func _init().("GetEntitlementsCountOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 
 	class GetItemImageInfoCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetItemImageInfoCountOptions")
+		func _init().("GetItemImageInfoCountOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 
 	class GetItemReleaseCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetItemReleaseCountOptions")
+		func _init().("GetItemReleaseCountOptions"): pass
 
 		var local_user_id: String
 		var item_id: String
 
 	class GetOfferCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetOfferCountOptions")
+		func _init().("GetOfferCountOptions"): pass
 
 		var local_user_id: String
 
 	class GetOfferImageInfoCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetOfferImageInfoCountOptions")
+		func _init().("GetOfferImageInfoCountOptions"): pass
 
 		var local_user_id: String
 		var offer_id: String
 
 	class GetOfferItemCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetOfferItemCountOptions")
+		func _init().("GetOfferItemCountOptions"): pass
 
 		var local_user_id: String
 		var offer_id: String
 
 	class GetTransactionCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetTransactionCountOptions")
+		func _init().("GetTransactionCountOptions"): pass
 
 		var local_user_id: String
 
 	class QueryEntitlementsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryEntitlementsOptions")
+		func _init().("QueryEntitlementsOptions"): pass
 
 		var local_user_id: String
 		var entitlement_names: Array # [String]
 		var include_redeemed: bool
 
 	class QueryOffersOptions extends BaseClass:
-		func _init(): pass
-			super("QueryOffersOptions")
+		func _init().("QueryOffersOptions"): pass
 
 		var local_user_id: String
 		var override_catalog_namespace = null # String
@@ -882,8 +809,7 @@ class Ecom:
 		var client_data = null
 
 	class QueryOwnershipOptions extends BaseClass:
-		func _init(): pass
-			super("QueryOwnershipOptions")
+		func _init().("QueryOwnershipOptions"): pass
 
 		var local_user_id: String
 		var catalog_item_ids: Array # [String]
@@ -892,8 +818,7 @@ class Ecom:
 		var client_data = null
 
 	class QueryOwnershipTokenOptions extends BaseClass:
-		func _init(): pass
-			super("QueryOwnershipTokenOptions")
+		func _init().("QueryOwnershipTokenOptions"): pass
 
 		var local_user_id: String
 		var catalog_item_ids: Array # [String]
@@ -902,8 +827,7 @@ class Ecom:
 		var client_data = null
 
 	class RedeemEntitlementsOptions extends BaseClass:
-		func _init(): pass
-			super("RedeemEntitlementsOptions")
+		func _init().("RedeemEntitlementsOptions"): pass
 
 		var local_user_id: String
 		var entitlement_ids: Array # [String]
@@ -994,8 +918,7 @@ class Friends:
 	enum FriendsStatus { NotFriends = 0, InviteSent = 1, InviteReceived = 2, Friends = 3 }
 
 	class AcceptInviteOptions extends BaseClass:
-		func _init(): pass
-			super("AcceptInviteOptions")
+		func _init().("AcceptInviteOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -1003,34 +926,29 @@ class Friends:
 		var client_data = null
 
 	class GetFriendAtIndexOptions extends BaseClass:
-		func _init(): pass
-			super("GetFriendAtIndexOptions")
+		func _init().("GetFriendAtIndexOptions"): pass
 
 		var local_user_id: String
 		var index: int
 
 	class GetFriendsCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetFriendsCountOptions")
+		func _init().("GetFriendsCountOptions"): pass
 
 		var local_user_id: String
 
 	class GetStatusOptions extends BaseClass:
-		func _init(): pass
-			super("GetStatusOptions")
+		func _init().("GetStatusOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class QueryFriendsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryFriendsOptions")
+		func _init().("QueryFriendsOptions"): pass
 
 		var local_user_id: String
 
 	class RejectInviteOptions extends BaseClass:
-		func _init(): pass
-			super("RejectInviteOptions")
+		func _init().("RejectInviteOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -1059,53 +977,45 @@ class KWS:
 	enum KWSPermissionStatus { Granted = 0, Rejected = 1, Pending = 2 }
 
 	class CopyPermissionByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyPermissionByIndexOptions")
+		func _init().("CopyPermissionByIndexOptions"): pass
 
 		var local_user_id: String
 		var index: int
 
 	class CreateUserOptions extends BaseClass:
-		func _init(): pass
-			super("CreateUserOptions")
+		func _init().("CreateUserOptions"): pass
 
 		var local_user_id: String
 		var date_of_birth: String # Date of birth in ISO8601 form (YYYY-MM-DD)
 		var parent_email: String
 
 	class GetPermissionByKeyOptions extends BaseClass:
-		func _init(): pass
-			super("GetPermissionByKeyOptions")
+		func _init().("GetPermissionByKeyOptions"): pass
 
 		var local_user_id: String
 		var key: String
 
 	class GetPermissionsCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetPermissionsCountOptions")
+		func _init().("GetPermissionsCountOptions"): pass
 
 		var local_user_id: String
 
 	class QueryAgeGateOptions extends BaseClass:
-		func _init(): pass
-			super("QueryAgeGateOptions")
+		func _init().("QueryAgeGateOptions"): pass
 
 	class QueryPermissionsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryPermissionsOptions")
+		func _init().("QueryPermissionsOptions"): pass
 
 		var local_user_id: String
 
 	class RequestPermissionsOptions extends BaseClass:
-		func _init(): pass
-			super("RequestPermissionsOptions")
+		func _init().("RequestPermissionsOptions"): pass
 
 		var local_user_id: String
 		var permission_keys: Array # [String]
 
 	class UpdateParentEmailOptions extends BaseClass:
-		func _init(): pass
-			super("UpdateParentEmailOptions")
+		func _init().("UpdateParentEmailOptions"): pass
 
 		var local_user_id: String
 		var parent_email: String
@@ -1139,60 +1049,50 @@ class Leaderboards:
 	enum LeaderboardAggregation { Min = 0, Max = 1, Sum = 2, Latest = 3 }
 
 	class CopyLeaderboardDefinitionByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardDefinitionByIndexOptions")
+		func _init().("CopyLeaderboardDefinitionByIndexOptions"): pass
 
 		var leaderboard_index: int
 
 	class CopyLeaderboardDefinitionByLeaderboardId extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardDefinitionByLeaderboardId")
+		func _init().("CopyLeaderboardDefinitionByLeaderboardId"): pass
 
 		var leaderboard_id: String
 
 	class CopyLeaderboardRecordByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardRecordByIndexOptions")
+		func _init().("CopyLeaderboardRecordByIndexOptions"): pass
 
 		var leaderboard_record_index: int
 
 	class CopyLeaderboardRecordByUserIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardRecordByUserIdOptions")
+		func _init().("CopyLeaderboardRecordByUserIdOptions"): pass
 
 		var user_id: int
 
 	class CopyLeaderboardUserScoreByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardUserScoreByIndexOptions")
+		func _init().("CopyLeaderboardUserScoreByIndexOptions"): pass
 
 		var leaderboard_user_score_index: int
 		var stat_name: String
 
 	class CopyLeaderboardUserScoreByUserIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyLeaderboardUserScoreByUserIdOptions")
+		func _init().("CopyLeaderboardUserScoreByUserIdOptions"): pass
 
 		var user_id: String
 		var stat_name: String
 
 	class GetLeaderboardDefinitionCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetLeaderboardDefinitionCountOptions")
+		func _init().("GetLeaderboardDefinitionCountOptions"): pass
 
 	class GetLeaderboardRecordCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetLeaderboardRecordCountOptions")
+		func _init().("GetLeaderboardRecordCountOptions"): pass
 
 	class GetLeaderboardUserScoreCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetLeaderboardUserScoreCountOptions")
+		func _init().("GetLeaderboardUserScoreCountOptions"): pass
 
 		var stat_name: String
 
 	class QueryLeaderboardDefinitionsOptions extends BaseClass:
-		func _init(): pass
-			super("QueryLeaderboardDefinitionsOptions")
+		func _init().("QueryLeaderboardDefinitionsOptions"): pass
 
 		var local_user_id: String
 		var start_time = null # String
@@ -1201,8 +1101,7 @@ class Leaderboards:
 		var client_data = null
 
 	class QueryLeaderboardRanksOptions extends BaseClass:
-		func _init(): pass
-			super("QueryLeaderboardRanksOptions")
+		func _init().("QueryLeaderboardRanksOptions"): pass
 
 		var local_user_id: String
 		var leaderboard_id: String
@@ -1210,8 +1109,7 @@ class Leaderboards:
 		var client_data = null
 
 	class QueryLeaderboardUserScoresOptions extends BaseClass:
-		func _init(): pass
-			super("QueryLeaderboardUserScoresOptions")
+		func _init().("QueryLeaderboardUserScoresOptions"): pass
 
 		var local_user_id: String
 		var user_ids = [] # [String]
@@ -1280,8 +1178,7 @@ class Metrics:
 	enum UserControllerType { Unknown = 0, MouseKeyboard = 1, GamepadControl = 2, TouchControl = 3 }
 
 	class BeginPlayerSessionOptions extends BaseClass:
-		func _init(): pass
-			super("BeginPlayerSessionOptions")
+		func _init().("BeginPlayerSessionOptions"): pass
 
 		var account_id_type: int # MetricsAccountIdType
 		var account_id: String
@@ -1291,8 +1188,7 @@ class Metrics:
 		var game_session_id = null # String
 
 	class EndPlayerSessionOptions extends BaseClass:
-		func _init(): pass
-			super("EndPlayerSessionOptions")
+		func _init().("EndPlayerSessionOptions"): pass
 
 		var account_id_type: int # MetricsAccountIdType
 		var account_id: String
@@ -1309,15 +1205,13 @@ class Mods:
 	enum ModEnumerationType { Installed = 0, AllAvailable }
 
 	class CopyModInfoOptions extends BaseClass:
-		func _init(): pass
-			super("CopyModInfoOptions")
+		func _init().("CopyModInfoOptions"): pass
 
 		var local_user_id: String
 		var type: int # ModEnumerationType
 
 	class EnumerateModsOptions extends BaseClass:
-		func _init(): pass
-			super("EnumerateModsOptions")
+		func _init().("EnumerateModsOptions"): pass
 
 		var local_user_id: String
 		var type: int # ModEnumerationType
@@ -1369,65 +1263,55 @@ class Presence:
 	enum Status { Offline = 0, Online = 1, Away = 2, ExtendedAway = 3, DoNotDisturb = 4 }
 
 	class CopyPresenceOptions extends BaseClass:
-		func _init(): pass
-			super("CopyPresenceOptions")
+		func _init().("CopyPresenceOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class CreatePresenceModificationOptions extends BaseClass:
-		func _init(): pass
-			super("CopyPresenceOptions")
+		func _init().("CopyPresenceOptions"): pass
 
 		var local_user_id: String
 
 	class PresenceModificationSetDataOptions extends BaseClass:
-		func _init(): pass
-			super("PresenceModificationSetDataOptions")
+		func _init().("PresenceModificationSetDataOptions"): pass
 
 		var records: Array # [{key: string, value: string}]
 
 	class PresenceModificationDeleteDataOptions extends BaseClass:
-		func _init(): pass
-			super("PresenceModificationDeleteDataOptions")
+		func _init().("PresenceModificationDeleteDataOptions"): pass
 
 		var records: Array # [string]
 
 	class PresenceModificationSetJoinInfoOptions extends BaseClass:
-		func _init(): pass
-			super("PresenceModificationSetJoinInfoOptions")
+		func _init().("PresenceModificationSetJoinInfoOptions"): pass
 
 		var join_info: String
 
 	class PresenceModificationSetRawRichTextOptions extends BaseClass:
-		func _init(): pass
-			super("PresenceModificationSetRawRichTextOptions")
+		func _init().("PresenceModificationSetRawRichTextOptions"): pass
 
 		var rich_text: String
 
 	class PresenceModificationSetStatusOptions extends BaseClass:
-		func _init(): pass
-			super("PresenceModificationSetStatusOptions")
+		func _init().("PresenceModificationSetStatusOptions"): pass
 
 		var status: int
 
 	class GetJoinInfoOptions extends BaseClass:
-		func _init(): pass
-			super("GetJoinInfoOptions")
+		func _init().("GetJoinInfoOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class HasPresenceOptions extends BaseClass:
-		func _init(): pass
-			super("HasPresenceOptions")
+		func _init().("HasPresenceOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class QueryPresenceOptions extends BaseClass:
-		func _init(): pass
-			super("QueryPresenceOptions")
+		func _init().("QueryPresenceOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -1435,11 +1319,10 @@ class Presence:
 		var client_data = null
 
 	class SetPresenceOptions extends BaseClass:
-		func _init(): pass
-			super("SetPresenceOptions")
+		func _init().("SetPresenceOptions"): pass
 
 		var local_user_id: String
-		var presence_modification: RefCounted # PresenceModificationWrapper
+		var presence_modification: Reference # PresenceModificationWrapper
 
 		var client_data = null
 
@@ -1476,8 +1359,7 @@ class Reports:
 	}
 
 	class SendPlayerBehaviorReportOptions extends BaseClass:
-		func _init(): pass
-			super("SendPlayerBehaviorReportOptions")
+		func _init().("SendPlayerBehaviorReportOptions"): pass
 
 		var reporter_user_id: String
 		var reported_user_id: String
@@ -1495,30 +1377,26 @@ class Reports:
 class ProgressionSnapshot:
 
 	class BeginSnapshotOptions extends BaseClass:
-		func _init(): pass
-			super("BeginSnapshotOptions")
+		func _init().("BeginSnapshotOptions"): pass
 
 		var local_user_id: String
 
 	class AddProgressionOptions extends BaseClass:
-		func _init(): pass
-			super("AddProgressionOptions")
+		func _init().("AddProgressionOptions"): pass
 
 		var snapshot_id: int
 		var key: String
 		var value: String
 
 	class SubmitSnapshotOptions extends BaseClass:
-		func _init(): pass
-			super("SubmitSnapshotOptions")
+		func _init().("SubmitSnapshotOptions"): pass
 
 		var snapshot_id: int
 
 		var client_data = null
 
 	class DeleteSnapshotOptions extends BaseClass:
-		func _init(): pass
-			super("DeleteSnapshotOptions")
+		func _init().("DeleteSnapshotOptions"): pass
 
 		var local_user_id: String
 
@@ -1689,45 +1567,38 @@ class UI:
 	}
 
 	class AcknowledgeEventIdOptions extends BaseClass:
-		func _init(): pass
-			super("AcknowledgeEventIdOptions")
+		func _init().("AcknowledgeEventIdOptions"): pass
 
 		var ui_event_id: int
 		var result: int
 
 	class GetFriendsVisibleOptions extends BaseClass:
-		func _init(): pass
-			super("GetFriendsVisibleOptions")
+		func _init().("GetFriendsVisibleOptions"): pass
 
 		var local_user_id: String
 
 	class GetToggleFriendsKeyOptions extends BaseClass:
-		func _init(): pass
-			super("GetToggleFriendsKeyOptions")
+		func _init().("GetToggleFriendsKeyOptions"): pass
 
 	class HideFriendsOptions extends BaseClass:
-		func _init(): pass
-			super("HideFriendsOptions")
+		func _init().("HideFriendsOptions"): pass
 
 		var local_user_id: String
 
 		var client_data = null
 
 	class SetDisplayPreferenceOptions extends BaseClass:
-		func _init(): pass
-			super("SetDisplayPreferenceOptions")
+		func _init().("SetDisplayPreferenceOptions"): pass
 
 		var notification_location: int # NotificationLocation
 
 	class SetToggleFriendsKeyOptions extends BaseClass:
-		func _init(): pass
-			super("SetToggleFriendsKeyOptions")
+		func _init().("SetToggleFriendsKeyOptions"): pass
 
 		var key_combination: int # KeyCombination
 
 	class ShowFriendsOptions extends BaseClass:
-		func _init(): pass
-			super("ShowFriendsOptions")
+		func _init().("ShowFriendsOptions"): pass
 
 		var local_user_id: String
 
@@ -1765,46 +1636,40 @@ class UI:
 class UserInfo:
 
 	class CopyExternalUserInfoByAccountIdOptions extends BaseClass:
-		func _init(): pass
-			super("CopyExternalUserInfoByAccountIdOptions")
+		func _init().("CopyExternalUserInfoByAccountIdOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 		var account_id: String
 
 	class CopyExternalUserInfoByAccountTypeOptions extends BaseClass:
-		func _init(): pass
-			super("CopyExternalUserInfoByAccountTypeOptions")
+		func _init().("CopyExternalUserInfoByAccountTypeOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 		var account_type: int # ExternalAccountType
 
 	class CopyExternalUserInfoByIndexOptions extends BaseClass:
-		func _init(): pass
-			super("CopyExternalUserInfoByIndexOptions")
+		func _init().("CopyExternalUserInfoByIndexOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 		var index: int
 
 	class CopyUserInfoOptions extends BaseClass:
-		func _init(): pass
-			super("CopyUserInfoOptions")
+		func _init().("CopyUserInfoOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class GetExternalUserInfoCountOptions extends BaseClass:
-		func _init(): pass
-			super("GetExternalUserInfoCountOptions")
+		func _init().("GetExternalUserInfoCountOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
 
 	class QueryUserInfoOptions extends BaseClass:
-		func _init(): pass
-			super("QueryUserInfoOptions")
+		func _init().("QueryUserInfoOptions"): pass
 
 		var local_user_id: String
 		var target_user_id: String
@@ -1812,8 +1677,7 @@ class UserInfo:
 		var client_data = null
 
 	class QueryUserInfoByDisplayNameOptions extends BaseClass:
-		func _init(): pass
-			super("QueryUserInfoByDisplayNameOptions")
+		func _init().("QueryUserInfoByDisplayNameOptions"): pass
 
 		var local_user_id: String
 		var display_name: String
@@ -1821,8 +1685,7 @@ class UserInfo:
 		var client_data = null
 
 	class QueryUserInfoByExternalAccountOptions extends BaseClass:
-		func _init(): pass
-			super("QueryUserInfoByExternalAccountOptions")
+		func _init().("QueryUserInfoByExternalAccountOptions"): pass
 
 		var local_user_id: String
 		var external_account_id: String
@@ -1904,8 +1767,7 @@ class Logging:
 	}
 
 	class LogMessage extends BaseClass:
-		func _init(): pass
-			super("LogMessage")
+		func _init().("LogMessage"): pass
 
 		var category: String
 		var level: int  # LogLevel enum

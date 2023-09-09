@@ -3,9 +3,9 @@ using Godot.Collections;
 using Epic.OnlineServices;
 using Epic.OnlineServices.Ecom;
 
-public partial class TransactionWrapper : RefCounted
+public class TransactionWrapper : Reference
 {
-    public Dictionary copy_entitlement_by_index(RefCounted p_options)
+    public Dictionary copy_entitlement_by_index(Reference p_options)
     {
         int p_entitlement_index = (int)p_options.Get("entitlement_index");
         var options = new TransactionCopyEntitlementByIndexOptions()
@@ -33,14 +33,14 @@ public partial class TransactionWrapper : RefCounted
         return ret;
     }
 
-    public int get_entitlements_count(RefCounted p_options)
+    public int get_entitlements_count(Reference p_options)
     {
         var options = new TransactionGetEntitlementsCountOptions();
         uint count = _internalTransaction.GetEntitlementsCount(ref options);
         return (int)count;
     }
 
-    public Dictionary get_transaction_id(RefCounted p_options)
+    public Dictionary get_transaction_id(Reference p_options)
     {
         Utf8String outBuffer;
         Result res = _internalTransaction.GetTransactionId(out outBuffer);

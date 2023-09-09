@@ -3,3 +3,7 @@ C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mon
 C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.AssemblyInfoInputs.cache
 C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.AssemblyInfo.cs
 C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.csproj.CoreCompileInputs.cache
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\bin\Debug\TestProj.dll
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\bin\Debug\TestProj.pdb
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.dll
+C:\Users\wiene\OneDrive\Documents\GitHub\XanEngine\XanTestProjects\TestProj\.mono\temp\obj\Debug\TestProj.pdb

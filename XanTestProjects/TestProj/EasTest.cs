@@ -1,6 +1,9 @@
 using Epic.OnlineServices.AntiCheatClient;
+using Epic.OnlineServices.AntiCheatCommon;
+using Epic.OnlineServices.Platform;
 using Godot;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 public class EasTest : Node
 {
@@ -11,7 +14,7 @@ public class EasTest : Node
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        GD.Print(AntiCheatClientInterface.EndsessionApiLatest);
+
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,5 +1,5 @@
 class_name BaseClass
-extends RefCounted
+extends Reference
 
 var __name__: String
 
@@ -15,7 +15,7 @@ func _to_string() -> String:
 	all_props.pop_front()
 	all_props.pop_front()
 	all_props.pop_front()
-	var props = PackedStringArray()
+	var props = PoolStringArray()
 	for prop in all_props:
 		props.append("%s=%s" % [prop.name, get(prop.name)])
-	return get_class() + "(" + ", ".join(props) + ")"
+	return get_class() + "(" + props.join(", ") + ")"

@@ -9,12 +9,12 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "RefCounted",
+"base": "Reference",
 "class": "BaseClass",
 "language": "GDScript",
 "path": "res://EOS/Scripts/BaseClass.gd"
 }, {
-"base": "RefCounted",
+"base": "Reference",
 "class": "EOS",
 "language": "GDScript",
 "path": "res://EOS/Scripts/EOS.gd"

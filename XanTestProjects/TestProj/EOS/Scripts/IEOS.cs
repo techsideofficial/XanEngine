@@ -28,7 +28,7 @@ using Epic.OnlineServices.Reports;
 using Epic.OnlineServices.ProgressionSnapshot;
 using Epic.OnlineServices.Presence;
 
-public partial class IEOS : Node
+public class IEOS : Node
 {
     // ------------------------
     // Signals
@@ -176,7 +176,7 @@ public partial class IEOS : Node
     // -----
     // Platform Interface
     // -----
-    public Result platform_interface_initialize(RefCounted p_options)
+    public Result platform_interface_initialize(Reference p_options)
     {
         // Initialize the EOS SDK
         var initializeOptions = new InitializeOptions()
@@ -199,7 +199,7 @@ public partial class IEOS : Node
         return res;
     }
 
-    public bool platform_interface_create(RefCounted p_create_options)
+    public bool platform_interface_create(Reference p_create_options)
     {
 #if EOS_PLATFORM_WINDOWS
         string XAudio29DllPath = ProjectSettings.GlobalizePath("res://EOS/Bin/x64/xaudio2_9redist.dll");
@@ -462,9 +462,9 @@ public partial class IEOS : Node
     // -----
     // Auth Interface
     // -----
-    public void auth_interface_login(RefCounted p_options)
+    public void auth_interface_login(Reference p_options)
     {
-        var p_credentials = (RefCounted)p_options.Get("credentials");
+        var p_credentials = (Reference)p_options.Get("credentials");
 
         var credentials = new Epic.OnlineServices.Auth.Credentials()
         {
@@ -530,7 +530,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void auth_interface_logout(RefCounted p_options)
+    public void auth_interface_logout(Reference p_options)
     {
         var options = new LogoutOptions()
         {
@@ -550,7 +550,7 @@ public partial class IEOS : Node
         });
     }
 
-    public Dictionary auth_interface_copy_id_token(RefCounted p_options)
+    public Dictionary auth_interface_copy_id_token(Reference p_options)
     {
         var options = new Epic.OnlineServices.Auth.CopyIdTokenOptions()
         {
@@ -574,7 +574,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary auth_interface_copy_user_auth_token(RefCounted p_options, string p_local_user_id)
+    public Dictionary auth_interface_copy_user_auth_token(Reference p_options, string p_local_user_id)
     {
         var options = new CopyUserAuthTokenOptions() { };
 
@@ -603,7 +603,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void auth_interface_delete_persistent_auth(RefCounted p_options)
+    public void auth_interface_delete_persistent_auth(Reference p_options)
     {
         var options = new DeletePersistentAuthOptions()
         {
@@ -664,7 +664,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void auth_interface_query_id_token(RefCounted p_options)
+    public void auth_interface_query_id_token(Reference p_options)
     {
         var options = new QueryIdTokenOptions()
         {
@@ -685,9 +685,9 @@ public partial class IEOS : Node
         });
     }
 
-    public void auth_interface_verify_id_token(RefCounted p_options)
+    public void auth_interface_verify_id_token(Reference p_options)
     {
-        var id_token = (RefCounted)p_options.Get("id_token");
+        var id_token = (Reference)p_options.Get("id_token");
 
         var options = new Epic.OnlineServices.Auth.VerifyIdTokenOptions()
         {
@@ -713,7 +713,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void auth_interface_link_account(RefCounted p_options)
+    public void auth_interface_link_account(Reference p_options)
     {
         var ctw = (ContinuanceTokenWrapper)p_options.Get("continuance_token");
         var options = new Epic.OnlineServices.Auth.LinkAccountOptions()
@@ -741,9 +741,9 @@ public partial class IEOS : Node
         });
     }
 
-    public void auth_interface_verify_user_auth(RefCounted p_options)
+    public void auth_interface_verify_user_auth(Reference p_options)
     {
-        var p_auth_token = (RefCounted)p_options.Get("auth_token");
+        var p_auth_token = (Reference)p_options.Get("auth_token");
         var p_auth_type = (int)p_auth_token.Get("auth_type");
         var auth_token = new Token()
         {
@@ -778,9 +778,9 @@ public partial class IEOS : Node
     // -----
     // Connect Interface
     // -----
-    public void connect_interface_login(RefCounted p_options)
+    public void connect_interface_login(Reference p_options)
     {
-        var p_credentials = (RefCounted)p_options.Get("credentials");
+        var p_credentials = (Reference)p_options.Get("credentials");
 
         var options = new Epic.OnlineServices.Connect.LoginOptions()
         {
@@ -792,7 +792,7 @@ public partial class IEOS : Node
         };
         if (p_options.Get("user_login_info") != null)
         {
-            RefCounted p_user_login_info = (RefCounted)p_options.Get("user_login_info");
+            Reference p_user_login_info = (Reference)p_options.Get("user_login_info");
             var userLoginInfo = new UserLoginInfo()
             {
                 DisplayName = (string)p_user_login_info.Get("display_name"),
@@ -835,7 +835,7 @@ public partial class IEOS : Node
         });
     }
 
-    public Dictionary connect_interface_copy_id_token(RefCounted p_options)
+    public Dictionary connect_interface_copy_id_token(Reference p_options)
     {
         var options = new Epic.OnlineServices.Connect.CopyIdTokenOptions()
         {
@@ -861,7 +861,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary connect_interface_copy_product_user_external_account_by_account_id(RefCounted p_options)
+    public Dictionary connect_interface_copy_product_user_external_account_by_account_id(Reference p_options)
     {
         var options = new CopyProductUserExternalAccountByAccountIdOptions()
         {
@@ -880,7 +880,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary connect_interface_copy_product_user_external_account_by_account_type(RefCounted p_options)
+    public Dictionary connect_interface_copy_product_user_external_account_by_account_type(Reference p_options)
     {
         var options = new CopyProductUserExternalAccountByAccountTypeOptions()
         {
@@ -899,7 +899,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary connect_interface_copy_product_user_external_account_by_index(RefCounted p_options)
+    public Dictionary connect_interface_copy_product_user_external_account_by_index(Reference p_options)
     {
         int p_external_account_info_index = (int)p_options.Get("external_account_info_index");
         var options = new CopyProductUserExternalAccountByIndexOptions()
@@ -919,7 +919,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary connect_interface_copy_product_user_info(RefCounted p_options)
+    public Dictionary connect_interface_copy_product_user_info(Reference p_options)
     {
         var options = new CopyProductUserInfoOptions()
         {
@@ -937,7 +937,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void connect_interface_create_device_id(RefCounted p_options)
+    public void connect_interface_create_device_id(Reference p_options)
     {
         var options = new CreateDeviceIdOptions()
         {
@@ -954,7 +954,7 @@ public partial class IEOS : Node
             EmitSignal(nameof(connect_interface_create_device_id_callback), ret);
         });
     }
-    public void connect_interface_delete_device_id(RefCounted p_options)
+    public void connect_interface_delete_device_id(Reference p_options)
     {
         DeleteDeviceIdOptions options = new DeleteDeviceIdOptions();
         object client_data = _get_client_data(p_options);
@@ -969,7 +969,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void connect_interface_create_user(RefCounted p_options)
+    public void connect_interface_create_user(Reference p_options)
     {
         ContinuanceTokenWrapper ctw = (ContinuanceTokenWrapper)p_options.Get("continuance_token");
         var options = new Epic.OnlineServices.Connect.CreateUserOptions()
@@ -989,7 +989,7 @@ public partial class IEOS : Node
         });
     }
 
-    public string connect_interface_get_external_account_mapping(RefCounted p_options)
+    public string connect_interface_get_external_account_mapping(Reference p_options)
     {
         GetExternalAccountMappingsOptions options = new GetExternalAccountMappingsOptions()
         {
@@ -1019,7 +1019,7 @@ public partial class IEOS : Node
         return s_ConnectInterface.GetLoginStatus(ProductUserId.FromString(p_local_user_id));
     }
 
-    public int connect_interface_get_product_user_external_account_count(RefCounted p_options)
+    public int connect_interface_get_product_user_external_account_count(Reference p_options)
     {
         var options = new GetProductUserExternalAccountCountOptions()
         {
@@ -1029,7 +1029,7 @@ public partial class IEOS : Node
         return (int)count;
     }
 
-    public Dictionary connect_interface_get_product_user_id_mapping(RefCounted p_options)
+    public Dictionary connect_interface_get_product_user_id_mapping(Reference p_options)
     {
         var options = new GetProductUserIdMappingOptions()
         {
@@ -1047,7 +1047,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void connect_interface_link_account(RefCounted p_options)
+    public void connect_interface_link_account(Reference p_options)
     {
         var ctw = (ContinuanceTokenWrapper)p_options.Get("continuance_token");
         var options = new Epic.OnlineServices.Connect.LinkAccountOptions()
@@ -1070,9 +1070,9 @@ public partial class IEOS : Node
         });
     }
 
-    public void connect_interface_verify_id_token(RefCounted p_options)
+    public void connect_interface_verify_id_token(Reference p_options)
     {
-        var id_token = (RefCounted)p_options.Get("id_token");
+        var id_token = (Reference)p_options.Get("id_token");
         var options = new Epic.OnlineServices.Connect.VerifyIdTokenOptions()
         {
             IdToken = new Epic.OnlineServices.Connect.IdToken()
@@ -1104,7 +1104,7 @@ public partial class IEOS : Node
 
     }
 
-    public void connect_interface_transfer_device_id_account(RefCounted p_options)
+    public void connect_interface_transfer_device_id_account(Reference p_options)
     {
         var options = new TransferDeviceIdAccountOptions()
         {
@@ -1125,7 +1125,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void connect_interface_unlink_account(RefCounted p_options)
+    public void connect_interface_unlink_account(Reference p_options)
     {
         var options = new UnlinkAccountOptions()
         {
@@ -1148,7 +1148,7 @@ public partial class IEOS : Node
     // -----
     // Achievements Interface
     // -----
-    public Dictionary achievements_interface_copy_achievement_definition_v2_by_achievement_id(RefCounted p_options)
+    public Dictionary achievements_interface_copy_achievement_definition_v2_by_achievement_id(Reference p_options)
     {
         var options = new CopyAchievementDefinitionV2ByAchievementIdOptions()
         {
@@ -1166,7 +1166,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary achievements_interface_copy_achievement_definition_v2_by_index(RefCounted p_options)
+    public Dictionary achievements_interface_copy_achievement_definition_v2_by_index(Reference p_options)
     {
         var p_achievement_index = (int)p_options.Get("achievement_index");
         var options = new CopyAchievementDefinitionV2ByIndexOptions()
@@ -1185,7 +1185,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary achievements_interface_copy_player_achievement_by_achievement_id(RefCounted p_options)
+    public Dictionary achievements_interface_copy_player_achievement_by_achievement_id(Reference p_options)
     {
         var options = new CopyPlayerAchievementByAchievementIdOptions()
         {
@@ -1204,7 +1204,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary achievements_interface_copy_player_achievement_by_index(RefCounted p_options)
+    public Dictionary achievements_interface_copy_player_achievement_by_index(Reference p_options)
     {
         int p_achievement_index = (int)p_options.Get("achievement_index");
         var options = new CopyPlayerAchievementByIndexOptions()
@@ -1224,13 +1224,13 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int achievements_interface_get_achievement_definition_count(RefCounted p_options)
+    public int achievements_interface_get_achievement_definition_count(Reference p_options)
     {
         var options = new GetAchievementDefinitionCountOptions();
         return (int)s_AchievementsInterface.GetAchievementDefinitionCount(ref options);
     }
 
-    public void achievements_interface_query_definitions(RefCounted p_options)
+    public void achievements_interface_query_definitions(Reference p_options)
     {
         var options = new QueryDefinitionsOptions()
         {
@@ -1248,7 +1248,7 @@ public partial class IEOS : Node
         });
     }
 
-    public int achievements_interface_get_player_achievement_count(RefCounted p_options)
+    public int achievements_interface_get_player_achievement_count(Reference p_options)
     {
         var options = new GetPlayerAchievementCountOptions()
         {
@@ -1257,7 +1257,7 @@ public partial class IEOS : Node
         return (int)s_AchievementsInterface.GetPlayerAchievementCount(ref options);
     }
 
-    public void achievements_interface_query_player_achievements(RefCounted p_options)
+    public void achievements_interface_query_player_achievements(Reference p_options)
     {
         var options = new QueryPlayerAchievementsOptions()
         {
@@ -1276,7 +1276,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void achievements_interface_unlock_achievements(RefCounted p_options)
+    public void achievements_interface_unlock_achievements(Reference p_options)
     {
         var p_achievement_ids = ((System.Collections.IEnumerable)p_options.Get("achievement_ids")).Cast<string>().Select(x => new Utf8String(x)).ToArray();
         var options = new UnlockAchievementsOptions()
@@ -1302,7 +1302,7 @@ public partial class IEOS : Node
     // ------------------------
     // Custom Invites Interface
     // ------------------------
-    public Result custom_invites_interface_finalize_invite(RefCounted p_options)
+    public Result custom_invites_interface_finalize_invite(Reference p_options)
     {
         var options = new FinalizeInviteOptions()
         {
@@ -1314,7 +1314,7 @@ public partial class IEOS : Node
         return s_CustomInvitesInterface.FinalizeInvite(ref options);
     }
 
-    public void custom_invites_interface_send_custom_invite(RefCounted p_options)
+    public void custom_invites_interface_send_custom_invite(Reference p_options)
     {
         var options = new SendCustomInviteOptions()
         {
@@ -1335,7 +1335,7 @@ public partial class IEOS : Node
         });
     }
 
-    public Result custom_invites_interface_set_custom_invite(RefCounted p_options)
+    public Result custom_invites_interface_set_custom_invite(Reference p_options)
     {
         var options = new SetCustomInviteOptions()
         {
@@ -1350,7 +1350,7 @@ public partial class IEOS : Node
     // ------------------------
     // Stats Interface
     // ------------------------
-    public Dictionary stats_interface_copy_stat_by_index(RefCounted p_options)
+    public Dictionary stats_interface_copy_stat_by_index(Reference p_options)
     {
         int p_stat_index = (int)p_options.Get("stat_index");
         var options = new CopyStatByIndexOptions()
@@ -1372,7 +1372,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary stats_interface_copy_stat_by_name(RefCounted p_options)
+    public Dictionary stats_interface_copy_stat_by_name(Reference p_options)
     {
         var options = new CopyStatByNameOptions()
         {
@@ -1393,7 +1393,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int stats_interface_get_stats_count(RefCounted p_options)
+    public int stats_interface_get_stats_count(Reference p_options)
     {
         var options = new GetStatCountOptions()
         {
@@ -1403,7 +1403,7 @@ public partial class IEOS : Node
         return (int)count;
     }
 
-    public void stats_interface_ingest_stat(RefCounted p_options)
+    public void stats_interface_ingest_stat(Reference p_options)
     {
         var p_stats = (Godot.Collections.Array)p_options.Get("stats");
         IngestData[] ingestData = new IngestData[p_stats.Count];
@@ -1438,7 +1438,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void stats_interface_query_stats(RefCounted p_options)
+    public void stats_interface_query_stats(Reference p_options)
     {
         var options = new QueryStatsOptions()
         {
@@ -1471,7 +1471,7 @@ public partial class IEOS : Node
     // ------------------------
     // Leaderboards Interface
     // ------------------------
-    public Dictionary leaderboards_interface_copy_leaderboard_definition_by_index(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_definition_by_index(Reference p_options)
     {
         int p_leaderboard_index = (int)p_options.Get("leaderboard_index");
         var options = new CopyLeaderboardDefinitionByIndexOptions()
@@ -1489,7 +1489,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary leaderboards_interface_copy_leaderboard_definition_by_leaderboard_id(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_definition_by_leaderboard_id(Reference p_options)
     {
         var options = new CopyLeaderboardDefinitionByLeaderboardIdOptions()
         {
@@ -1506,7 +1506,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary leaderboards_interface_copy_leaderboard_record_by_index(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_record_by_index(Reference p_options)
     {
         int p_leaderboard_record_index = (int)p_options.Get("leaderboard_record_index");
         var options = new CopyLeaderboardRecordByIndexOptions()
@@ -1525,7 +1525,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary leaderboards_interface_copy_leaderboard_record_by_user_id(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_record_by_user_id(Reference p_options)
     {
         var options = new CopyLeaderboardRecordByUserIdOptions()
         {
@@ -1543,7 +1543,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary leaderboards_interface_copy_leaderboard_user_score_by_index(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_user_score_by_index(Reference p_options)
     {
         int p_user_score_index = (int)p_options.Get("leaderboard_user_score_index");
         var options = new CopyLeaderboardUserScoreByIndexOptions()
@@ -1562,7 +1562,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary leaderboards_interface_copy_leaderboard_user_score_by_user_id(RefCounted p_options)
+    public Dictionary leaderboards_interface_copy_leaderboard_user_score_by_user_id(Reference p_options)
     {
         var options = new CopyLeaderboardUserScoreByUserIdOptions()
         {
@@ -1580,19 +1580,19 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int leaderboards_interface_get_leaderboard_definition_count(RefCounted p_options)
+    public int leaderboards_interface_get_leaderboard_definition_count(Reference p_options)
     {
         var options = new GetLeaderboardDefinitionCountOptions() { };
         return (int)s_LeaderboardsInterface.GetLeaderboardDefinitionCount(ref options);
     }
 
-    public int leaderboards_interface_get_leaderboard_record_count(RefCounted p_options)
+    public int leaderboards_interface_get_leaderboard_record_count(Reference p_options)
     {
         var options = new GetLeaderboardRecordCountOptions() { };
         return (int)s_LeaderboardsInterface.GetLeaderboardRecordCount(ref options);
     }
 
-    public int leaderboards_interface_get_leaderboard_user_score_count(RefCounted p_options)
+    public int leaderboards_interface_get_leaderboard_user_score_count(Reference p_options)
     {
         var options = new GetLeaderboardUserScoreCountOptions()
         {
@@ -1601,7 +1601,7 @@ public partial class IEOS : Node
         return (int)s_LeaderboardsInterface.GetLeaderboardUserScoreCount(ref options);
     }
 
-    public void leaderboards_interface_query_leaderboard_definitions(RefCounted p_options)
+    public void leaderboards_interface_query_leaderboard_definitions(Reference p_options)
     {
         var options = new QueryLeaderboardDefinitionsOptions()
         {
@@ -1621,7 +1621,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void leaderboards_interface_query_leaderboard_ranks(RefCounted p_options)
+    public void leaderboards_interface_query_leaderboard_ranks(Reference p_options)
     {
         var options = new QueryLeaderboardRanksOptions()
         {
@@ -1640,7 +1640,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void leaderboards_interface_query_leaderboard_user_scores(RefCounted p_options)
+    public void leaderboards_interface_query_leaderboard_user_scores(Reference p_options)
     {
         var p_stat_info = (Godot.Collections.Array)p_options.Get("stat_info");
         UserScoresQueryStatInfo[] statInfo = new UserScoresQueryStatInfo[p_stat_info.Count];
@@ -1681,7 +1681,7 @@ public partial class IEOS : Node
     // ------------------------
     // Friends Interface
     // ------------------------
-    public void friends_interface_accept_invite(RefCounted p_options)
+    public void friends_interface_accept_invite(Reference p_options)
     {
         var options = new AcceptInviteOptions()
         {
@@ -1702,7 +1702,7 @@ public partial class IEOS : Node
         });
     }
 
-    public string friends_interface_get_friend_at_index(RefCounted p_options)
+    public string friends_interface_get_friend_at_index(Reference p_options)
     {
         var options = new GetFriendAtIndexOptions()
         {
@@ -1714,7 +1714,7 @@ public partial class IEOS : Node
         return friendId.ToString();
     }
 
-    public int friends_interface_get_friends_count(RefCounted p_options)
+    public int friends_interface_get_friends_count(Reference p_options)
     {
         var options = new GetFriendsCountOptions()
         {
@@ -1723,7 +1723,7 @@ public partial class IEOS : Node
         return s_FriendsInterface.GetFriendsCount(ref options);
     }
 
-    public FriendsStatus friends_interface_get_status(RefCounted p_options)
+    public FriendsStatus friends_interface_get_status(Reference p_options)
     {
         var options = new GetStatusOptions()
         {
@@ -1733,7 +1733,7 @@ public partial class IEOS : Node
         return s_FriendsInterface.GetStatus(ref options);
     }
 
-    public void friends_interface_query_friends(RefCounted p_options)
+    public void friends_interface_query_friends(Reference p_options)
     {
         var options = new QueryFriendsOptions()
         {
@@ -1752,7 +1752,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void friends_interface_reject_invite(RefCounted p_options)
+    public void friends_interface_reject_invite(Reference p_options)
     {
         var options = new RejectInviteOptions()
         {
@@ -1773,7 +1773,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void friends_interface_send_invite(RefCounted p_options)
+    public void friends_interface_send_invite(Reference p_options)
     {
         var options = new SendInviteOptions()
         {
@@ -1798,7 +1798,7 @@ public partial class IEOS : Node
     // ------------------------
     // User Info Interface
     // ------------------------
-    public Dictionary user_info_interface_copy_external_user_info_by_account_id(RefCounted p_options)
+    public Dictionary user_info_interface_copy_external_user_info_by_account_id(Reference p_options)
     {
         var options = new CopyExternalUserInfoByAccountIdOptions()
         {
@@ -1817,7 +1817,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary user_info_interface_copy_external_user_info_by_account_type(RefCounted p_options)
+    public Dictionary user_info_interface_copy_external_user_info_by_account_type(Reference p_options)
     {
         var options = new CopyExternalUserInfoByAccountTypeOptions()
         {
@@ -1836,7 +1836,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary user_info_interface_copy_external_user_info_by_index(RefCounted p_options)
+    public Dictionary user_info_interface_copy_external_user_info_by_index(Reference p_options)
     {
         int p_index = (int)p_options.Get("index");
         var options = new CopyExternalUserInfoByIndexOptions()
@@ -1856,7 +1856,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary user_info_interface_copy_user_info(RefCounted p_options)
+    public Dictionary user_info_interface_copy_user_info(Reference p_options)
     {
         var options = new CopyUserInfoOptions()
         {
@@ -1876,7 +1876,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int user_info_interface_get_external_user_info_count(RefCounted p_options)
+    public int user_info_interface_get_external_user_info_count(Reference p_options)
     {
         var options = new GetExternalUserInfoCountOptions()
         {
@@ -1887,7 +1887,7 @@ public partial class IEOS : Node
         return (int)count;
     }
 
-    public void user_info_interface_query_user_info(RefCounted p_options)
+    public void user_info_interface_query_user_info(Reference p_options)
     {
         var options = new QueryUserInfoOptions()
         {
@@ -1908,7 +1908,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void user_info_interface_query_user_info_by_display_name(RefCounted p_options)
+    public void user_info_interface_query_user_info_by_display_name(Reference p_options)
     {
         var options = new QueryUserInfoByDisplayNameOptions()
         {
@@ -1930,7 +1930,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void user_info_interface_query_user_info_by_external_account(RefCounted p_options)
+    public void user_info_interface_query_user_info_by_external_account(Reference p_options)
     {
         var options = new QueryUserInfoByExternalAccountOptions()
         {
@@ -1958,7 +1958,7 @@ public partial class IEOS : Node
     // ------------------------
     // Ecom Interface
     // ------------------------
-    public void ecom_interface_checkout(RefCounted p_options)
+    public void ecom_interface_checkout(Reference p_options)
     {
         CheckoutEntry[] p_entries = ((System.Collections.IEnumerable)p_options.Get("entries")).Cast<Dictionary>().Select(
             x => new CheckoutEntry()
@@ -1986,7 +1986,7 @@ public partial class IEOS : Node
         });
     }
 
-    public Dictionary ecom_interface_copy_entitlement_by_id(RefCounted p_options)
+    public Dictionary ecom_interface_copy_entitlement_by_id(Reference p_options)
     {
         var options = new CopyEntitlementByIdOptions()
         {
@@ -2004,7 +2004,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_entitlement_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_entitlement_by_index(Reference p_options)
     {
         int p_entitlement_index = (int)p_options.Get("entitlement_index");
         var options = new CopyEntitlementByIndexOptions()
@@ -2023,7 +2023,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_entitlement_by_name_and_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_entitlement_by_name_and_index(Reference p_options)
     {
         int p_index = (int)p_options.Get("index");
         var options = new CopyEntitlementByNameAndIndexOptions()
@@ -2043,7 +2043,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_item_by_id(RefCounted p_options)
+    public Dictionary ecom_interface_copy_item_by_id(Reference p_options)
     {
         var options = new CopyItemByIdOptions()
         {
@@ -2061,7 +2061,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_item_image_info_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_item_image_info_by_index(Reference p_options)
     {
         int p_image_info_index = (int)p_options.Get("image_info_index");
         var options = new CopyItemImageInfoByIndexOptions()
@@ -2081,7 +2081,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_item_release_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_item_release_by_index(Reference p_options)
     {
         int p_release_index = (int)p_options.Get("release_index");
         var options = new CopyItemReleaseByIndexOptions()
@@ -2101,7 +2101,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_offer_by_id(RefCounted p_options)
+    public Dictionary ecom_interface_copy_offer_by_id(Reference p_options)
     {
         var options = new CopyOfferByIdOptions()
         {
@@ -2119,7 +2119,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_offer_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_offer_by_index(Reference p_options)
     {
         int p_offer_index = (int)p_options.Get("offer_index");
         var options = new CopyOfferByIndexOptions()
@@ -2138,7 +2138,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_offer_image_info_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_offer_image_info_by_index(Reference p_options)
     {
         int p_image_info_index = (int)p_options.Get("image_info_index");
         var options = new CopyOfferImageInfoByIndexOptions()
@@ -2158,7 +2158,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_offer_item_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_offer_item_by_index(Reference p_options)
     {
         int p_item_index = (int)p_options.Get("item_index");
         var options = new CopyOfferItemByIndexOptions()
@@ -2178,7 +2178,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_transaction_by_id(RefCounted p_options)
+    public Dictionary ecom_interface_copy_transaction_by_id(Reference p_options)
     {
         var options = new CopyTransactionByIdOptions()
         {
@@ -2199,7 +2199,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public Dictionary ecom_interface_copy_transaction_by_index(RefCounted p_options)
+    public Dictionary ecom_interface_copy_transaction_by_index(Reference p_options)
     {
         int p_transaction_index = (int)p_options.Get("transaction_index");
         var options = new CopyTransactionByIndexOptions()
@@ -2221,7 +2221,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int ecom_interface_get_entitlements_by_name_count(RefCounted p_options)
+    public int ecom_interface_get_entitlements_by_name_count(Reference p_options)
     {
         var options = new GetEntitlementsByNameCountOptions()
         {
@@ -2231,7 +2231,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetEntitlementsByNameCount(ref options);
     }
 
-    public int ecom_interface_get_entitlements_count(RefCounted p_options)
+    public int ecom_interface_get_entitlements_count(Reference p_options)
     {
         var options = new GetEntitlementsCountOptions()
         {
@@ -2240,7 +2240,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetEntitlementsCount(ref options);
     }
 
-    public int ecom_interface_get_item_image_info_count(RefCounted p_options)
+    public int ecom_interface_get_item_image_info_count(Reference p_options)
     {
         var options = new GetItemImageInfoCountOptions()
         {
@@ -2250,7 +2250,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetItemImageInfoCount(ref options);
     }
 
-    public int ecom_interface_get_item_release_count(RefCounted p_options)
+    public int ecom_interface_get_item_release_count(Reference p_options)
     {
         var options = new GetItemReleaseCountOptions()
         {
@@ -2260,7 +2260,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetItemReleaseCount(ref options);
     }
 
-    public int ecom_interface_get_offer_count(RefCounted p_options)
+    public int ecom_interface_get_offer_count(Reference p_options)
     {
         var options = new GetOfferCountOptions()
         {
@@ -2269,7 +2269,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetOfferCount(ref options);
     }
 
-    public int ecom_interface_get_offer_image_info_count(RefCounted p_options)
+    public int ecom_interface_get_offer_image_info_count(Reference p_options)
     {
         var options = new GetOfferImageInfoCountOptions()
         {
@@ -2279,7 +2279,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetOfferImageInfoCount(ref options);
     }
 
-    public int ecom_interface_get_offer_item_count(RefCounted p_options)
+    public int ecom_interface_get_offer_item_count(Reference p_options)
     {
         var options = new GetOfferItemCountOptions()
         {
@@ -2289,7 +2289,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetOfferItemCount(ref options);
     }
 
-    public int ecom_interface_get_transaction_count(RefCounted p_options)
+    public int ecom_interface_get_transaction_count(Reference p_options)
     {
         var options = new GetTransactionCountOptions()
         {
@@ -2298,7 +2298,7 @@ public partial class IEOS : Node
         return (int)s_EcomInterface.GetTransactionCount(ref options);
     }
 
-    public void ecom_interface_query_entitlements(RefCounted p_options)
+    public void ecom_interface_query_entitlements(Reference p_options)
     {
         var options = new QueryEntitlementsOptions()
         {
@@ -2320,7 +2320,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void ecom_interface_query_offers(RefCounted p_options)
+    public void ecom_interface_query_offers(Reference p_options)
     {
         var options = new QueryOffersOptions()
         {
@@ -2340,7 +2340,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void ecom_interface_query_ownership(RefCounted p_options)
+    public void ecom_interface_query_ownership(Reference p_options)
     {
         var options = new QueryOwnershipOptions()
         {
@@ -2367,7 +2367,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void ecom_interface_query_ownership_token(RefCounted p_options)
+    public void ecom_interface_query_ownership_token(Reference p_options)
     {
         var options = new QueryOwnershipTokenOptions()
         {
@@ -2389,7 +2389,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void ecom_interface_redeem_entitlements(RefCounted p_options)
+    public void ecom_interface_redeem_entitlements(Reference p_options)
     {
         var options = new RedeemEntitlementsOptions()
         {
@@ -2413,7 +2413,7 @@ public partial class IEOS : Node
     // ------------------------
     // UI Interface
     // ------------------------
-    public Result ui_interface_acknowledge_event_id(RefCounted p_options)
+    public Result ui_interface_acknowledge_event_id(Reference p_options)
     {
         int p_event_id = (int)p_options.Get("ui_event_id");
         int p_result = (int)p_options.Get("result");
@@ -2425,7 +2425,7 @@ public partial class IEOS : Node
         return s_UIInterface.AcknowledgeEventId(ref options);
     }
 
-    public bool ui_interface_get_friends_visible(RefCounted p_options)
+    public bool ui_interface_get_friends_visible(Reference p_options)
     {
         var options = new GetFriendsVisibleOptions()
         {
@@ -2439,13 +2439,13 @@ public partial class IEOS : Node
         return s_UIInterface.GetNotificationLocationPreference();
     }
 
-    public KeyCombination ui_interface_get_toggle_friends_key(RefCounted p_options)
+    public KeyCombination ui_interface_get_toggle_friends_key(Reference p_options)
     {
         var options = new GetToggleFriendsKeyOptions();
         return s_UIInterface.GetToggleFriendsKey(ref options);
     }
 
-    public void ui_interface_hide_friends(RefCounted p_options)
+    public void ui_interface_hide_friends(Reference p_options)
     {
         var options = new HideFriendsOptions()
         {
@@ -2471,7 +2471,7 @@ public partial class IEOS : Node
         );
     }
 
-    public Result ui_interface_set_display_preference(RefCounted p_options)
+    public Result ui_interface_set_display_preference(Reference p_options)
     {
         int p_notification_location = (int)p_options.Get("notification_location");
         var options = new SetDisplayPreferenceOptions()
@@ -2481,7 +2481,7 @@ public partial class IEOS : Node
         return s_UIInterface.SetDisplayPreference(ref options);
     }
 
-    public Result ui_interface_set_toggle_friends_key(RefCounted p_options)
+    public Result ui_interface_set_toggle_friends_key(Reference p_options)
     {
         var options = new SetToggleFriendsKeyOptions()
         {
@@ -2490,7 +2490,7 @@ public partial class IEOS : Node
         return s_UIInterface.SetToggleFriendsKey(ref options);
     }
 
-    public void ui_interface_show_friends(RefCounted p_options)
+    public void ui_interface_show_friends(Reference p_options)
     {
         var options = new ShowFriendsOptions()
         {
@@ -2513,7 +2513,7 @@ public partial class IEOS : Node
     // ------------------------
     // KWS Interface
     // ------------------------
-    public Dictionary kws_interface_copy_permission_by_index(RefCounted p_options)
+    public Dictionary kws_interface_copy_permission_by_index(Reference p_options)
     {
         int p_index = (int)p_options.Get("index");
 
@@ -2539,7 +2539,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void kws_interface_create_user(RefCounted p_options)
+    public void kws_interface_create_user(Reference p_options)
     {
         var options = new Epic.OnlineServices.KWS.CreateUserOptions()
         {
@@ -2562,7 +2562,7 @@ public partial class IEOS : Node
         });
     }
 
-    public Dictionary kws_interface_get_permission_by_key(RefCounted p_options)
+    public Dictionary kws_interface_get_permission_by_key(Reference p_options)
     {
         var options = new GetPermissionByKeyOptions()
         {
@@ -2578,7 +2578,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public int kws_interface_get_permissions_count(RefCounted p_options)
+    public int kws_interface_get_permissions_count(Reference p_options)
     {
         var options = new GetPermissionsCountOptions()
         {
@@ -2587,7 +2587,7 @@ public partial class IEOS : Node
         return s_KWSInterface.GetPermissionsCount(ref options);
     }
 
-    public void kws_interface_query_age_gate(RefCounted p_options)
+    public void kws_interface_query_age_gate(Reference p_options)
     {
         var options = new QueryAgeGateOptions() { };
         object client_data = _get_client_data(p_options);
@@ -2604,7 +2604,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void kws_interface_query_permissions(RefCounted p_options)
+    public void kws_interface_query_permissions(Reference p_options)
     {
         var options = new QueryPermissionsOptions()
         {
@@ -2626,7 +2626,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void kws_interface_request_permissions(RefCounted p_options)
+    public void kws_interface_request_permissions(Reference p_options)
     {
         var options = new RequestPermissionsOptions()
         {
@@ -2646,7 +2646,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void kws_interface_update_parent_email(RefCounted p_options)
+    public void kws_interface_update_parent_email(Reference p_options)
     {
         var options = new UpdateParentEmailOptions()
         {
@@ -2670,7 +2670,7 @@ public partial class IEOS : Node
     // ------------------------
     // Metrics Interface
     // ------------------------
-    public Result metrics_interface_begin_player_session(RefCounted p_options)
+    public Result metrics_interface_begin_player_session(Reference p_options)
     {
         int p_account_id_type = (int)p_options.Get("account_id_type");
         string p_account_id = (string)p_options.Get("account_id");
@@ -2705,7 +2705,7 @@ public partial class IEOS : Node
 
         return s_MetricsInterface.BeginPlayerSession(ref options);
     }
-    public Result metrics_interface_end_player_session(RefCounted p_options)
+    public Result metrics_interface_end_player_session(Reference p_options)
     {
         int p_account_id_type = (int)p_options.Get("account_id_type");
         string p_account_id = (string)p_options.Get("account_id");
@@ -2759,7 +2759,7 @@ public partial class IEOS : Node
     // ------------------------
     // Mods Interface
     // ------------------------
-    public Dictionary mods_interface_copy_mod_info(RefCounted p_options)
+    public Dictionary mods_interface_copy_mod_info(Reference p_options)
     {
         var options = new CopyModInfoOptions()
         {
@@ -2786,7 +2786,7 @@ public partial class IEOS : Node
         return ret;
     }
 
-    public void mods_interface_enumerate_mods(RefCounted p_options)
+    public void mods_interface_enumerate_mods(Reference p_options)
     {
         var options = new EnumerateModsOptions()
         {
@@ -2810,7 +2810,7 @@ public partial class IEOS : Node
     // ------------------------
     // Reports Interface
     // ------------------------
-    public void reports_interface_send_player_behavior_report(RefCounted p_options)
+    public void reports_interface_send_player_behavior_report(Reference p_options)
     {
         var options = new SendPlayerBehaviorReportOptions()
         {
@@ -2836,7 +2836,7 @@ public partial class IEOS : Node
     // ------------------------
     // Progression Snapshot Interface
     // ------------------------
-    public Dictionary progression_snapshot_interface_begin_snapshot(RefCounted p_options)
+    public Dictionary progression_snapshot_interface_begin_snapshot(Reference p_options)
     {
         var options = new BeginSnapshotOptions()
         {
@@ -2850,7 +2850,7 @@ public partial class IEOS : Node
         };
     }
 
-    public Result progression_snapshot_interface_add_progression(RefCounted p_options)
+    public Result progression_snapshot_interface_add_progression(Reference p_options)
     {
         var p_snapshot_id = (int)p_options.Get("snapshot_id");
         var options = new AddProgressionOptions()
@@ -2863,7 +2863,7 @@ public partial class IEOS : Node
         return s_ProgressionSnapshotInterface.AddProgression(ref options);
     }
 
-    public void progression_snapshot_interface_submit_snapshot(RefCounted p_options)
+    public void progression_snapshot_interface_submit_snapshot(Reference p_options)
     {
         var p_snapshot_id = (int)p_options.Get("snapshot_id");
         var options = new SubmitSnapshotOptions()
@@ -2891,7 +2891,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void progression_snapshot_interface_delete_snapshot(RefCounted p_options)
+    public void progression_snapshot_interface_delete_snapshot(Reference p_options)
     {
         var options = new DeleteSnapshotOptions()
         {
@@ -2917,7 +2917,7 @@ public partial class IEOS : Node
     // ------------------------
     // Presence Interface
     // ------------------------
-    public Dictionary presence_interface_copy_presence(RefCounted p_options)
+    public Dictionary presence_interface_copy_presence(Reference p_options)
     {
         Info? outPresence;
         var options = new CopyPresenceOptions()
@@ -2959,7 +2959,7 @@ public partial class IEOS : Node
         return new Dictionary() { { "result_code", res } };
     }
 
-    public Dictionary presence_interface_create_presence_modification(RefCounted p_options)
+    public Dictionary presence_interface_create_presence_modification(Reference p_options)
     {
         PresenceModification outPresenceModification;
         var options = new CreatePresenceModificationOptions()
@@ -2981,7 +2981,7 @@ public partial class IEOS : Node
         return new Dictionary() { { "result_code", res } };
     }
 
-    public Dictionary presence_interface_get_join_info(RefCounted p_options)
+    public Dictionary presence_interface_get_join_info(Reference p_options)
     {
         var options = new GetJoinInfoOptions()
         {
@@ -3001,7 +3001,7 @@ public partial class IEOS : Node
         return new Dictionary() { { "result_code", res } };
     }
 
-    public bool presence_interface_has_presence(RefCounted p_options)
+    public bool presence_interface_has_presence(Reference p_options)
     {
         var options = new HasPresenceOptions()
         {
@@ -3011,7 +3011,7 @@ public partial class IEOS : Node
         return s_PresenceInterface.HasPresence(ref options);
     }
 
-    public void presence_interface_query_presence(RefCounted p_options)
+    public void presence_interface_query_presence(Reference p_options)
     {
         var options = new QueryPresenceOptions()
         {
@@ -3038,7 +3038,7 @@ public partial class IEOS : Node
         });
     }
 
-    public void presence_interface_set_presence(RefCounted p_options)
+    public void presence_interface_set_presence(Reference p_options)
     {
         var options = new SetPresenceOptions()
         {
@@ -3106,7 +3106,7 @@ public partial class IEOS : Node
     // ------------------------
     // EOS to Dictionary Helpers
     // ------------------------
-    private object _get_client_data(RefCounted p_options)
+    private object _get_client_data(Reference p_options)
     {
         if (p_options.Get("client_data") != null) return p_options.Get("client_data");
         return null;

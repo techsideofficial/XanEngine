@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\USERS\\WIENE\\ONEDRIVE\\DOCUMENTS\\GITHUB\\XANENGINE\\XANTESTPROJECTS\\TESTPROJ\\TestProj.csproj",
+      "projectUniqueName": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj",
       "projectName": "TestProj",
-      "projectPath": "C:\\USERS\\WIENE\\ONEDRIVE\\DOCUMENTS\\GITHUB\\XANENGINE\\XANTESTPROJECTS\\TESTPROJ\\TestProj.csproj",
+      "projectPath": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\TestProj.csproj",
       "packagesPath": "C:\\Users\\wiene\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wiene\\OneDrive\\DOCUMENTS\\GitHub\\XANENGINE\\XANTESTPROJECTS\\TestProj\\.mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\wiene\\OneDrive\\Documents\\GitHub\\XanEngine\\XanTestProjects\\TestProj\\.mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\wiene\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
